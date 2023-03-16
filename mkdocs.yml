@@ -8,11 +8,11 @@ theme:
     - navigation.expand
     - toc.follow
 
-repo_url: https://github.com/openkfw/d4dtools
+repo_url: https://github.com/openkfw/open-geodata-model
 edit_uri: edit/main/docs/
 
 nav:
-  - "documentation.md"
+  - "index.md"
     
 markdown_extensions:
   - footnotes
