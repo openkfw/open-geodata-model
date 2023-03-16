@@ -1,0 +1,23 @@
+site_name: Open Geodata model
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - toc.follow
+
+repo_url: https://github.com/openkfw/d4dtools
+edit_uri: edit/main/docs/
+
+nav:
+  - "index.md"
+    
+markdown_extensions:
+  - toc
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
