@@ -1,7 +1,10 @@
 # KfWs open geodata model
 ## About
 Welcome! This is KfWs repository for storing the geodata model which can be used to collect project location sites and meta-information for KfW financed projects. 
-The geodata model comes in form of an excel template which can be used to collect the data. A guideline on how to collect this information is published and continously updated [here]([url](https://openkfw.github.io/open-geodata-model/)).
+The geodata model comes in form of an excel template which can be used to collect the data. 
+
+**A guideline on how to collect this information is published and continously updated [here](https://openkfw.github.io/open-geodata-model/).**
+
 
 ## Available versions and versioning of the template. 
 Please note, that the geodata template and the guidelines are living documents. We keep on advancing the model i.e. by extending the available IATI location codes. 
