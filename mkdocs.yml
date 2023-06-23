@@ -13,7 +13,11 @@ edit_uri: edit/main/docs/
 
 nav:
   - "index.md"
-    
+  - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
+
+plugins:
+  - mkdocs-jupyter
+
 markdown_extensions:
   - footnotes
   - toc
