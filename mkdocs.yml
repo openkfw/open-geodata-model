@@ -13,6 +13,7 @@ edit_uri: edit/main/docs/
 
 nav:
   - "index.md"
+  - "sdg_icons.md"
   - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
 
 plugins:
