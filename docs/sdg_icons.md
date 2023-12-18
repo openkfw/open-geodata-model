@@ -47,7 +47,7 @@
   <figcaption> <b>SCHA</b> - agricultural school</figcaption>
 </figure>
 <figure markdown>
-  ![SCHC](icons/png/SCHC-college.png)
+  ![SCHC](icons/png/SCHC_college.png)
   <figcaption> <b>SCHC</b> - college</figcaption>
 </figure>
 <figure markdown>
@@ -91,7 +91,7 @@
   <figcaption> <b>CVS</b> - converter station</figcaption>
 </figure>
 <figure markdown>
-  ![EPTD](icons/png/EPTD_electric_power_transmission_and_distribution.png)
+  ![EPTD](icons/png/EPTD_electric_power_trans­mission_and_distribution.png)
   <figcaption> <b>EPTD</b> - electric power transmission and distribution</figcaption>
 </figure>
 <figure markdown>
@@ -113,8 +113,8 @@
 
 ## Decent Work and Economic Growth
 <figure markdown>
-  ![CTRB](icons/png/CTRB_business_centere.png)
-  <figcaption> <b>CTRB</b> - business centere</figcaption>
+  ![CTRB](icons/png/CTRB_business_centre.png)
+  <figcaption> <b>CTRB</b> - business centre</figcaption>
 </figure>
 <figure markdown>
   ![DEVH](icons/png/DEVH_housing_development.png)
