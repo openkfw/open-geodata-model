@@ -43,7 +43,7 @@
   <figcaption> <b>SCH</b> - school</figcaption>
 </figure>
 <figure markdown>
-  ![SCHA](icons/png/SCHA_agricutural_school.png)
+  ![SCHA](icons/png/SCHA_agricultural_school.png)
   <figcaption> <b>SCHA</b> - agricultural school</figcaption>
 </figure>
 <figure markdown>
@@ -73,8 +73,8 @@
   <figcaption> <b>SAN</b> - sanitary facilities</figcaption>
 </figure>
 <figure markdown>
-  ![SWT](icons/png/SWT_sewage_tretment_plant.png)
-  <figcaption> <b>SWT</b> - sewage tretment plant</figcaption>
+  ![SWT](icons/png/SWT_sewage_treatment_plant.png)
+  <figcaption> <b>SWT</b> - sewage treatment plant</figcaption>
 </figure>
 <figure markdown>
   ![WLL](icons/png/WLL_well.png)
@@ -91,7 +91,7 @@
   <figcaption> <b>CVS</b> - converter station</figcaption>
 </figure>
 <figure markdown>
-  ![EPTD](icons/png/EPTD_electric_power_transmission_and_didtribution.png)
+  ![EPTD](icons/png/EPTD_electric_power_transmission_and_distribution.png)
   <figcaption> <b>EPTD</b> - electric power transmission and distribution</figcaption>
 </figure>
 <figure markdown>
@@ -99,7 +99,7 @@
   <figcaption> <b>PS</b> - power station</figcaption>
 </figure>
 <figure markdown>
-  ![PSH](icons/png/PSH_hydroelectric_power_station<.png)
+  ![PSH](icons/png/PSH_hydroelectric_power_station.png)
   <figcaption> <b>PSH</b> - hydroelectric power station</figcaption>
 </figure>
 <figure markdown>
@@ -113,8 +113,8 @@
 
 ## Decent Work and Economic Growth
 <figure markdown>
-  ![CTRB](icons/png/CTRB_business_center.png)
-  <figcaption> <b>CTRB</b> - business center</figcaption>
+  ![CTRB](icons/png/CTRB_business_centere.png)
+  <figcaption> <b>CTRB</b> - business centere</figcaption>
 </figure>
 <figure markdown>
   ![DEVH](icons/png/DEVH_housing_development.png)
@@ -151,7 +151,7 @@
   <figcaption> <b>DRCNL</b> - city street with drainage canal</figcaption>
 </figure>
 <figure markdown>
-  ![FPWL](icons/png/FPWL_flood_prtection_wall.png)
+  ![FPWL](icons/png/FPWL_flood_protection_wall.png)
   <figcaption> <b>FPWL</b> - flood protection wall</figcaption>
 </figure>
 <figure markdown>
@@ -203,8 +203,8 @@
   <figcaption> <b>GDN</b> - garden</figcaption>
 </figure>
 <figure markdown>
-  ![GOVL](icons/png/GOVL_local_goverment_office.png)
-  <figcaption> <b>GOVL</b> - local goverment office</figcaption>
+  ![GOVL](icons/png/GOVL_local_government_office.png)
+  <figcaption> <b>GOVL</b> - local government office</figcaption>
 </figure>
 <figure markdown>
   ![MKT](icons/png/MKT_market.png)
