@@ -29,7 +29,7 @@
   <figcaption> <b>HSP</b> - hospital</figcaption>
 </figure>
 <figure markdown>
-  ![](icons/png/HSPC_clinic.png)
+  ![HSPC](icons/png/HSPC_clinic.png)
   <figcaption><b>HSPC</b> - clinic</figcaption>
 </figure>
 <figure markdown>
