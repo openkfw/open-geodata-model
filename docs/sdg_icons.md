@@ -24,3 +24,7 @@
 </figure>
 
 ## Good health and Well-Being
+<figure markdown>
+  ![HSP](icons/png/HSP_hospital.png)
+  <figcaption> <b>HSP</b> - hospital</figcaption>
+</figure>
