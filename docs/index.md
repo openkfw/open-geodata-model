@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # The KfW Geodata Model
 
 In this Section we explain the FC Geodata Model according to which project location data should be collected as well as technical requirements for the data collection. The goal is to inform KfW staff, Project Executing Agencies (PEAs), consultants, and other external stakeholders responsible for data collection as to the types of location data to be collected and in what form.
