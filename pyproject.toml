@@ -8,10 +8,12 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
+pyxform = "^2.0.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.2.0"
 pylint = "^3.0.3"
+ipykernel = "^6.29.2"
 
 [build-system]
 requires = ["poetry-core"]
