@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "open-geodata-model"
+version = "0.1.0"
+description = "Open Geodata Model for Mapping Project Sites in ODA"
+authors = ["Your Name <you@example.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.2.0"
+pylint = "^3.0.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
