@@ -69,6 +69,8 @@ In such cases, approximate location must be defined based on administrative unit
 
 ## Project Geodata Standard Formats and Templates
 
+## Link to Project Location Data Collection Template
+
 ### Exact locations using the Excel Template (and potentially KML files)
 
 As outlined above, all project locations should be collected using the Excel template (or a future open-source-based geodata collection tool) provided by KfW, which utilizes predefined categories under the IATI standard and built-in selection methods facilitating clean data entry. The geolocation is to be submitted in Excel with the geo-coordinates that can be obtained with a GPS tool. **All coordinates are to be collected using** **WGS 84**[^3] **as the coordinate reference system.** WGS 84 is the de-facto standard for web mapping applications. Geo-coordinates are to be provided in the decimal place format 00.00000 in the order LONG, LAT (using at least 5 digits after the separator).
