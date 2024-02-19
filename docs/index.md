@@ -69,7 +69,7 @@ In such cases, approximate location must be defined based on administrative unit
 
 ## Project Geodata Standard Formats and Templates
 
-## Link to Project Location Data Collection Template
+## Link to Project Location Data Collection Template (https://github.com/openkfw/open-geodata-model/blob/main/Project_Location_Data_Template_V02.xlsx)
 
 ### Exact locations using the Excel Template (and potentially KML files)
 
