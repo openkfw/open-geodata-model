@@ -1,0 +1,2162 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:jr="http://openrosa.org/javarosa"
+    xmlns:orx="http://openrosa.org/xforms"
+    xmlns:odk="http://www.opendatakit.org/xforms">
+    <h:head>
+        <h:title>Geo Template</h:title>
+        <model odk:xforms-version="1.0.0">
+            <instance>
+                <data id="14" version="2">
+                    <unique_id/>
+                    <pr_number/>
+                    <project_abbreviation/>
+                    <data_owner/>
+                    <publishing_restrictions/>
+                    <date_latest_update/>
+                    <project_specific_location_identifier/>
+                    <location_name/>
+                    <location_activity_status/>
+                    <activity_start/>
+                    <activity_end/>
+                    <activity_desc/>
+                    <activity_desc_add/>
+                    <kc_theme/>
+                    <location_type_name/>
+                    <alternative_location_type/>
+                    <dac_5_purpose_classification/>
+                    <budget_share/>
+                    <geographic_exactness/>
+                    <latitude/>
+                    <longitude/>
+                    <related_vilage/>
+                    <geo_file_name/>
+                    <primary_key_file/>
+                    <meta>
+                        <instanceID/>
+                    </meta>
+                </data>
+            </instance>
+            <instance id="yes_no">
+                <root>
+                    <item>
+                        <name>1</name>
+                        <label>yes</label>
+                    </item>
+                    <item>
+                        <name>0</name>
+                        <label>no</label>
+                    </item>
+                </root>
+            </instance>
+            <instance id="location_activity_status">
+                <root>
+                    <item>
+                        <name>Pipeline/identification</name>
+                        <label>Pipeline/identification</label>
+                    </item>
+                    <item>
+                        <name>Implementation</name>
+                        <label>Implementation</label>
+                    </item>
+                    <item>
+                        <name>Finalisation</name>
+                        <label>Finalisation</label>
+                    </item>
+                    <item>
+                        <name>Closed</name>
+                        <label>Closed</label>
+                    </item>
+                    <item>
+                        <name>Cancelled</name>
+                        <label>Cancelled</label>
+                    </item>
+                    <item>
+                        <name>Suspended</name>
+                        <label>Suspended</label>
+                    </item>
+                    <item>
+                        <name>NA</name>
+                        <label>NA</label>
+                    </item>
+                    <item>
+                        <name>Other</name>
+                        <label>Other</label>
+                    </item>
+                </root>
+            </instance>
+            <instance id="kc_theme">
+                <root>
+                    <item>
+                        <name>Agriculture</name>
+                        <label>Agriculture</label>
+                    </item>
+                    <item>
+                        <name>Agrofinance</name>
+                        <label>Agrofinance</label>
+                    </item>
+                    <item>
+                        <name>Aquaculture / Fishery</name>
+                        <label>Aquaculture / Fishery</label>
+                    </item>
+                    <item>
+                        <name>Climate</name>
+                        <label>Climate</label>
+                    </item>
+                    <item>
+                        <name>Education</name>
+                        <label>Education</label>
+                    </item>
+                    <item>
+                        <name>Employment</name>
+                        <label>Employment</label>
+                    </item>
+                    <item>
+                        <name>Energy</name>
+                        <label>Energy</label>
+                    </item>
+                    <item>
+                        <name>Financial Sector Devt</name>
+                        <label>Financial Sector Devt</label>
+                    </item>
+                    <item>
+                        <name>Food Security and Nutrition</name>
+                        <label>Food Security and Nutrition</label>
+                    </item>
+                    <item>
+                        <name>Generic / All</name>
+                        <label>Generic / All</label>
+                    </item>
+                    <item>
+                        <name>Governance</name>
+                        <label>Governance</label>
+                    </item>
+                    <item>
+                        <name>Health</name>
+                        <label>Health</label>
+                    </item>
+                    <item>
+                        <name>Infrastructure</name>
+                        <label>Infrastructure</label>
+                    </item>
+                    <item>
+                        <name>Land Management</name>
+                        <label>Land Management</label>
+                    </item>
+                    <item>
+                        <name>Mobility / Transport</name>
+                        <label>Mobility / Transport</label>
+                    </item>
+                    <item>
+                        <name>Natural Resources Management</name>
+                        <label>Natural Resources Management</label>
+                    </item>
+                    <item>
+                        <name>Ocean Protection</name>
+                        <label>Ocean Protection</label>
+                    </item>
+                    <item>
+                        <name>Peace</name>
+                        <label>Peace</label>
+                    </item>
+                    <item>
+                        <name>Sanitation</name>
+                        <label>Sanitation</label>
+                    </item>
+                    <item>
+                        <name>Social Protection</name>
+                        <label>Social Protection</label>
+                    </item>
+                    <item>
+                        <name>Urban Infrastructure</name>
+                        <label>Urban Infrastructure</label>
+                    </item>
+                    <item>
+                        <name>Waste</name>
+                        <label>Waste</label>
+                    </item>
+                    <item>
+                        <name>Water Resources</name>
+                        <label>Water Resources</label>
+                    </item>
+                    <item>
+                        <name>Water Supply</name>
+                        <label>Water Supply</label>
+                    </item>
+                    <item>
+                        <name>Water resources</name>
+                        <label>Water resources</label>
+                    </item>
+                </root>
+            </instance>
+            <instance id="location_type_name">
+                <root>
+                    <item>
+                        <name>Agricultural / Farming Area</name>
+                        <label>Agricultural / Farming Area</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agricultural Extension Services</name>
+                        <label>Agricultural Extension Services</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agricultural Facility</name>
+                        <label>Agricultural Facility</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agricultural Machinery: Tractors, Tills, Seeder, Etc.</name>
+                        <label>Agricultural Machinery: Tractors, Tills, Seeder, Etc.</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agricultural Research Facility</name>
+                        <label>Agricultural Research Facility</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agricultural School</name>
+                        <label>Agricultural School</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Certified Agriculture</name>
+                        <label>Certified Agriculture</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Cultivated Area</name>
+                        <label>Cultivated Area</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Environmental &amp; Social Mgt System Establishment</name>
+                        <label>Environmental &amp; Social Mgt System Establishment</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Erosion Control Area</name>
+                        <label>Erosion Control Area</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Farm</name>
+                        <label>Farm</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Farm Village</name>
+                        <label>Farm Village</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Farmers Groups / Cooperatives</name>
+                        <label>Farmers Groups / Cooperatives</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Fences (Vector/Km)</name>
+                        <label>Fences (Vector/Km)</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Field(S)</name>
+                        <label>Field(S)</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Garden(S)</name>
+                        <label>Garden(S)</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Grassland</name>
+                        <label>Grassland</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Grazing Area</name>
+                        <label>Grazing Area</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Households That Have Accessed Inputs: Seeds, Fertilizers, Tools</name>
+                        <label>Households That Have Accessed Inputs: Seeds, Fertilizers, Tools</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Improved Soil Management Area</name>
+                        <label>Improved Soil Management Area</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Irrigated Field(S)</name>
+                        <label>Irrigated Field(S)</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Irrigation Canal</name>
+                        <label>Irrigation Canal</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Irrigation Infrastructure</name>
+                        <label>Irrigation Infrastructure</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Irrigation System</name>
+                        <label>Irrigation System</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Nursery(-Ies)</name>
+                        <label>Nursery(-Ies)</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Orchard(S)</name>
+                        <label>Orchard(S)</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Plantation Area</name>
+                        <label>Plantation Area</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Scrubland</name>
+                        <label>Scrubland</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Smallholder Farms</name>
+                        <label>Smallholder Farms</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Soil Erosion Control Infrastructure</name>
+                        <label>Soil Erosion Control Infrastructure</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Water Storage Infrastructure</name>
+                        <label>Water Storage Infrastructure</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Weir(S)</name>
+                        <label>Weir(S)</label>
+                        <kcthemefilter>Agriculture</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agricultural Insurance (Issued)</name>
+                        <label>Agricultural Insurance (Issued)</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agricultural Loans (Delivered)</name>
+                        <label>Agricultural Loans (Delivered)</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agrodevelopment Hubs/Clusters/Incubators</name>
+                        <label>Agrodevelopment Hubs/Clusters/Incubators</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Contract Farming / Ppp</name>
+                        <label>Contract Farming / Ppp</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Digital Agfinance Services</name>
+                        <label>Digital Agfinance Services</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Erntepfandkreditsysteme</name>
+                        <label>Erntepfandkreditsysteme</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Financial Literacy Trainings (Ag)</name>
+                        <label>Financial Literacy Trainings (Ag)</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Matching Grants (Delivered)</name>
+                        <label>Matching Grants (Delivered)</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Partner Insurance Company</name>
+                        <label>Partner Insurance Company</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Saving Groups/Vsla/Saccos</name>
+                        <label>Saving Groups/Vsla/Saccos</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Small And Medium Enterprises (Sme)</name>
+                        <label>Small And Medium Enterprises (Sme)</label>
+                        <kcthemefilter>Agrofinance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Certified Aquaculture Or Fisheries (Msc, Asc)</name>
+                        <label>Certified Aquaculture Or Fisheries (Msc, Asc)</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Coastguard</name>
+                        <label>Coastguard</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Community Based Aquaculture Area</name>
+                        <label>Community Based Aquaculture Area</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Extensive Aquaculture Ponds</name>
+                        <label>Extensive Aquaculture Ponds</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Fao Catch-Area</name>
+                        <label>Fao Catch-Area</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Feed-Mill</name>
+                        <label>Feed-Mill</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Fishponds</name>
+                        <label>Fishponds</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Inland Waters Fishery</name>
+                        <label>Inland Waters Fishery</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Intensive Aquaculture Ponds</name>
+                        <label>Intensive Aquaculture Ponds</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Pond</name>
+                        <label>Pond</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Post Harvest Processing &amp; Value Addition</name>
+                        <label>Post Harvest Processing &amp; Value Addition</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Privately-Owned Aquaculture Area</name>
+                        <label>Privately-Owned Aquaculture Area</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Wastewater-Treatment</name>
+                        <label>Wastewater-Treatment</label>
+                        <kcthemefilter>Aquaculture / Fishery</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Carbon Credits</name>
+                        <label>Carbon Credits</label>
+                        <kcthemefilter>Climate</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Climate Vulnerability</name>
+                        <label>Climate Vulnerability</label>
+                        <kcthemefilter>Climate</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Athletic Field</name>
+                        <label>Athletic Field</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Capacity Devt Tvet-Center</name>
+                        <label>Capacity Devt Tvet-Center</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Capacity Devt University Mgt</name>
+                        <label>Capacity Devt University Mgt</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>College</name>
+                        <label>College</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Primary School</name>
+                        <label>Primary School</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Scholarship Program</name>
+                        <label>Scholarship Program</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>School</name>
+                        <label>School</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>School District</name>
+                        <label>School District</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Technical School</name>
+                        <label>Technical School</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Training Voucher(S) (System)</name>
+                        <label>Training Voucher(S) (System)</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Tvet School / Infrastructure</name>
+                        <label>Tvet School / Infrastructure</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>University</name>
+                        <label>University</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Unterstützung Netzwerkberufsbildungszentrum (Teil Eines Coe)</name>
+                        <label>Unterstützung Netzwerkberufsbildungszentrum (Teil Eines Coe)</label>
+                        <kcthemefilter>Education</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Additional Employment Generation</name>
+                        <label>Additional Employment Generation</label>
+                        <kcthemefilter>Employment</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Biogas Point</name>
+                        <label>Biogas Point</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Converter Station</name>
+                        <label>Converter Station</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Dam</name>
+                        <label>Dam</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Electric Power Transmission + Distribution (T&amp;D)</name>
+                        <label>Electric Power Transmission + Distribution (T&amp;D)</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Geothermal (Power Station)?</name>
+                        <label>Geothermal (Power Station)?</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Hydroelectric Power Station</name>
+                        <label>Hydroelectric Power Station</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Hydrogen Point/Area</name>
+                        <label>Hydrogen Point/Area</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Hydropower (Incl. Dams)</name>
+                        <label>Hydropower (Incl. Dams)</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Hydropower Grid</name>
+                        <label>Hydropower Grid</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Photovoltaic Grid</name>
+                        <label>Photovoltaic Grid</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Photovoltaic Power Station</name>
+                        <label>Photovoltaic Power Station</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Power Station</name>
+                        <label>Power Station</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Re-Mixed Point/Area</name>
+                        <label>Re-Mixed Point/Area</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Solar</name>
+                        <label>Solar</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Spillway</name>
+                        <label>Spillway</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Stream Gauging Station</name>
+                        <label>Stream Gauging Station</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Sub-Surface Dam</name>
+                        <label>Sub-Surface Dam</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Water Mill</name>
+                        <label>Water Mill</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Water Pumping Station</name>
+                        <label>Water Pumping Station</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Wind</name>
+                        <label>Wind</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Wind On / Off-Shore Area</name>
+                        <label>Wind On / Off-Shore Area</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Windmill</name>
+                        <label>Windmill</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Batteries Point</name>
+                        <label>Batteries Point</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>District Heating Area</name>
+                        <label>District Heating Area</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Ee: Heating</name>
+                        <label>Ee: Heating</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Geothermal Power Grid?</name>
+                        <label>Geothermal Power Grid?</label>
+                        <kcthemefilter>Energy</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Bank</name>
+                        <label>Bank</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Bank Branch</name>
+                        <label>Bank Branch</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Banking Outlet</name>
+                        <label>Banking Outlet</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Bonds</name>
+                        <label>Bonds</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Concession Area</name>
+                        <label>Concession Area</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Credit Guarantee Funds</name>
+                        <label>Credit Guarantee Funds</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Economic Region</name>
+                        <label>Economic Region</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Factory</name>
+                        <label>Factory</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Free Trade Zone</name>
+                        <label>Free Trade Zone</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Fund</name>
+                        <label>Fund</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Guarantees</name>
+                        <label>Guarantees</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Industrial Area/Zone (Devt/Upgrade)</name>
+                        <label>Industrial Area/Zone (Devt/Upgrade)</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Insurance (Other)</name>
+                        <label>Insurance (Other)</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Loans (Refinancing)</name>
+                        <label>Loans (Refinancing)</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Structured Funds</name>
+                        <label>Structured Funds</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Subordinated Loans</name>
+                        <label>Subordinated Loans</label>
+                        <kcthemefilter>Financial Sector Devt</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Food Access Point / Area</name>
+                        <label>Food Access Point / Area</label>
+                        <kcthemefilter>Food Security and Nutrition</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Nutrition Training(S)</name>
+                        <label>Nutrition Training(S)</label>
+                        <kcthemefilter>Food Security and Nutrition</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>School Gardens/Community Gardens/Kitchen Gardens</name>
+                        <label>School Gardens/Community Gardens/Kitchen Gardens</label>
+                        <kcthemefilter>Food Security and Nutrition</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Anti-Discrimination Measures</name>
+                        <label>Anti-Discrimination Measures</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Building(S)</name>
+                        <label>Building(S)</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Capacity Development / Training</name>
+                        <label>Capacity Development / Training</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Co-Management Models</name>
+                        <label>Co-Management Models</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Common / Public Community Area</name>
+                        <label>Common / Public Community Area</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Company</name>
+                        <label>Company</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Ensuring Ict-Security</name>
+                        <label>Ensuring Ict-Security</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Equipment / Materials</name>
+                        <label>Equipment / Materials</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Estate(S)</name>
+                        <label>Estate(S)</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Financial Institution</name>
+                        <label>Financial Institution</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Housing Development</name>
+                        <label>Housing Development</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Hut(S)</name>
+                        <label>Hut(S)</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Ict-Infrastructure / Ict-Equipment</name>
+                        <label>Ict-Infrastructure / Ict-Equipment</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Income Generating Activities (Iga)</name>
+                        <label>Income Generating Activities (Iga)</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Indigenous Peoples And Local Communities (Ip&amp;Lc)</name>
+                        <label>Indigenous Peoples And Local Communities (Ip&amp;Lc)</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Infrastructure Operations And Maintenance Training</name>
+                        <label>Infrastructure Operations And Maintenance Training</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Local Community Housing</name>
+                        <label>Local Community Housing</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Locality</name>
+                        <label>Locality</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Ministry</name>
+                        <label>Ministry</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Municipality</name>
+                        <label>Municipality</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Museum</name>
+                        <label>Museum</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Ngo</name>
+                        <label>Ngo</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Office Building</name>
+                        <label>Office Building</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Other</name>
+                        <label>Other</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Participatory Planning</name>
+                        <label>Participatory Planning</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Public Dialogue</name>
+                        <label>Public Dialogue</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Sector-Programs Area</name>
+                        <label>Sector-Programs Area</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Sensitisation</name>
+                        <label>Sensitisation</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Sensitization/Awareness Raising (Campaign)</name>
+                        <label>Sensitization/Awareness Raising (Campaign)</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Settlement</name>
+                        <label>Settlement</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Target Groups / Rightsholders / Clients Beneficiaries</name>
+                        <label>Target Groups / Rightsholders / Clients Beneficiaries</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Tribal Area</name>
+                        <label>Tribal Area</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Zone</name>
+                        <label>Zone</label>
+                        <kcthemefilter>Generic / All</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Administrative Facility</name>
+                        <label>Administrative Facility</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Administrative Reforms (Incl. E-Gov &amp; Public Financial Management)</name>
+                        <label>Administrative Reforms (Incl. E-Gov &amp; Public Financial Management)</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Broadband / (Mobile) Connectivity Infrstructure</name>
+                        <label>Broadband / (Mobile) Connectivity Infrstructure</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Citizen Participation / Feedback (System)</name>
+                        <label>Citizen Participation / Feedback (System)</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Citizen Service Center (Point)</name>
+                        <label>Citizen Service Center (Point)</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Community Center</name>
+                        <label>Community Center</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Community Development</name>
+                        <label>Community Development</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Community Infrastructure</name>
+                        <label>Community Infrastructure</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Connectivity Infrastructure (Mobile)</name>
+                        <label>Connectivity Infrastructure (Mobile)</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Customs Post</name>
+                        <label>Customs Post</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Data Center</name>
+                        <label>Data Center</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Decentralisation Support</name>
+                        <label>Decentralisation Support</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Digital Transformation Of Public Services</name>
+                        <label>Digital Transformation Of Public Services</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>E-Learning</name>
+                        <label>E-Learning</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Facility Center</name>
+                        <label>Facility Center</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Fire Station</name>
+                        <label>Fire Station</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Governance-Related Awareness Raising</name>
+                        <label>Governance-Related Awareness Raising</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Legal Advice / Counseling</name>
+                        <label>Legal Advice / Counseling</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Operation- &amp; Maintenance Planning</name>
+                        <label>Operation- &amp; Maintenance Planning</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Pfm (Public Financial Management)</name>
+                        <label>Pfm (Public Financial Management)</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Police Post</name>
+                        <label>Police Post</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Policy Based Financing (Pbf) / Lending (Pbl)</name>
+                        <label>Policy Based Financing (Pbf) / Lending (Pbl)</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Post Office</name>
+                        <label>Post Office</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Radio Station</name>
+                        <label>Radio Station</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Socio-Economic Rehabilitation/Recovery</name>
+                        <label>Socio-Economic Rehabilitation/Recovery</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Transfers To Communities (Public)</name>
+                        <label>Transfers To Communities (Public)</label>
+                        <kcthemefilter>Governance</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Clinic</name>
+                        <label>Clinic</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Dispensary</name>
+                        <label>Dispensary</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Distribution Of Medicine / Contraceptives</name>
+                        <label>Distribution Of Medicine / Contraceptives</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Health Insurance</name>
+                        <label>Health Insurance</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Health Post</name>
+                        <label>Health Post</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Health Voucher(S) (System)</name>
+                        <label>Health Voucher(S) (System)</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Hospital</name>
+                        <label>Hospital</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Laboratory</name>
+                        <label>Laboratory</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Medical Isolation Station</name>
+                        <label>Medical Isolation Station</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Policy-Based Financing (Pbf/Pbl)</name>
+                        <label>Policy-Based Financing (Pbf/Pbl)</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Regional Programmes</name>
+                        <label>Regional Programmes</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Results-Based Financing (Rbf)</name>
+                        <label>Results-Based Financing (Rbf)</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Services For Youth (Youth Programmes)</name>
+                        <label>Services For Youth (Youth Programmes)</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Social Franchising</name>
+                        <label>Social Franchising</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Social Marketing</name>
+                        <label>Social Marketing</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Supply Chains (Support)</name>
+                        <label>Supply Chains (Support)</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Vaccines Development &amp; Production</name>
+                        <label>Vaccines Development &amp; Production</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Women'S Shelter</name>
+                        <label>Women'S Shelter</label>
+                        <kcthemefilter>Health</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Aqueduct</name>
+                        <label>Aqueduct</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Bridge</name>
+                        <label>Bridge</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Business Center</name>
+                        <label>Business Center</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Canal</name>
+                        <label>Canal</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Causeway</name>
+                        <label>Causeway</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Coastal Protection Area</name>
+                        <label>Coastal Protection Area</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Communication Center</name>
+                        <label>Communication Center</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Cultural Sites Rehabilitation</name>
+                        <label>Cultural Sites Rehabilitation</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Drainage Canal</name>
+                        <label>Drainage Canal</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Flood Protection Wall (Infrastructure)</name>
+                        <label>Flood Protection Wall (Infrastructure)</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Hydraulic Construction: Accompanying /Other  Measures</name>
+                        <label>Hydraulic Construction: Accompanying /Other  Measures</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Insured Infrastructure</name>
+                        <label>Insured Infrastructure</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Parc / Green Area</name>
+                        <label>Parc / Green Area</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Safe Place / Infrastructure (Neutral)</name>
+                        <label>Safe Place / Infrastructure (Neutral)</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Sanitary Facility</name>
+                        <label>Sanitary Facility</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Shopping Center Or Mall</name>
+                        <label>Shopping Center Or Mall</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Store</name>
+                        <label>Store</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Storehouse</name>
+                        <label>Storehouse</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Stormwater Network</name>
+                        <label>Stormwater Network</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Stormwater/Flood Protection: Accompanying / Other Measures</name>
+                        <label>Stormwater/Flood Protection: Accompanying / Other Measures</label>
+                        <kcthemefilter>Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Digital Cadastre / Land Mgt System</name>
+                        <label>Digital Cadastre / Land Mgt System</label>
+                        <kcthemefilter>Land Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Land Use (Change) Mapping / Planning Area</name>
+                        <label>Land Use (Change) Mapping / Planning Area</label>
+                        <kcthemefilter>Land Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Land Use / Leasing / Rights Certification</name>
+                        <label>Land Use / Leasing / Rights Certification</label>
+                        <kcthemefilter>Land Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Management / Monitoring System (Remote)</name>
+                        <label>Management / Monitoring System (Remote)</label>
+                        <kcthemefilter>Land Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Payment For Environmental Services Recipient</name>
+                        <label>Payment For Environmental Services Recipient</label>
+                        <kcthemefilter>Land Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Airplane(S)</name>
+                        <label>Airplane(S)</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Airport</name>
+                        <label>Airport</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Aviation Safety System / Flight Control</name>
+                        <label>Aviation Safety System / Flight Control</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Boats / Boat Yard</name>
+                        <label>Boats / Boat Yard</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Brt / Bus System</name>
+                        <label>Brt / Bus System</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Buses</name>
+                        <label>Buses</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Dmus/Emus</name>
+                        <label>Dmus/Emus</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Ferry (Line, System)</name>
+                        <label>Ferry (Line, System)</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Freight Waggons</name>
+                        <label>Freight Waggons</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Heavy Rail System</name>
+                        <label>Heavy Rail System</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Highway</name>
+                        <label>Highway</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Light Rail Transit System</name>
+                        <label>Light Rail Transit System</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Locomotives / Trains</name>
+                        <label>Locomotives / Trains</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Logistic Node / Terminal / Station</name>
+                        <label>Logistic Node / Terminal / Station</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Main Station / Intermodal Terminal</name>
+                        <label>Main Station / Intermodal Terminal</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Marshelling Yard / Logistic Node</name>
+                        <label>Marshelling Yard / Logistic Node</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Mobility Fonds</name>
+                        <label>Mobility Fonds</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Multimodal Terminal</name>
+                        <label>Multimodal Terminal</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Operation Control System / Ist</name>
+                        <label>Operation Control System / Ist</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Other Road Based Vehicle Categories</name>
+                        <label>Other Road Based Vehicle Categories</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Passenger Coaches</name>
+                        <label>Passenger Coaches</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Pedestrian Lane(S) / Bike Lane(S)</name>
+                        <label>Pedestrian Lane(S) / Bike Lane(S)</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Port</name>
+                        <label>Port</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Rail Infrastructure Interurban</name>
+                        <label>Rail Infrastructure Interurban</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Rail Infrastructure Intraurban</name>
+                        <label>Rail Infrastructure Intraurban</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Railroad</name>
+                        <label>Railroad</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Road</name>
+                        <label>Road</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Rural Road(S)</name>
+                        <label>Rural Road(S)</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Subway (System)</name>
+                        <label>Subway (System)</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Terminal Within Port</name>
+                        <label>Terminal Within Port</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Tramway (System)</name>
+                        <label>Tramway (System)</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Waterway(S) (System)</name>
+                        <label>Waterway(S) (System)</label>
+                        <kcthemefilter>Mobility / Transport</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agrobiodiversity (Area?)</name>
+                        <label>Agrobiodiversity (Area?)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agroecology (Area?)</name>
+                        <label>Agroecology (Area?)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Agroforestry (Area?)</name>
+                        <label>Agroforestry (Area?)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Alternative Income Sources</name>
+                        <label>Alternative Income Sources</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Area Under Payment For Enviromental Services/Incentive System</name>
+                        <label>Area Under Payment For Enviromental Services/Incentive System</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Biodiversity Credits (Area)</name>
+                        <label>Biodiversity Credits (Area)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Certified Forestry (Fsc, Rainforest Alliance, Pefc)</name>
+                        <label>Certified Forestry (Fsc, Rainforest Alliance, Pefc)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Conservation Trust Fund</name>
+                        <label>Conservation Trust Fund</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Corridor / Ecosystem Connectivity</name>
+                        <label>Corridor / Ecosystem Connectivity</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Deforestation (Area)</name>
+                        <label>Deforestation (Area)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Eco-Tourism (Area)</name>
+                        <label>Eco-Tourism (Area)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Environmental / Sustainability Education</name>
+                        <label>Environmental / Sustainability Education</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Forest Reserve</name>
+                        <label>Forest Reserve</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Forest Station</name>
+                        <label>Forest Station</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Forest(S)</name>
+                        <label>Forest(S)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Glacier(S)</name>
+                        <label>Glacier(S)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Indigenous And Community Conservation Area (Icca)</name>
+                        <label>Indigenous And Community Conservation Area (Icca)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Lake</name>
+                        <label>Lake</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Land Tenure</name>
+                        <label>Land Tenure</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Mining Area</name>
+                        <label>Mining Area</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Natural Vegetation Regeneration Area</name>
+                        <label>Natural Vegetation Regeneration Area</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Nature Reserve</name>
+                        <label>Nature Reserve</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Ocean</name>
+                        <label>Ocean</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Other Effective Area-Based Conservation Measures (Oecm)</name>
+                        <label>Other Effective Area-Based Conservation Measures (Oecm)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Patrolling In Protected Areas</name>
+                        <label>Patrolling In Protected Areas</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Protected Area (According To Iucn Categories)</name>
+                        <label>Protected Area (According To Iucn Categories)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Protected Farmland Area</name>
+                        <label>Protected Farmland Area</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Ranger Station</name>
+                        <label>Ranger Station</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Re-/ Afforestation Area</name>
+                        <label>Re-/ Afforestation Area</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Research Institute</name>
+                        <label>Research Institute</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Restored/Rehabilitated  Land Area</name>
+                        <label>Restored/Rehabilitated  Land Area</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>River(S)</name>
+                        <label>River(S)</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Sea</name>
+                        <label>Sea</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Seed Bank</name>
+                        <label>Seed Bank</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Sustainable Forest Management</name>
+                        <label>Sustainable Forest Management</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Swamp</name>
+                        <label>Swamp</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Watercourse</name>
+                        <label>Watercourse</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Watershed</name>
+                        <label>Watershed</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Wildlife Reserve</name>
+                        <label>Wildlife Reserve</label>
+                        <kcthemefilter>Natural Resources Management</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Biodiversity-Hotspot</name>
+                        <label>Biodiversity-Hotspot</label>
+                        <kcthemefilter>Ocean Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Coast</name>
+                        <label>Coast</label>
+                        <kcthemefilter>Ocean Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Coral Reef</name>
+                        <label>Coral Reef</label>
+                        <kcthemefilter>Ocean Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Eez - Exclusive Economic Zone</name>
+                        <label>Eez - Exclusive Economic Zone</label>
+                        <kcthemefilter>Ocean Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Kelp-Forest</name>
+                        <label>Kelp-Forest</label>
+                        <kcthemefilter>Ocean Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Mangroves</name>
+                        <label>Mangroves</label>
+                        <kcthemefilter>Ocean Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Marine Protected Area (Mpa)</name>
+                        <label>Marine Protected Area (Mpa)</label>
+                        <kcthemefilter>Ocean Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>No-Take-Zone</name>
+                        <label>No-Take-Zone</label>
+                        <kcthemefilter>Ocean Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Seagrass-Meadow</name>
+                        <label>Seagrass-Meadow</label>
+                        <kcthemefilter>Ocean Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Small Scale Fisheries (Ssf) Zone</name>
+                        <label>Small Scale Fisheries (Ssf) Zone</label>
+                        <kcthemefilter>Ocean Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Camp(S)</name>
+                        <label>Camp(S)</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Community Policing</name>
+                        <label>Community Policing</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Courthouse</name>
+                        <label>Courthouse</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Disarmament, Demobilisation, Reintegration Of Combatants (Ddr)</name>
+                        <label>Disarmament, Demobilisation, Reintegration Of Combatants (Ddr)</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Early Warning System</name>
+                        <label>Early Warning System</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Election Support</name>
+                        <label>Election Support</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Emergency Supplies (Distribution)? (Food, Medical Items, Emergency Equipment...)</name>
+                        <label>Emergency Supplies (Distribution)? (Food, Medical Items, Emergency Equipment...)</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Facility</name>
+                        <label>Facility</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Idp (Internally Displaced Persons) Camp</name>
+                        <label>Idp (Internally Displaced Persons) Camp</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Local Government Office</name>
+                        <label>Local Government Office</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Peace Education</name>
+                        <label>Peace Education</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Populated Place</name>
+                        <label>Populated Place</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Reconstruction</name>
+                        <label>Reconstruction</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Refugee Camp</name>
+                        <label>Refugee Camp</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Reparation Fund</name>
+                        <label>Reparation Fund</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Transparency Measures</name>
+                        <label>Transparency Measures</label>
+                        <kcthemefilter>Peace</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Dezentralized Sanitation / Toilets</name>
+                        <label>Dezentralized Sanitation / Toilets</label>
+                        <kcthemefilter>Sanitation</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Sanitation: Accompanying / Other Measures</name>
+                        <label>Sanitation: Accompanying / Other Measures</label>
+                        <kcthemefilter>Sanitation</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Sewer Network</name>
+                        <label>Sewer Network</label>
+                        <kcthemefilter>Sanitation</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Wastewater Pipeline (Large)</name>
+                        <label>Wastewater Pipeline (Large)</label>
+                        <kcthemefilter>Sanitation</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Basic Social Services</name>
+                        <label>Basic Social Services</label>
+                        <kcthemefilter>Social Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Cash Transfers</name>
+                        <label>Cash Transfers</label>
+                        <kcthemefilter>Social Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Cash-/Food-For-Work</name>
+                        <label>Cash-/Food-For-Work</label>
+                        <kcthemefilter>Social Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Climate Risk Insurance</name>
+                        <label>Climate Risk Insurance</label>
+                        <kcthemefilter>Social Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Employment Subsidies</name>
+                        <label>Employment Subsidies</label>
+                        <kcthemefilter>Social Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Food Voucher (S) (System)</name>
+                        <label>Food Voucher (S) (System)</label>
+                        <kcthemefilter>Social Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Social Security / Insurance</name>
+                        <label>Social Security / Insurance</label>
+                        <kcthemefilter>Social Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Support To Social Security System</name>
+                        <label>Support To Social Security System</label>
+                        <kcthemefilter>Social Protection</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>City Street With Drainage Canal</name>
+                        <label>City Street With Drainage Canal</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Housing</name>
+                        <label>Housing</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Market (Shopping Area)</name>
+                        <label>Market (Shopping Area)</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Multisectoral Infrastructure Measures Area</name>
+                        <label>Multisectoral Infrastructure Measures Area</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Parcs And Other Green Areas</name>
+                        <label>Parcs And Other Green Areas</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Public Space(S) Upgrade/ Devt</name>
+                        <label>Public Space(S) Upgrade/ Devt</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Slum Upgrading</name>
+                        <label>Slum Upgrading</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Square</name>
+                        <label>Square</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Street (Urban)</name>
+                        <label>Street (Urban)</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Street Lighting</name>
+                        <label>Street Lighting</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Urban (Infrastructure) Development</name>
+                        <label>Urban (Infrastructure) Development</label>
+                        <kcthemefilter>Urban Infrastructure</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Composting Plant</name>
+                        <label>Composting Plant</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Fermentation Plant</name>
+                        <label>Fermentation Plant</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Improved Waste Collection</name>
+                        <label>Improved Waste Collection</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Landfill</name>
+                        <label>Landfill</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Mechanical-Biological Treatment Plant</name>
+                        <label>Mechanical-Biological Treatment Plant</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Sewage Treatment Plant</name>
+                        <label>Sewage Treatment Plant</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Transfer Station</name>
+                        <label>Transfer Station</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Waste Sorting Plant</name>
+                        <label>Waste Sorting Plant</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Waste Treatment: Thermal</name>
+                        <label>Waste Treatment: Thermal</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Waste-To-Energy Plant</name>
+                        <label>Waste-To-Energy Plant</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Water Re-Use</name>
+                        <label>Water Re-Use</label>
+                        <kcthemefilter>Waste</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Renaturation Of Water Bodies</name>
+                        <label>Renaturation Of Water Bodies</label>
+                        <kcthemefilter>Water Resources</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Reservoir(S)</name>
+                        <label>Reservoir(S)</label>
+                        <kcthemefilter>Water Resources</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Water Resources/Biodiversity: Accompanying /Other Measures</name>
+                        <label>Water Resources/Biodiversity: Accompanying /Other Measures</label>
+                        <kcthemefilter>Water Resources</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Drinking Water System / Network</name>
+                        <label>Drinking Water System / Network</label>
+                        <kcthemefilter>Water Supply</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Drinking Water Transport Pipeline (Large)</name>
+                        <label>Drinking Water Transport Pipeline (Large)</label>
+                        <kcthemefilter>Water Supply</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Drinking Water: Accompagnying / Other Measures</name>
+                        <label>Drinking Water: Accompagnying / Other Measures</label>
+                        <kcthemefilter>Water Supply</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Water Intake</name>
+                        <label>Water Intake</label>
+                        <kcthemefilter>Water Supply</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Water Tank</name>
+                        <label>Water Tank</label>
+                        <kcthemefilter>Water Supply</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Waterworks</name>
+                        <label>Waterworks</label>
+                        <kcthemefilter>Water Supply</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Well</name>
+                        <label>Well</label>
+                        <kcthemefilter>Water Supply</kcthemefilter>
+                    </item>
+                    <item>
+                        <name>Water Resources Protection Area</name>
+                        <label>Water Resources Protection Area</label>
+                        <kcthemefilter>Water resources</kcthemefilter>
+                    </item>
+                </root>
+            </instance>
+            <instance id="geographic_exactness">
+                <root>
+                    <item>
+                        <name>exact</name>
+                        <label>Exact</label>
+                    </item>
+                    <item>
+                        <name>approximate</name>
+                        <label>Approximate</label>
+                    </item>
+                </root>
+            </instance>
+            <bind nodeset="/data/unique_id" type="int" required="true()"/>
+            <bind nodeset="/data/pr_number" type="int" required="true()"/>
+            <bind nodeset="/data/project_abbreviation" type="string"/>
+            <bind nodeset="/data/data_owner" type="string" required="true()"/>
+            <bind nodeset="/data/publishing_restrictions" type="string" required="true()"/>
+            <bind nodeset="/data/date_latest_update" type="date" required="true()"/>
+            <bind nodeset="/data/project_specific_location_identifier" type="string"/>
+            <bind nodeset="/data/location_name" type="string" required="true()"/>
+            <bind nodeset="/data/location_activity_status" type="string"/>
+            <bind nodeset="/data/activity_start" type="date" required="true()"/>
+            <bind nodeset="/data/activity_end" type="date" required="true()"/>
+            <bind nodeset="/data/activity_desc" type="string" required="true()"/>
+            <bind nodeset="/data/activity_desc_add" type="string"/>
+            <bind nodeset="/data/kc_theme" type="string" required="true()"/>
+            <bind nodeset="/data/location_type_name" type="string" required="true()"/>
+            <bind nodeset="/data/alternative_location_type" type="string" relevant="selected( /data/location_type_name , 'Other')"/>
+            <bind nodeset="/data/dac_5_purpose_classification" type="int" required="true()"/>
+            <bind nodeset="/data/budget_share" type="int"/>
+            <bind nodeset="/data/geographic_exactness" type="string" required="true()"/>
+            <bind nodeset="/data/latitude" type="int" required="true()"/>
+            <bind nodeset="/data/longitude" type="int" required="true()"/>
+            <bind nodeset="/data/related_vilage" type="string"/>
+            <bind nodeset="/data/geo_file_name" type="binary"/>
+            <bind nodeset="/data/primary_key_file" type="string"/>
+            <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" jr:preload="uid"/>
+        </model>
+    </h:head>
+    <h:body>
+        <input ref="/data/unique_id">
+            <label>Unique-ID</label>
+            <hint>For new locations, this column will be empty. For updates, your KfW counterpart will provide you with the list of unique_id numbers in this file to ensure that updated location ids match with the former ones.</hint>
+        </input>
+        <input ref="/data/pr_number">
+            <label>KfW Project -No.
+(INPRO)</label>
+            <hint>This is the KfW internal Project Number which has to be provided by your KfW counterpart</hint>
+        </input>
+        <input ref="/data/project_abbreviation">
+            <label>Abbreviation of project name (project acronym)</label>
+            <hint>Please enter here the acronym used for the name/title of the project (e.g. HREII) to be visible on your map. If the project has multiple phases, please add the number of the phase belonging to the before-stated KfW Project-No.</hint>
+        </input>
+        <input ref="/data/data_owner">
+            <label>Data Owner (Institution Name)</label>
+            <hint>Legal Entity who owns the data provided here (= legal authorship)</hint>
+        </input>
+        <select1 ref="/data/publishing_restrictions">
+            <label>Publishing restrictions due to security reasons</label>
+            <hint>Indicates if this information is collected in fragile regions (e.g. areas of severe civil conflict or war) and should therefore be ommited from publicly available reports.</hint>
+            <itemset nodeset="instance('yes_no')/root/item">
+                <value ref="name"/>
+                <label ref="label"/>
+            </itemset>
+        </select1>
+        <input ref="/data/date_latest_update">
+            <label>Date of data collection or latest update</label>
+            <hint>Date of data collection or latest update (if date of data collection is unknown). In case only the year is available please choose the 1st of january e.g. 2022-01-01</hint>
+        </input>
+        <input ref="/data/project_specific_location_identifier">
+            <label>Project-specific location identifier</label>
+            <hint>In case the location or activity has a project-specific identifier (e.g., a location code in the MIS of the source Agency) or an identifier in a public database, it can be entered here.</hint>
+        </input>
+        <input ref="/data/location_name">
+            <label>Location name</label>
+            <hint>Name of the location if existing, e.g. Al Sharifa School</hint>
+        </input>
+        <select1 ref="/data/location_activity_status">
+            <label>Location Activity Status</label>
+            <hint>The location activity status according to the IATI standard. If you are unaware of the current status please choose "NA"</hint>
+            <itemset nodeset="instance('location_activity_status')/root/item">
+                <value ref="name"/>
+                <label ref="label"/>
+            </itemset>
+        </select1>
+        <input ref="/data/activity_start">
+            <label>Planned or actual start date of activity at the location</label>
+            <hint>Approximated planned or actual start date of implementation of activities on the ground. This can be e.g. the date when construction work is planned to begin. For no information enter 2100-01-01</hint>
+        </input>
+        <input ref="/data/activity_end">
+            <label>Planned or actual end date of activity at the location</label>
+            <hint>Approximated planned or actual end date of activities on the ground. This can be e.g. the date when the project is planned to cease implementation activities. For no information enter 2100-01-01</hint>
+        </input>
+        <input ref="/data/activity_desc">
+            <label>Activity-Description (general)</label>
+            <hint>A short description of the main project activity in this location, e.g., hydropower plant construction or construction of small irrigation systems.</hint>
+        </input>
+        <input ref="/data/activity_desc_add">
+            <label>Additional Activity-Description</label>
+            <hint>Free text (In case you need to add other location–specific information like production volumes, progress values or a tag like "COVID-19"). Please consult your KfW counterpart if additional information is required.</hint>
+        </input>
+        <select1 appearance="minimal" ref="/data/kc_theme">
+            <label>KC Theme / Sub-Sector</label>
+            <hint>Sectoral / cross-sectoral location type preselection field, see table sheets "Location Types" &amp; KC Themes. If there is no fit, select "other physical/immaterial and fill out the column "Alternative Location Type".</hint>
+            <itemset nodeset="instance('kc_theme')/root/item">
+                <value ref="name"/>
+                <label ref="label"/>
+            </itemset>
+        </select1>
+        <select1 appearance="minimal" ref="/data/location_type_name">
+            <label>Location Type Name</label>
+            <hint>After selecting the KC Theme, choose the most appropriate location type, see table sheet "Location Types". If there is no fit please select "other phys./imm." and fill out the next column "Alternative Location Type".</hint>
+            <itemset nodeset="instance('location_type_name')/root/item[kcthemefilter= /data/kc_theme ]">
+                <value ref="name"/>
+                <label ref="label"/>
+            </itemset>
+        </select1>
+        <input ref="/data/alternative_location_type">
+            <label>Alternative Location Type Name</label>
+            <hint>If you selected "other physical or other immaterial " in Location Type Name, please propose your own location type here. This will help us to propose a comprehensive IATI standard extension in the future.</hint>
+        </input>
+        <input appearance="minimal" ref="/data/dac_5_purpose_classification">
+            <label>DAC 5 Purpose Classification</label>
+            <hint>Assignment to the respective DAC5/CRS codes, see table sheet "DAC Purpose Codes".</hint>
+        </input>
+        <input appearance="thousands-sep" ref="/data/budget_share">
+            <label>Budget share of this location in €.</label>
+            <hint>The budget share allocated to this location in €. The sum of all locations in a project should add up to the budget sum in Inpro/PMT including overheads. Data from private partners/PEA must not be entered here!</hint>
+        </input>
+        <select1 ref="/data/geographic_exactness">
+            <label>Geographic Exactness</label>
+            <hint>Use "exact", if you know the geographically exact end destination of a financial flow &amp; it is not an administrative unit &amp; if you don't face security restrictions to do so. If not, use the resp. type "approximate".</hint>
+            <itemset nodeset="instance('geographic_exactness')/root/item">
+                <value ref="name"/>
+                <label ref="label"/>
+            </itemset>
+        </select1>
+        <input ref="/data/latitude">
+            <label>Latitude</label>
+            <hint>Enter the Latitude measured with a GPS device (or centroid for approximate locations). Make sure to use WGS 84 as the Coordinate Reference System (EPSG:4326). Enter Values with at least FIVE digits.</hint>
+        </input>
+        <input ref="/data/longitude">
+            <label>Longitude</label>
+            <hint>Enter the Longitude measured with a GPS device (or centroid for approximate locations) here. Make sure to use WGS 84 as the Coordinate Reference System (EPSG:4326). Enter Values with at least FIVE digits.</hint>
+        </input>
+        <input ref="/data/related_vilage">
+            <label>Related Community / Village / Neighborhood</label>
+            <hint>Is there a village name that relates to this project. This can serve as well to manually add smaller locations resp. administrative unit names not identified in global coordinates lists such as GADM.</hint>
+        </input>
+        <upload mediatype="application/*" ref="/data/geo_file_name">
+            <label>Filename of additional Geo-data submitted as KML (Lines/Polygons)</label>
+            <hint>A string of the KML file where the associated geometry information is found. Note, to link an entry from this excel to the KML file, it is required to correctly fill in the Primary Key column.</hint>
+        </upload>
+        <input ref="/data/primary_key_file">
+            <label>Primary Key (as provided in KML file)</label>
+            <hint>Required only in case you provide additonal geolocation information in another KML file. The geometry in the KML file should possess the same primary key as an attribute as it is listed here.</hint>
+        </input>
+    </h:body>
+</h:html>
