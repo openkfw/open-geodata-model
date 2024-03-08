@@ -2,11 +2,11 @@
 comments: true
 ---
 
-# The KfW Geodata Model
+# The KfW Geodata Model: KfW’s Project Location Data Collection and Management Approach
 
 In this Section we explain the FC Geodata Model according to which project location data should be collected as well as technical requirements for the data collection. The goal is to inform KfW staff, Project Executing Agencies (PEAs), consultants, and other external stakeholders responsible for data collection as to the types of location data to be collected and in what form.
 
-Our FC Geodata Model is based on the International Aid Transparency Initiative (IATI) standard. The IATI Standard is used by international development organizations and allows harmonization of FC project location data across heterogenous projects. The data to be collected are subject to minimum requirements in the form of mandatory fields, and there are optional fields flexibly usable for collecting site-specific information.
+Our FC Geodata Model is mostly based on the International Aid Transparency Initiative (IATI) standard. The IATI Standard is used by international development organizations and allows harmonization of FC project location data across heterogenous projects. The data to be collected are subject to minimum requirements in the form of mandatory fields, and there are optional fields flexibly usable for collecting site-specific information.
 
 Furthermore, projects are able to store single location points (e.g., the location of one power plant site) or a larger number of project sites and features (e.g., 300 locations of buildings in different sectors within the framework of a decentralization project). In addition, project sites with larger areas and more complex geometries (e.g., polygons of forest protection areas) are supported as well.
 
@@ -20,7 +20,7 @@ Please note, that KfW does not publish any exact coordinates of its project loca
 
 ### Difference between exact and approximate locations
 
-For each project location there will be one exact[^1] or approximate geolocation data set. The exact geolocation designates the geographical end point of an international development assistance financial flow. Approximate locations can be used however, when no exact geoinformation is (yet) available, or such is not collected for other reasons (details see below).
+For each project location there will be one exact[^1] or approximate geolocation data set. The exact geolocation designates the geographical end point of an international development assistance financial flow. Approximate locations should be used however, when no exact geoinformation is (yet) available, when it is not collected due to security reasons or when you want to indicate your target location to be an administrative unit area (details see below).
 
 For exact locations, geographical data are to be collected with GPS tools and eventually edited in a Geographical Information System (GIS). Approximate locations should be given on administrative scales using the GADM database as a global standard.
 
@@ -57,13 +57,13 @@ In addition, line and polygon geometries have to be collected in KML[^2] format 
 
 ### When to use approximate geo location information
 
-Approximate[^1] locations can be used when no exact geoinformation is available (yet), or when exact location information should not be collected and stored. The approximate location option should be chosen if one or more of the following circumstances apply:
+Approximate[^1] locations should be used when no exact geoinformation is available (yet), or when exact location information should not be collected or communicated, or when the target area is an administrative unit. The approximate location option should be chosen if one or more of the following circumstances apply:
 
--   an exact project location has not (yet) been specified
+-   an exact project location has not (yet) been specified or is not yet known -> then choose option: *approximate (yet unknown)*
 
--   an exact project location is not (yet) known or defined
+-   an exact project location is not to be collected or communicated due to security reasons -> then choose option: *approximate (security)*   
 
--   the target location(s) is/are one or more administrative units.
+-   the target location(s) is/are one or more administrative units, e.g. a district, a province or the entire country -> then choose option: *approximate (admin unit)*   
 
 In such cases, approximate location must be defined based on administrative units applying the [Global Aviation Data Management (GADM) standard](https://gadm.org/)\. GADM is used as a common standard for administrative units to afford harmonized and consistent collection of approximate locations.
 
@@ -76,18 +76,20 @@ You can find the current version of the projection location data collection temp
 
 ### Exact locations using the Excel Template (and potentially KML files)
 
-As outlined above, all project locations should be collected using the Excel template (or a future open-source-based geodata collection tool) provided by KfW, which utilizes predefined categories under the IATI standard and built-in selection methods facilitating clean data entry. The geolocation is to be submitted in Excel with the geo-coordinates that can be obtained with a GPS tool. **All coordinates are to be collected using** **WGS 84**[^3] **as the coordinate reference system.** WGS 84 is the de-facto standard for web mapping applications. Geo-coordinates are to be provided in the decimal place format 00.00000 in the order LONG, LAT (using at least 5 digits after the separator).
+As outlined above, all project locations should be collected using the above Excel template (or the respective Kobo Toolbox form currenly under development, which will be published in this repository) provided by KfW, which utilizes mostly predefined categories under the IATI standard and built-in selection methods facilitating clean data entry. The only difference to the IATI-standard is that the exising IATI list of location types has been expanded to cover all physical and immaterial location types required by international development. The geolocation is to be submitted in Excel with the geo-coordinates that can be obtained with a GPS tool. **All coordinates are to be collected using** **WGS 84**[^3] **as the coordinate reference system.** WGS 84 is the de-facto standard for web mapping applications. Geo-coordinates are to be provided in the decimal place format 00.00000 in the order LONG, LAT (using at least 5 digits after the separator).
 [^3]: World Geodetic System 1984 (https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84\)
 
 -   **For point locations** like buildings, filling out the exact GPS point location in the Excel template is sufficient. We estimate that about 90% of all project locations are point locations.
 
--   **For line and polygon geometries,** the gateway GPS point location is stored in Excel. In this case, geometry data should be supplied additionally in KML[^2] format separately for each project location. For multiple line or polygon locations, multiple KML files have to be submitted. A single KML file can, however, contain a single geometry (e.g., a road) or multiple geometries (e.g., multiple agricultural plots) that are linked to the gateway location collected in Excel. Multiple KML files should be submitted to KfW as .zip or .tar container. The data collector must ensure that the KfW staff responsible for uploading the data into the GeoApp are able to connect single KML files with project locations to the gateway points in Excel. To do so, the data collectors need to use the unique identifier given in the Excel template (column "Unique ID") together with the respective location name, separated by an underscore character "\_" as filename for the KML data. An example of such a KML filename is "00345_Ouagadougou.kml". We follow this two-step approach for line and polygon geodata to ensure that all relevant metadata is collected in a clean way in Excel while still being able to submit relevant geometry information in a common geo-standard. It is strongly encouraged to submit additional geometry information in KML for locations larger than 1000 m (line) or 500 m2 (shapes) wherever possible, to enable KfW to see the spatial delimitation of our projects (e.g., a transmission line or the boundaries of a protected area). **KML files are also to be submitted using** **WGS 84 as the coordinate reference system.** The WG S84 datum is also used by OpenStreetMaps and Google Maps. The complete specification for OGC KML can be found [here](http://www.opengeospatial.org/standards/kml/).
+**For line and polygon geometries,** please provide additional geoinformation in the KML format, e.g. for lines or polygons (e.g. in the case your location covers a forest area or an administrative unit like a district as a whole). The gateway GPS point location is stored in Excel/Kobo. Multiple KML files should be submitted to KfW as .zip or .tar container. The data collector must ensure that the KfW staff responsible for uploading the data into the GeoApp are able to connect single KML files with project locations to the gateway points in Excel/Kobo. 
+In the section ‘Location data’, under ‘Latitude’ and ‘Longitude’, fill in the coordinates of the locations centroid. Provide the information of the additional columns in this section. For each row entry with additional geolocation, indicate the filename of the KML file in which the associated geometry is stored.  An example of such a KML filename is "00345_Ouagadougou.kml". The column `Primary Key` is used to associate an activity described in the excel sheet with its corresponding geolocation. It is very important this field is filled correctly. For each distinct location the primary key is equivalent both in the excel sheet and the associated KML file. Use whole numbers (integers) to construct the primary key. Similar to point locations, make sure that the geoinformation is delivered in unprojected coordinates on the WGS84 reference ellipsoid in the order LAT,LONG ("EPSG:4326").
+We follow this two-step approach for line and polygon geodata to ensure that all relevant metadata is collected in a clean way in Excel (or Kobo) while still being able to submit relevant geometry information in a common geo-standard. It is strongly encouraged to submit additional geometry information in KML for locations larger than 1000 m (line) or 500 m2 (shapes) wherever possible, to enable KfW to see the spatial delimitation of our projects (e.g., a transmission line or the boundaries of a protected area). **KML files are also to be submitted using** **WGS 84 as the coordinate reference system.** The WG S84 datum is also used by OpenStreetMaps and Google Maps. The complete specification for OGC KML can be found [here](http://www.opengeospatial.org/standards/kml/).
 
-It is strongly encouraged to check the data before submission in GIS software, such as QGIS or Google Earth Pro. This reduces the need to go back and forth between the responsible project managers and the projects.
+It is strongly encouraged to check the data before submission in GIS software, such as QGIS or Google Earth Pro. This reduces the need to go back and forth between the responsible KfW counterparts and the project staff.
 
-### Approximate locations using Excel Template and GADM standard
+### Approximate (admin unit) locations using Excel Template and GADM standard
 
-Approximate project locations should be collected by referencing the respective administrative unit on the lowest administrative scale available in the GADM standard. GADM differentiates up to seven different levels, although for many developing countries, only three or four levels have yet been defined. Here are the most commonly available administrative unit levels:
+Approximate (admin unit) project locations should be collected by referencing the respective administrative unit on the lowest administrative scale available in the GADM standard. GADM differentiates up to seven different levels, although for many developing countries, only three or four levels have yet been defined. Here are the most commonly available administrative unit levels:
 
 -   level 0 (shape of the national boundary)
 
@@ -97,9 +99,7 @@ Approximate project locations should be collected by referencing the respective 
 
 -   level 3 (community, tehsil etc.)
 
-If the respective administrative unit level has not been defined in GADM, you may instead indicate the GPS coordinates of the respective administrative unit center (municipality, district center or similar as a point location). In such case, you must specify the location as "approximate" in column No. 21 of the Excel template "Geographic Exactness according to IATI standard". This ensures that this location is not confused with the actual location of the site.
-
-Mixing the administrative unit levels is not allowed because this would render the geo-data Model inconsistent.
+If the respective administrative unit level has not been defined in GADM, you may instead indicate the GPS coordinates of the respective administrative unit center (municipality, district center or similar as a point location). In any case, you must specify the location as "approximate (admin unit)" in column No. S  ("Geographic Exactness") of the tab "fill-me" of the Excel template. This ensures that this location is not confused with the actual location of the site.
 
 The GIS database of GADM can be downloaded [here](https://gadm.org/data.html) and analyzed in a common GIS software such as QGIS, ArcGIS, or Google Earth Pro. Data collectors have to enter the GADM-defined polygon Geographic ID (GID), the GID level, and the utilized GADM database version. See Figure 2 below for more information:
 
@@ -107,6 +107,51 @@ The GIS database of GADM can be downloaded [here](https://gadm.org/data.html) an
   ![Figure 2](images/Figure2.png)
   <figcaption>Figure 2: How to Collect Project Location Data</figcaption>
 </figure>
+
+
+#### Tab "Read-Me General" in the Excel Template
+
+**General Information**
+
+**Who should fill out this form?**
+ 
+This Excel-Template is to be filled out by the Project Executing Agencies (PEAs) or Consultants, or other external Stakeholders tasked with the collection of project location data. 
+ 
+**What is a project location?**
+
+A project location can consist of one or more features that are part of a financially supported activity where no further geographical discrimination regarding funding is possible. An example of a single-feature project location is a financially supported hospital in a specific location. An example of a project location with multiple features is a group of adjacent agricultural plots under a financed irrigation plan that benefits all producers in that area. Another example is a set of protected areas jointly financed from a fund if, and only if, further geographical discrimination as to the allocation of funds to specific areas is not possible. If discrimination is possible, data for multiple project locations (such as protected areas) and their financial allocation have to be collected. KfW highly encourages increasing geographical discrimination of financial flows to specific project locations to the maximum possible, as this affords greater aid transpaency and financial accountability.
+
+**What is a Location Type?**
+ 
+In case you need/want to mention two different location types (e.g. school and capacity development) at the same GPS-Coordinate, you may just create two separate two rows for these locations types with the same GPS coordinates.
+This template follows as closely as possible the International Aid Transparency Initiative IATI standard, but had to create additional location types, since those already existing in the IATI Standard would not allow us to cover all Financial Cooperation project types. We therefore created 197 new project location types, including “immaterial” ones like Capacity Development / Training or Voucher Schemes, that cannot be plotted according to any physical feature on a map, but can defined by the area covered by them. We therefore also adapted the definition of “location type” as “project output- or intervention-related type of physical location or immaterial output- or intervention area”. 
+ 
+**Geodata Types & reference system:**
+ 
+This form allows you to collect single location points (e.g., one power plant site) or a larger number of project sites and features (e.g., 300 locations of buildings in different sectors within the framework of a decentralization project). In addition, project sites with larger areas and more complex geometries (e.g., polygons of forest protection areas) or linear location types like roads or railways are supported as well. All coordinates are to be collected using WGS 843 as the coordinate reference system. WGS 84 is the de-facto standard for web mapping applications. Geo-coordinates are to be provided in the decimal place format 00.00000 in the order LAT,LONG (using at least 5 digits after the separator).
+ 
+**Mandatory and Non-Mandatory Fields:**
+ 
+The data to be collected are subject to minimum requirements in the form of mandatory fields, and there are non-mandatory fields that can be used for collecting additional site-specific information. Please agree with KfW and your other main project partners which non-mandatory fields to fill within the respective project.
+
+**DAC5-Classification/CRS-Codes:**
+
+The DAC 5 Purpose Codes (one to four codes) for the entire project have to be provided by your KfW counterpart. In case there are more than one codes for the project, you have to assign the correct code to each location. In case your project contains locations contributing not only to one, but two, three or four DAC/CRS-Codes, please create two, three or four separate rows with the same GPS-Coordinates, but different DAC/CRS-Codes, and potentially different location types and activity descriptions.
+ 
+**Exact vs. Approximate locations:**
+ 
+In case you already know your exact location coordinates, you may state them as “exact” locations. In case you don’t know (yet) your exact locations, or you only need to define administrative units (e.g. one entire country for a Policy-Based-Lending project, or a number of districts in a country for a decentralization project) or if you cannot communicate exact coordinates due to security restrictions in a conflict zone, you may state them as “approximate”. 
+ 
+**How to provide lines and polygons?**
+
+If your location does not represent a single point location, please provide additional geoinformation in the KML format, e.g. for lines or polygons (e.g. in the case your location covers a forest area or an administrative unit like a district as a whole). In the section ‘Location data’, under ‘Latitude’ and ‘Longitude’, fill in the coordinates of the locations centroid. Provide the information of the additional columns in this section. For each row entry with additional geolocation, indicate the filename of the KML file in which the associated geometry is stored.  The column `Primary Key` is used to associate an activity described in the excel sheet with its corresponding geolocation. It is very important this field is filled correctly. For each distinct location the primary key is equivalent both in the excel sheet and the associated KML file. Use whole numbers (integers) to construct the primary key. Similar to point locations, make sure that the geoinformation is delivered in unprojected coordinates on the WGS84 reference ellipsoid in the order LAT,LONG ("EPSG:4326").
+
+**Privacy, confidentiality and publication:**
+ 
+The Excel Template should be submitted without containing any personal data or any data that could be linked to individual persons, such as houses of private households. Please note, that KfW does not publish any exact coordinates of its project locations. Location data collection in fragile and conflict contexts should be treated with extra diligence. 
+
+For more info, please go to our Github-Site: Open Geodata model (openkfw.github.io)
+![image](https://github.com/Maja4Dev/open-geodata-model/assets/113998721/3ddd339f-6585-4aa6-8a5b-23a139503663)
 
 
 
@@ -128,7 +173,7 @@ The GIS database of GADM can be downloaded [here](https://gadm.org/data.html) an
 
 | **Type of location data** | **Example**           | **How to collect**      |  **Comment**  |
 | --------------------------|:-----------------------:| -----------------------:| -------------:|
-| Administrational Boundaries  |     | Excel (GADM) or Excel (LAT/LONG) + KML|If no GADM boundaries are available you can also upload the boundaries of the administrational area as a Polygon in KML. Supplement this information with Excel where you can. Give e.g., the centroid of the polygon|  
+| Administrational Boundaries  |     | Excel (LAT/LONG) + KML|If no GADM boundaries are available, you can also upload the boundaries of the administrational area as a Polygon in KML. Supplement this information with Excel where you can. Give e.g., the centroid of the polygon|  
 | Municipality/district Center  |                   |Excel (LAT/LONG)  ||
 
 
@@ -140,17 +185,17 @@ The GIS database of GADM can be downloaded [here](https://gadm.org/data.html) an
 
 ### How to compare project location data from existing systems (R/MIS, GIS)?
 
-If a Geographic Information System (GIS), (Remote) Management Information System (R/MIS) or Maintenance Management System (MMS) is used in the project, then the existing location IDs can also be entered in the Excel template as Project-Specific Location Identifiers (No. 7 in the table below), as defined in the Excel template. This makes it easier to check location data across project partner systems and verify the use of funds.
+If a Geographic Information System (GIS), (Remote) Management Information System (R/MIS) or Maintenance Management System (MMS) is used in the project, then the existing location IDs can also be entered in the Excel template as Project-Specific Location Identifiers (No. 7 in the table below), as defined in the Excel/Kobo template. This makes it easier to check location data across project partner systems and verify the use of funds.
 
 ## The KfW Project Location Geodata Model for Financial Cooperation
 
-Below, the required project location data is defined for all FC projects. Project-related data is usually provided from both internal and external sources. The external data (see column "Source" with field entry "Input") has to be provided by the PEA or consultant staff using the template(s) provided by KfW and be validated by the responsible KfW PM/analyst before uploading.
+Below, the required project location data is defined for all FC projects. Project-related data is usually provided from both internal and external sources. The external data (see column "Source" with field entry "Input") has to be provided by the Project Executing Agency or consultant staff using the template(s) provided by KfW and be validated by the responsible KfW counterpart before uploading.
 
 #### Table 2: The KfW Project Location Geodata Model for Financial Cooperation
 
 | **Name** | **Type of data** | **Source**      |  **Mandatory**  | **Asignment** | **Description** | 
 | ---------|:----------------:| ---------------:| ---------------:| --------------:| --------------:|
-| 1. Unique ID | Number | Input  | Given | Per location | Every project location in the FC Geodata Model has to receive a unique location identifier number. This is the unique location identifier that is already provided in the Excel template in the Sub-Annex of the geodata collection ToR >Annex 3.2|
+| 1. Unique ID | Number | Input  | Given | Per location | For new locations, this column will be empty. For updates, your KfW counterpart will provide you with the list of unique_id numbers in this file to ensure that updated location ids match with the former ones.
 | 2. KfW project No. (INPRO) | Number | Input  |Yes| Per location | Every project location in the FC Geodata Model must be assigned to its respective KfW project number that is being provided by KfW in the geodata collection ToR > Annex 3.2 |
 | 3. Project-specific location identifier  | Text    | Selection |No| Per location | If the location or activity has a project-specific identifier, e.g., a location code in the MIS of the PEA, this can be entered here. This enables logically connecting and comparing the  location/activity in the KfW–system against the location/activity in the PEA-system. Otherwise the identifier is generated automatically (= No. 1 Unique ID in this table)|
 | 4. Location name |Text | Input |Yes| Per location | Short summary of the main project activity (max. 12 characters or digits)
