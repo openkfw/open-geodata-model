@@ -10,6 +10,9 @@ The geodata model comes in form of an excel template which can be used to collec
 Please note, that the geodata template and the guidelines are living documents. We keep on advancing the model i.e. by extending the available IATI location codes. 
 You might therefore find different versions of the template in this repository over time. We are also working hard to provide the template in different languages. 
 
+## Open Data Kit / KoboToolbox Templates
+In addition to the Excel Template named "Project_Location_Data_Template," we provide two other templates named "Project_Location_ODK_Template" for data collection using either [ODK](https://getodk.org/) or [KoboToolbox](https://www.kobotoolbox.org/). Therefore, all three templates adhere to the same configuration, encompassing identical required data points, such as types of locations etc.
+
 ## Some general remarks
 Most of the technical specifications can be found in the RMMV Guidebook linked above, especifically in the document "Data Model and Data collection Guideline". 
 This information is also given as comments in the Excel template if you click on the cells. Most importantly make sure to use WGS 84 as the coordinate reference system
