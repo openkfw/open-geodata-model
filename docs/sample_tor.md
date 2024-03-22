@@ -1,9 +1,7 @@
 Sub-Annex 1
 to Annex 8 (Content and Form of Reporting to KfW) of the Separate Agreement
 
-# Terms of Reference
-# for Project Location Data Collection and Management 
-# as part of Project Reporting
+# Terms of Reference for Project Location Data Collection and Management as part of Project Reporting
 
 ## 1.	Common requirements: 
 The project location data will form part of the regular project implementation reporting of the present FC project (==*insert* project title, abbreviation of project name (*project acronym*), *KfW 5-digit project* INPRO number, (planned) project start date *as per INPRO* and total project budget *as per INPRO*==) and shall be attached as an annex to each (==planning report *– if needed*==) and (==annual / biannual *– please select!*==) progress report, starting with the project inception report and ending with the final report. Therefore, the project location data are to be **collected, managed and quality-assured** by the same party/parties who are responsible for project reporting in general and to be distributed to the same parties receiving the project reports, i.e. all relevant stakeholders. They are to be **updated** with the same frequency and quality as the other reporting information (including the required minimum content of the header and footer of the annex) with the following additional requirements: 
