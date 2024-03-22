@@ -14,8 +14,9 @@ edit_uri: edit/main/docs/
 nav:
   - "index.md"
   - "sdg_icons.md"
-  - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
-  - "Example: Template to KML": tutorials/xls_to_kml.ipynb
+  - Tutorials:
+    - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
+    - "Example: Template to KML": tutorials/xls_to_kml.ipynb
 
 plugins:
   - mkdocs-jupyter
