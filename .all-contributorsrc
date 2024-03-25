@@ -1,4 +1,21 @@
 {
   "projectName": "open-geodata-model",
-  "projectOwner": "openkfw"
+  "projectOwner": "openkfw",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "JohannSfk",
+      "name": "JohannSfk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/134304380?v=4",
+      "profile": "https://github.com/JohannSfk",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ]
 }
