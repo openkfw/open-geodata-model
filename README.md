@@ -29,6 +29,13 @@ The datamodel is part of KfWs RMMV Initiative. You can find more information [he
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jzakotnik"><img src="https://avatars.githubusercontent.com/u/551599?v=4?s=100" width="100px;" alt="Jure Zakotnik"/><br /><sub><b>Jure Zakotnik</b></sub></a><br /><a href="#review-jzakotnik" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
