@@ -1,0 +1,1168 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="sdg_icons/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.14">
+    
+    
+      
+        <title>Open Geodata model</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.10ba22f1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-kfw-geodata-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Open Geodata model" class="md-header__button md-logo" aria-label="Open Geodata model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Geodata model
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The KfW Geodata Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/openkfw/open-geodata-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Open Geodata model" class="md-nav__button md-logo" aria-label="Open Geodata model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Open Geodata model
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/openkfw/open-geodata-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    The KfW Geodata Model
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    The KfW Geodata Model
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-notes-on-geodata-and-location-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Notes on Geodata and Location Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Notes on Geodata and Location Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-project-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a project location?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-between-exact-and-approximate-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference between exact and approximate locations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-collect-project-location-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to collect project location information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometrical-characteristics-of-exact-geo-location-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geometrical characteristics of exact geo location information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-approximate-geo-location-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use approximate geo location information
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-geodata-standard-formats-and-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Geodata Standard Formats and Templates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#link-to-project-location-data-collection-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to Project Location Data Collection Template
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Link to Project Location Data Collection Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exact-locations-using-the-excel-template-and-potentially-kml-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exact locations using the Excel Template (and potentially KML files)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approximate-locations-using-excel-template-and-gadm-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approximate locations using Excel Template and GADM standard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approximate locations using Excel Template and GADM standard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-1-how-to-collect-which-type-of-location-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 1: How to Collect Which Type of Location Data?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-compare-project-location-data-from-existing-systems-rmis-gis" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to compare project location data from existing systems (R/MIS, GIS)?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-kfw-project-location-geodata-model-for-financial-cooperation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The KfW Project Location Geodata Model for Financial Cooperation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The KfW Project Location Geodata Model for Financial Cooperation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-2-the-kfw-project-location-geodata-model-for-financial-cooperation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 2: The KfW Project Location Geodata Model for Financial Cooperation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sdg_icons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IATI-based SDG-colored Location Type Icons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sample_tor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample ToR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/open_data_on_broadband_in_egypt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Open data on broadband in Egypt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/xls_to_kml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geodata template to KML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-notes-on-geodata-and-location-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Notes on Geodata and Location Information
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Notes on Geodata and Location Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-project-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a project location?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-between-exact-and-approximate-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Difference between exact and approximate locations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-collect-project-location-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to collect project location information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometrical-characteristics-of-exact-geo-location-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geometrical characteristics of exact geo location information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-approximate-geo-location-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use approximate geo location information
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-geodata-standard-formats-and-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Geodata Standard Formats and Templates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#link-to-project-location-data-collection-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Link to Project Location Data Collection Template
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Link to Project Location Data Collection Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exact-locations-using-the-excel-template-and-potentially-kml-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exact locations using the Excel Template (and potentially KML files)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approximate-locations-using-excel-template-and-gadm-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approximate locations using Excel Template and GADM standard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approximate locations using Excel Template and GADM standard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-1-how-to-collect-which-type-of-location-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 1: How to Collect Which Type of Location Data?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-compare-project-location-data-from-existing-systems-rmis-gis" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to compare project location data from existing systems (R/MIS, GIS)?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-kfw-project-location-geodata-model-for-financial-cooperation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The KfW Project Location Geodata Model for Financial Cooperation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The KfW Project Location Geodata Model for Financial Cooperation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-2-the-kfw-project-location-geodata-model-for-financial-cooperation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 2: The KfW Project Location Geodata Model for Financial Cooperation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="the-kfw-geodata-model">The KfW Geodata Model</h1>
+<p>In this Section we explain the FC Geodata Model according to which project location data should be collected as well as technical requirements for the data collection. The goal is to inform KfW staff, Project Executing Agencies (PEAs), consultants, and other external stakeholders responsible for data collection as to the types of location data to be collected and in what form.</p>
+<p>Our FC Geodata Model is based on the International Aid Transparency Initiative (IATI) standard. The IATI Standard is used by international development organizations and allows harmonization of FC project location data across heterogenous projects. The data to be collected are subject to minimum requirements in the form of mandatory fields, and there are optional fields flexibly usable for collecting site-specific information.</p>
+<p>Furthermore, projects are able to store single location points (e.g., the location of one power plant site) or a larger number of project sites and features (e.g., 300 locations of buildings in different sectors within the framework of a decentralization project). In addition, project sites with larger areas and more complex geometries (e.g., polygons of forest protection areas) are supported as well.</p>
+<p>Please note, that KfW does not publish any exact coordinates of its project locations. Location data collection in fragile and conflict contexts should be treated with extra diligence.</p>
+<h2 id="general-notes-on-geodata-and-location-information">General Notes on Geodata and Location Information</h2>
+<h3 id="what-is-a-project-location">What is a project location?</h3>
+<p><strong>A project location can consist of one or more features that are part of a financially supported activity where no further geographical discrimination regarding funding is possible.</strong> An example of a single-feature project location is a financially supported hospital in a specific location. An example of a project location with multiple features is a group of adjacent agricultural plots under a financed irrigation plan that benefits all producers in that area. Another example is a set of protected areas jointly financed from a fund if, and only if, further geographical discrimination as to the allocation of funds to specific areas is not possible. If discrimination is possible, data for multiple project locations (such as protected areas) and their financial allocation have to be collected. KfW highly encourages increasing geographical discrimination of financial flows to specific project locations to the maximum possible, as this affords greater aid transparency and financial accountability.</p>
+<h3 id="difference-between-exact-and-approximate-locations">Difference between exact and approximate locations</h3>
+<p>For each project location there will be one exact<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> or approximate geolocation data set. The exact geolocation designates the geographical end point of an international development assistance financial flow. Approximate locations can be used however, when no exact geoinformation is (yet) available, or such is not collected for other reasons (details see below).</p>
+<p>For exact locations, geographical data are to be collected with GPS tools and eventually edited in a Geographical Information System (GIS). Approximate locations should be given on administrative scales using the GADM database as a global standard.</p>
+<h3 id="when-to-collect-project-location-information">When to collect project location information</h3>
+<p>KfW strongly encourages the PEA and/or consultant staff to collect exact or approximate geo-coordinates as early on as possible in the project cycle to increase the usage potential of such data throughout the entire project cycle. Ideally, data should be collected already during the project preparation phase, e.g., as part of the feasibility study.</p>
+<p>If no exact locations can be determined at this stage, approximate location should be used and later be checked during the project appraisal and inception stages (including possible transformation from approximate to exact location information). During project implementation, data should be updated at least annually in project progress reviews, and in order to reflect potential changes in the geographical allocation of funds, which are common in Financial Cooperation projects.</p>
+<h3 id="geometrical-characteristics-of-exact-geo-location-information">Geometrical characteristics of exact geo location information</h3>
+<p>'Exact<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup> locations' are measured via GPS devices, and geo-coordinates are to be collected as precisely as possible. For this purpose, three different geometry types can be used</p>
+<ol>
+<li>
+<p>Point geometries (e.g., a well or a hospital)</p>
+</li>
+<li>
+<p>Line geometries (e.g., a road or transmission line)</p>
+</li>
+<li>
+<p>Polygon geometries/shapes (e.g., a protected area or agricultural
+    plots)</p>
+</li>
+</ol>
+<p>All exact project locations have to be collected at first as a point geometry that represents a gateway to the project location, irrespective of the actual feature geometry (i.e., also for lines and polygons). This may be for example the center of a road, a village adjacent to agricultural plots or the administration building of a protected forest. If there is a line or polygon geometry and no gateway can be defined, the geometrical center (centroid) is to be used. This information is to be collected in an Excel template (xlsx) or a future open-source based geodata collection tool providing the geographical coordinates of the gateway point (more information to be provided at <a href="https://www.kfw-entwicklungsbank.de/Service/Publikationen-Videos/Publikationen-thematisch/Digitalisierung/RMMV-Guidebook/">KfW RMMV Guidebook</a>.</p>
+<p>In addition, line and polygon geometries have to be collected in KML<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> format independently for each project site (details are given below in data formats and templates).</p>
+<figure>
+<p><img alt="Figure 1" src="images/Figure1.png" />
+  </p>
+<figcaption>Figure 1: Schematic Representation of Different Location Data for the GeoApp</figcaption>
+</figure>
+<h3 id="when-to-use-approximate-geo-location-information">When to use approximate geo location information</h3>
+<p>Approximate<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup> locations can be used when no exact geoinformation is available (yet), or when exact location information should not be collected and stored. The approximate location option should be chosen if one or more of the following circumstances apply:</p>
+<ul>
+<li>
+<p>an exact project location has not (yet) been specified</p>
+</li>
+<li>
+<p>an exact project location is not (yet) known or defined</p>
+</li>
+<li>
+<p>the target location(s) is/are one or more administrative units.</p>
+</li>
+</ul>
+<p>In such cases, approximate location must be defined based on administrative units applying the <a href="https://gadm.org/">Global Aviation Data Management (GADM) standard</a>. GADM is used as a common standard for administrative units to afford harmonized and consistent collection of approximate locations.</p>
+<h2 id="project-geodata-standard-formats-and-templates">Project Geodata Standard Formats and Templates</h2>
+<h2 id="link-to-project-location-data-collection-template">Link to Project Location Data Collection Template</h2>
+<p>You can find the current version of the projection location data collection template <a href="https://github.com/openkfw/open-geodata-model/blob/main/Project_Location_Data_Template_V02.xlsx">here</a>.</p>
+<h3 id="exact-locations-using-the-excel-template-and-potentially-kml-files">Exact locations using the Excel Template (and potentially KML files)</h3>
+<p>As outlined above, all project locations should be collected using the Excel template (or a future open-source-based geodata collection tool) provided by KfW, which utilizes predefined categories under the IATI standard and built-in selection methods facilitating clean data entry. The geolocation is to be submitted in Excel with the geo-coordinates that can be obtained with a GPS tool. <strong>All coordinates are to be collected using</strong> <strong>WGS 84</strong><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> <strong>as the coordinate reference system.</strong> WGS 84 is the de-facto standard for web mapping applications. Geo-coordinates are to be provided in the decimal place format 00.00000 in the order LONG, LAT (using at least 5 digits after the separator).</p>
+<ul>
+<li>
+<p><strong>For point locations</strong> like buildings, filling out the exact GPS point location in the Excel template is sufficient. We estimate that about 90% of all project locations are point locations.</p>
+</li>
+<li>
+<p><strong>For line and polygon geometries,</strong> the gateway GPS point location is stored in Excel. In this case, geometry data should be supplied additionally in KML<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup> format separately for each project location. For multiple line or polygon locations, multiple KML files have to be submitted. A single KML file can, however, contain a single geometry (e.g., a road) or multiple geometries (e.g., multiple agricultural plots) that are linked to the gateway location collected in Excel. Multiple KML files should be submitted to KfW as .zip or .tar container. The data collector must ensure that the KfW staff responsible for uploading the data into the GeoApp are able to connect single KML files with project locations to the gateway points in Excel. To do so, the data collectors need to use the unique identifier given in the Excel template (column "Unique ID") together with the respective location name, separated by an underscore character "_" as filename for the KML data. An example of such a KML filename is "00345_Ouagadougou.kml". We follow this two-step approach for line and polygon geodata to ensure that all relevant metadata is collected in a clean way in Excel while still being able to submit relevant geometry information in a common geo-standard. It is strongly encouraged to submit additional geometry information in KML for locations larger than 1000 m (line) or 500 m2 (shapes) wherever possible, to enable KfW to see the spatial delimitation of our projects (e.g., a transmission line or the boundaries of a protected area). <strong>KML files are also to be submitted using</strong> <strong>WGS 84 as the coordinate reference system.</strong> The WG S84 datum is also used by OpenStreetMaps and Google Maps. The complete specification for OGC KML can be found <a href="http://www.opengeospatial.org/standards/kml/">here</a>.</p>
+</li>
+</ul>
+<p>It is strongly encouraged to check the data before submission in GIS software, such as QGIS or Google Earth Pro. This reduces the need to go back and forth between the responsible project managers and the projects.</p>
+<h3 id="approximate-locations-using-excel-template-and-gadm-standard">Approximate locations using Excel Template and GADM standard</h3>
+<p>Approximate project locations should be collected by referencing the respective administrative unit on the lowest administrative scale available in the GADM standard. GADM differentiates up to seven different levels, although for many developing countries, only three or four levels have yet been defined. Here are the most commonly available administrative unit levels:</p>
+<ul>
+<li>
+<p>level 0 (shape of the national boundary)</p>
+</li>
+<li>
+<p>level 1 (region, province, governorate etc.)</p>
+</li>
+<li>
+<p>level 2 (district, zone, department, municipality etc.)</p>
+</li>
+<li>
+<p>level 3 (community, tehsil etc.)</p>
+</li>
+</ul>
+<p>If the respective administrative unit level has not been defined in GADM, you may instead indicate the GPS coordinates of the respective administrative unit center (municipality, district center or similar as a point location). In such case, you must specify the location as "approximate" in column No. 21 of the Excel template "Geographic Exactness according to IATI standard". This ensures that this location is not confused with the actual location of the site.</p>
+<p>Mixing the administrative unit levels is not allowed because this would render the geo-data Model inconsistent.</p>
+<p>The GIS database of GADM can be downloaded <a href="https://gadm.org/data.html">here</a> and analyzed in a common GIS software such as QGIS, ArcGIS, or Google Earth Pro. Data collectors have to enter the GADM-defined polygon Geographic ID (GID), the GID level, and the utilized GADM database version. See Figure 2 below for more information:</p>
+<figure>
+<p><img alt="Figure 2" src="images/Figure2.png" />
+  </p>
+<figcaption>Figure 2: How to Collect Project Location Data</figcaption>
+</figure>
+<h4 id="table-1-how-to-collect-which-type-of-location-data">Table 1: How to Collect Which Type of Location Data?</h4>
+<p><strong>Exact</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Type of location data</strong></th>
+<th style="text-align: center;"><strong>Example</strong></th>
+<th style="text-align: right;"><strong>How to collect</strong></th>
+<th style="text-align: right;"><strong>Comment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Point</td>
+<td style="text-align: center;">Hospital</td>
+<td style="text-align: right;">Excel (LAT/LONG)</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>Line</td>
+<td style="text-align: center;">Road</td>
+<td style="text-align: right;">Excel (LAT/LONG) + KML</td>
+<td style="text-align: right;">Choose gateway point or centroid for Excel</td>
+</tr>
+<tr>
+<td>Polygon</td>
+<td style="text-align: center;">Protected Area</td>
+<td style="text-align: right;">Excel (LAT/LONG) + KML</td>
+<td style="text-align: right;">Choose gateway point or centroid for Excel</td>
+</tr>
+<tr>
+<td>Point - Gateway</td>
+<td style="text-align: center;">Start of a Road</td>
+<td style="text-align: right;">Excel (LAT/LONG)</td>
+<td style="text-align: right;">Complement with KML data if possible</td>
+</tr>
+<tr>
+<td>Point - Polygon</td>
+<td style="text-align: center;">Center of a protected area</td>
+<td style="text-align: right;">Excel (LAT/LONG)</td>
+<td style="text-align: right;">Complement with KML data if possible</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Approximate</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Type of location data</strong></th>
+<th style="text-align: center;"><strong>Example</strong></th>
+<th style="text-align: right;"><strong>How to collect</strong></th>
+<th style="text-align: right;"><strong>Comment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Administrational Boundaries</td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">Excel (GADM) or Excel (LAT/LONG) + KML</td>
+<td style="text-align: right;">If no GADM boundaries are available you can also upload the boundaries of the administrational area as a Polygon in KML. Supplement this information with Excel where you can. Give e.g., the centroid of the polygon</td>
+</tr>
+<tr>
+<td>Municipality/district Center</td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;">Excel (LAT/LONG)</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<figure>
+<p><img alt="Figure 3" src="images/Figure3.png" />
+  </p>
+<figcaption>Figure 3: How to Upload Which Type of Location Data?</figcaption>
+</figure>
+<h3 id="how-to-compare-project-location-data-from-existing-systems-rmis-gis">How to compare project location data from existing systems (R/MIS, GIS)?</h3>
+<p>If a Geographic Information System (GIS), (Remote) Management Information System (R/MIS) or Maintenance Management System (MMS) is used in the project, then the existing location IDs can also be entered in the Excel template as Project-Specific Location Identifiers (No. 7 in the table below), as defined in the Excel template. This makes it easier to check location data across project partner systems and verify the use of funds.</p>
+<h2 id="the-kfw-project-location-geodata-model-for-financial-cooperation">The KfW Project Location Geodata Model for Financial Cooperation</h2>
+<p>Below, the required project location data is defined for all FC projects. Project-related data is usually provided from both internal and external sources. The external data (see column "Source" with field entry "Input") has to be provided by the PEA or consultant staff using the template(s) provided by KfW and be validated by the responsible KfW PM/analyst before uploading.</p>
+<h4 id="table-2-the-kfw-project-location-geodata-model-for-financial-cooperation">Table 2: The KfW Project Location Geodata Model for Financial Cooperation</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th style="text-align: center;"><strong>Type of data</strong></th>
+<th style="text-align: right;"><strong>Source</strong></th>
+<th style="text-align: right;"><strong>Mandatory</strong></th>
+<th style="text-align: right;"><strong>Asignment</strong></th>
+<th style="text-align: right;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Unique ID</td>
+<td style="text-align: center;">Number</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Given</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Every project location in the FC Geodata Model has to receive a unique location identifier number. This is the unique location identifier that is already provided in the Excel template in the Sub-Annex of the geodata collection ToR &gt;Annex 3.2</td>
+</tr>
+<tr>
+<td>2. KfW project No. (INPRO)</td>
+<td style="text-align: center;">Number</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Every project location in the FC Geodata Model must be assigned to its respective KfW project number that is being provided by KfW in the geodata collection ToR &gt; Annex 3.2</td>
+</tr>
+<tr>
+<td>3. Project-specific location identifier</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Selection</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">If the location or activity has a project-specific identifier, e.g., a location code in the MIS of the PEA, this can be entered here. This enables logically connecting and comparing the  location/activity in the KfW–system against the location/activity in the PEA-system. Otherwise the identifier is generated automatically (= No. 1 Unique ID in this table)</td>
+</tr>
+<tr>
+<td>4. Location name</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Short summary of the main project activity (max. 12 characters or digits)</td>
+</tr>
+<tr>
+<td>5. Author of the data (=the legal owner)</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Person and/or Legal Entity who collected the data (= legal authorship)</td>
+</tr>
+<tr>
+<td>6. Publishing restrictions due to security reasons</td>
+<td style="text-align: center;">Select Text (yes/no)</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">In fragile contexts, geolocation information must be protected and may not be published, for example in online maps, public ESIA or evaluation reports for security reasons (e.g., risk of conflict, repression/discrimination or terrorist attack) in the target area(s)</td>
+</tr>
+<tr>
+<td>7. Date of data collection or latest update</td>
+<td style="text-align: center;">Date</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Date of data collection or latest update (if date of data collection is unknown) Form: DD.MM.YYYY (numbers only)</td>
+</tr>
+<tr>
+<td>8. Location activity status</td>
+<td style="text-align: center;">Select Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">As per IATI–Standard, see List of Activity Status options in the Excel–Template. Updates are only mandatory annually at the time of annual reporting for the respective funding client, as too many updates could otherwise be required depending on the project type. We recommend more frequent regular updating however for your own project monitoring</td>
+</tr>
+<tr>
+<td>9. Planned or actual start date of activity at the location</td>
+<td style="text-align: center;">Date</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Ideally, the start of the activity / implementation at the respective location is defined in the geodata collection ToR &gt; Annex 3.2</td>
+</tr>
+<tr>
+<td>10. Activity description (general)</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">A short description of the main project activity in this location, e.g., hydropower plant construction or construction of small irrigation systems</td>
+</tr>
+<tr>
+<td>11. Additional activity description</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Free text (in case you need to add other location–specific information like production volumes, progress values or a tag like “COVID-19”)</td>
+</tr>
+<tr>
+<td>12. Location type code IATI</td>
+<td style="text-align: center;">Select Text</td>
+<td style="text-align: right;">Selection</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">See List of Location Types in the Excel Template. This allows aggregating across location type and assignment of icons for publication on the map. Please use the most similar type, e.g., "well.". You can add the exact location type e.g., "extraction well" under "additional location types" if necessary. Definitions for all IATI-based location types can be found <a href="https://iatistandard.org/en/iati-standard/203/codelists/locationtype/">here</a></td>
+</tr>
+<tr>
+<td>13. Alternative location type</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Free text for additional location types (in case you don’t find a suitable Location Type Name in the drop-down menu). This promotes systemic learning and allows us to identify additionally required location types</td>
+</tr>
+<tr>
+<td>14. Budget share</td>
+<td style="text-align: center;">Currency number in EUR</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">The budget share allocated to this location in €. The sum of all locations in a project should add up to the budget sum in INPRO/PMT, including overheads. The budget sum is provided in the geodata collection ToR &gt; Annex 3.2</td>
+</tr>
+<tr>
+<td>15. DAC 5 purpose classification</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Assignment to the relevant DAC 5 Digit Codes from the respective 1 to 3 Codes defined for the project. For example, in a decentralization project, the construction of primary school locations is to be assigned to the respective Basic Education DAC 5-Code, while road rehabilitation sites within the same project are to be assigned to the respective Transport DAC 5-Code</td>
+</tr>
+<tr>
+<td>16. Geographic exactness according to IATI</td>
+<td style="text-align: center;">Select Text (exact or approximate)</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">The “exact” specification is to be used when the coder is confident of coding the exact geographically end destination of a financial flow. Flows that can only be traced to a general area or an approximate location are to be coded as “approximate.” In case of security risks (e.g., zones of conflict), we strongly recommend only publishing approximate locations</td>
+</tr>
+</tbody>
+</table>
+<p><strong>If exact locations are known, use Geo-Coordinates:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th style="text-align: center;"><strong>Type of data</strong></th>
+<th style="text-align: right;"><strong>Source</strong></th>
+<th style="text-align: right;"><strong>Mandatory</strong></th>
+<th style="text-align: right;"><strong>Asignment</strong></th>
+<th style="text-align: right;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17. Geo-coordinates of the respective location gateway (Latitude/LAT)</td>
+<td style="text-align: center;">Decimal</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Point: 1 coordinate (LAT). At least 5 digits after the dot for each coordinate. Only use if exact locations are known. Example: 50.12018514689011. Usage of WGS84 as Coordinate Reference System mandatory</td>
+</tr>
+<tr>
+<td>18. Geo-coordinates of the respective location gateway (Longitude/LONG)</td>
+<td style="text-align: center;">Decimal</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Point: 1 coordinates (LONG). At least 5 digits after the dot for each coordinate. Only use if exact locations are known. Example: 8.655474047059236. Usage of WGS84 as Coordinate Reference System mandatory</td>
+</tr>
+<tr>
+<td>19. Related community/neighborhood/village</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">This is for manually adding smaller locations or administrative unit names not identified in global geo-coordinates lists such as GADM</td>
+</tr>
+<tr>
+<td>20. Additional geodata submitted as KML (Lines/Polygons)</td>
+<td style="text-align: center;">Select Text (yes/no)</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per location</td>
+<td style="text-align: right;">Are you providing additional geodata with the geometry shapes for line and polygon data? It his recommended to supply this kind of information as it helps KfW to better identify the project areas. Data has to be submitted as separate KML files per location (one file per location entry in the table)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Use approximate locations according to the GADM standard only if exact locations are not (yet) known or are not to be collected, processed or transmitted:</strong> </p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th style="text-align: center;"><strong>Type of data</strong></th>
+<th style="text-align: right;"><strong>Source</strong></th>
+<th style="text-align: right;"><strong>Mandatory</strong></th>
+<th style="text-align: right;"><strong>Asignment</strong></th>
+<th style="text-align: right;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21. GADM GID</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per approximate location</td>
+<td style="text-align: right;">The Geographic ID (GID) of the administrative level that receives the financial flow. Try to use the lowest administrational level possible. For multiple approximate locations (administrational areas) use multiple data entries. Example value: VNM.1.1.1_1 for a specific area in Vietnam. Only use if exact locations are unknown</td>
+</tr>
+<tr>
+<td>22. GID level</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per approximate location</td>
+<td style="text-align: right;">Administrative level within the GADM database (0-7). This should be the name of the column the GID was extracted from. Example value: GID_3 for level three. Only use if exact locations are unknown</td>
+</tr>
+<tr>
+<td>23. GADM version</td>
+<td style="text-align: center;">Text</td>
+<td style="text-align: right;">Input</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Per approximate location</td>
+<td style="text-align: right;">The version of the utilized GADM database is available. Example value: 4.0.4. Only use if exact locations are unknown</td>
+</tr>
+</tbody>
+</table>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>in the sense of the IATI- Standard&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>KML (KMZ) is an open XML Standard for Points, Lines and Shapes. Officially named the OpenGIS KML Encoding Standard (OGC KML). It is maintained by the Open Geospatial Consortium, Inc. (OGC). Other Geoformats (e.g., Shapefiles or Geojson) can usually be converted to KML in Standard Geographic Information System (GIS) Software such as ArcGIS or QGIS.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>World Geodetic System 1984 (https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84)&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "toc.follow"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="assets/external/unpkg.com/mermaid@10.7.0/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
