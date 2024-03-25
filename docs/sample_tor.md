@@ -49,5 +49,5 @@ Each location is to be assigned at least one CRS-code (mandatory). If one locati
 -	Data shall only be transferred through encrypted channels (e.g. KfW data room). 
 -	Special caution is required in fragile and conflict contexts, where location data should be only treated with extra diligence e.g. working only with approximate geo coordinates for security reasons. 
 
-The [KfW’s Project Location Geodata Model](https://github.com/openkfw/open-geodata-model) is part of these ToR including the Excel / Kobo Template as well as the Location Type Icons currently being updated and both to be found under the same link above. 
+The [KfW’s Project Location Geodata Model](https://github.com/openkfw/open-geodata-model) is part of these ToR including the Excel Template as well as the Location Type Icons currently being updated and both to be found under the same link above. 
 
