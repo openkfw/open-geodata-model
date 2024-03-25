@@ -15,17 +15,24 @@ nav:
   - "index.md"
   - "howto_for_kfw_staff.md"
   - "sdg_icons.md"
-  - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
-  - "Example: Template to KML": tutorials/xls_to_kml.ipynb
+  - "Sample ToR": sample_tor.md
+  - Tutorials:
+    - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
+    - "Example: Template to KML": tutorials/xls_to_kml.ipynb
 
 plugins:
   - mkdocs-jupyter
+  - privacy
 
 markdown_extensions:
+  - admonition
   - footnotes
   - toc
   - attr_list
   - md_in_html
+  - pymdownx.critic
+  - pymdownx.tasklist:
+      clickable_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
