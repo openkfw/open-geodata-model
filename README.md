@@ -22,22 +22,3 @@ represented by line or polygon geometries (e.g. protected areas or transimission
 
 ## More information on remote management methods
 The datamodel is part of KfWs RMMV Initiative. You can find more information [here](https://www.kfw-entwicklungsbank.de/Service/Publications-Videos/Publications-by-topic/Digitalisation/RMMV-Guidebook/). You can also find sample terms of reference there if you require external assistance on collecting the data. 
-
-
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/S-r-f-l"><img src="https://avatars.githubusercontent.com/u/91615452?v=4?s=100" width="100px;" alt="Surafel"/><br /><sub><b>Surafel</b></sub></a><br /><a href="#code-s-r-f-l" title="Code">💻</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
