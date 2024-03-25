@@ -22,7 +22,7 @@ The project location data will form part of the regular project implementation r
 -	All planned or existing project locations and their respective attributes shall be inserted into the template row by row. One row is equivalent to one project location. In case it is not self-evident how the locations of the project are to be defined (e.g. in some cases, it makes sense to summarize a number of small projects in one community under one project location, in other cases it doesn’t), this shall be clarified with the recipient parties of the project reports. 
 -	The DAC 5 Purpose Classification(s), also called CRS-Code(s) of the project are the following: {==please insert all (five-digit) CRS-Codes assigned to your project in INPRO – these are one up to four codes==}. 
 Each location is to be assigned at least one CRS-code (mandatory). If one location has more than one code assigned to, create an additional row for each additional code containing the same GPS-coordinates. For details, please check [the guidelines](index.md).
--	The Following Data Fields stated as Non-Mandatory in the Excel/Kobo-Template are to be filled out for this project {== (boxes below to be checked by KfW) ==}: 
+-	The Following Data Fields stated as Non-Mandatory in the Excel Template are to be filled out for this project {== (boxes below to be checked by KfW) ==}: 
 
     * [ ] Unique ID (only if this template is an update. For new templates, this data field will remain empty, as KfW will generate a Unique ID for each location in its system
     * [ ] Abbreviation of project name (project acronym)
