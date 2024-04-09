@@ -1,7 +1,9 @@
 # Using KoboToolbox for Geographical Data Collection
 
-!!! warning This guide is in the early phase of development, and we are currently testing out the workflow. Please bear with us as we refine the content and improve the workflow. Your feedback and suggestions are greatly appreciated as we work towards enhancing this guide.
-## Guide Introduction:
+!!! warning 
+   This guide is in the early phase of development, and we are currently testing out the workflow. Please bear with us as we refine the content and improve the workflow. Your feedback and suggestions are greatly appreciated as we work towards enhancing this guide.
+
+## Guide Introduction
 
 Explore our guide on utilizing [KoboToolbox](https://www.kobotoolbox.org/) for efficient geographical data collection. In today's digital age, efficient data collection is crucial for various projects, from research initiatives to humanitarian efforts. KoboToolbox offers a powerful platform for designing, deploying, and managing surveys and forms, with a special emphasis on geo data collection.
 
@@ -13,7 +15,7 @@ So, if you're ready to embark on a journey of efficient geo data collection usin
 
 For further Information please vist: [Open Geodata Model](https://openkfw.github.io/open-geodata-model/#table-2-the-kfw-project-location-geodata-model-for-financial-cooperation)
 
-## Steps to Use KoboToolbox:
+## Steps to Use KoboToolbox
 
 1. **Access KoboToolbox Website:**
    - Open your web browser and navigate to [KoboToolbox website](https://www.kobotoolbox.org/).
@@ -27,7 +29,8 @@ For further Information please vist: [Open Geodata Model](https://openkfw.github
 
 3. **Dashboard Overview:**
    - Upon logging in, you'll be directed to your dashboard. Familiarize yourself with the different sections such as Projects, Forms, Data, and Settings.
-   - Next, you will need to import the [XLS form](https://github.com/openkfw/open-geodata-model/blob/main/Project_Location_ODK_XLSFORM_Template_V01.xlsx) that you downloaded earlier. If not, please download it now so that you can continue working according to our guidelines.  
+   - Next, you will need to import the [XLS form](https://github.com/openkfw/open-geodata-model/blob/main/Project_Location_ODK_XLSFORM_Template_V01.xlsx) that you downloaded earlier. If not, please download it now so that you can continue working according to our guidelines.
+
 4. **Create a New Project:**
    - Click on the "New" tab and then select "New Project."
    - Click on the "New" button at the top right corner of the homepage and then select "Upload an XLSForm."
