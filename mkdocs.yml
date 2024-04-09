@@ -7,6 +7,7 @@ theme:
     - navigation.tracking
     - navigation.expand
     - toc.follow
+  custom_dir: overrides
 
 repo_url: https://github.com/openkfw/open-geodata-model
 edit_uri: edit/main/docs/

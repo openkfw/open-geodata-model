@@ -1,7 +1,12 @@
+---
+comments: true
+---
+
+
 # Using KoboToolbox for Geographical Data Collection
 
-!!! warning 
-   This guide is in the early phase of development, and we are currently testing out the workflow. Please bear with us as we refine the content and improve the workflow. Your feedback and suggestions are greatly appreciated as we work towards enhancing this guide.
+!!! warning
+    This guide is in the early phase of development, and we are currently testing out the workflow. Please bear with us as we refine the content and improve the workflow. Your feedback and suggestions are greatly appreciated as we work towards enhancing this guide.
 
 ## Guide Introduction
 
@@ -17,32 +22,33 @@ For further Information please vist: [Open Geodata Model](https://openkfw.github
 
 ## Steps to Use KoboToolbox
 
-1. **Access KoboToolbox Website:**
-   - Open your web browser and navigate to [KoboToolbox website](https://www.kobotoolbox.org/).
+1.  **Access KoboToolbox Website:**
 
-2. **Sign Up or Log In:**
-   - If you're new to KoboToolbox, click on the "Sign Up" button at the top right corner of the homepage.
-   - Select the European Union KoboToolbox Server and click on the "Creat an account" button.
-   - Enter your email address, create a password, and follow the prompts to complete the registration process.
-   - After Creating your account you will recive an email to verify your account.
-   - If you already have an account, click on the "Log In" button at the top right corner of the homepage. Enter your email address and password to log in to your account.
+    1.  Open your web browser and navigate to [KoboToolbox website](https://www.kobotoolbox.org/).
 
-3. **Dashboard Overview:**
-   - Upon logging in, you'll be directed to your dashboard. Familiarize yourself with the different sections such as Projects, Forms, Data, and Settings.
-   - Next, you will need to import the [XLS form](https://github.com/openkfw/open-geodata-model/blob/main/Project_Location_ODK_XLSFORM_Template_V01.xlsx) that you downloaded earlier. If not, please download it now so that you can continue working according to our guidelines.
+1.  **Sign Up or Log In:**
+    1. If you're new to KoboToolbox, click on the "Sign Up" button at the top right corner of the homepage.
+    1. Select the European Union KoboToolbox Server and click on the "Creat an account" button.
+    1. Enter your email address, create a password, and follow the prompts to complete the registration process.
+    1. After Creating your account you will recive an email to verify your account.
+    1. If you already have an account, click on the "Log In" button at the top right corner of the homepage. Enter your email address and password to log in to your account.
+
+1. **Dashboard Overview:**
+    1. Upon logging in, you'll be directed to your dashboard. Familiarize yourself with the different sections such as Projects, Forms, Data, and Settings.
+    1. Next, you will need to import the [XLS form](https://github.com/openkfw/open-geodata-model/blob/main/Project_Location_ODK_XLSFORM_Template_V01.xlsx) that you downloaded earlier. If not, please download it now so that you can continue working according to our guidelines.
 
 4. **Create a New Project:**
-   - Click on the "New" tab and then select "New Project."
-   - Click on the "New" button at the top right corner of the homepage and then select "Upload an XLSForm."
-   - After you have uploaded the XLS form by clicking on the button "drag and drop the XLSForm file here or click to browse", you must follow the prompt and enter all the necessary information so that you can create the project.
-   - Enter a name and description for your project. Choose the appropriate settings which are required such as Sector type and Country options.
-   - Click on the "Create Project" tab.
+    1. Click on the "New" tab and then select "New Project."
+    1. Click on the "New" button at the top right corner of the homepage and then select "Upload an XLSForm."
+    1. After you have uploaded the XLS form by clicking on the button "drag and drop the XLSForm file here or click to browse", you must follow the prompt and enter all the necessary information so that you can create the project.
+    1. Enter a name and description for your project. Choose the appropriate settings which are required such as Sector type and Country options.
+    1. Click on the "Create Project" tab.
  
 5. **Deploy Forms:**
-   - Once your form is ready, click on the "Deploy" button.
-   - Choose the deployment method (e.g., web form, mobile app) and follow the instructions to deploy your form.
+    1. Once your form is ready, click on the "Deploy" button.
+    1. Choose the deployment method (e.g., web form, mobile app) and follow the instructions to deploy your form.
 
-
+## Conclusion
 In this guide, we've walked you through the steps involved in leveraging this tool effectively for your data collection needs. You now have the knowledge to make the most out of KoboToolbox for your geographical data collection projects.
 
 Thank you for joining us on this journey! 
