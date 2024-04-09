@@ -23,7 +23,6 @@ nav:
 
 plugins:
   - mkdocs-jupyter
-  - privacy
 
 markdown_extensions:
   - admonition
