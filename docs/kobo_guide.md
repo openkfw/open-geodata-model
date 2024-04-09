@@ -1,9 +1,6 @@
-**Disclaimer:* This guide is in the early phase of development, and we are currently testing out the workflow. Please bear with us as we refine the content and improve the workflow. Your feedback and suggestions are greatly appreciated as we work towards enhancing this guide.
-
 # Using KoboToolbox for Geographical Data Collection
 
-!!! warning
-   This guide is in the early phase of development, and we are currently testing out the workflow. Please bear with us as we refine the content and improve the workflow. Your feedback and suggestions are greatly appreciated as we work towards enhancing this guide.
+!!! warning This guide is in the early phase of development, and we are currently testing out the workflow. Please bear with us as we refine the content and improve the workflow. Your feedback and suggestions are greatly appreciated as we work towards enhancing this guide.
 ## Guide Introduction:
 
 Explore our guide on utilizing [KoboToolbox](https://www.kobotoolbox.org/) for efficient geographical data collection. In today's digital age, efficient data collection is crucial for various projects, from research initiatives to humanitarian efforts. KoboToolbox offers a powerful platform for designing, deploying, and managing surveys and forms, with a special emphasis on geo data collection.
