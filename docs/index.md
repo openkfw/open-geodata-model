@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# Extra Page: Introduction
+# Introduction
 
 ## What is the Project Location Model? 
 The Project Location Model is a data model to systematically collect location-specific information in projects supported by international development cooperation in a structured way. It was developed by the KfW Development Bank, which is using and improving it together with their peers and partners. The model is currently provided in Excel format (xlsx) to be used in combination with a KML file. Data related to specific project locations should be collected according to this standard. The project location model utilizes mostly predefined categories under the IATI standard and built-in selection methods facilitating clean data entry. A main difference to the IATI-standard is that the exising IATI list of location types has been expanded to cover all physical and immaterial location types required by international development cooperation standards. 
