@@ -13,7 +13,7 @@ repo_url: https://github.com/openkfw/open-geodata-model
 edit_uri: edit/main/docs/
 
 nav:
-  - "index.md"  
+  - "index.md"
   - "Sample ToR": sample_tor.md
   - "kobo_guide.md"
   - "sdg_icons.md"
