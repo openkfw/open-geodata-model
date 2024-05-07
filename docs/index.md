@@ -90,7 +90,7 @@ Approximate[^1] locations should be used when no exact geoinformation is availab
 
 -   the target location(s) is/are one or more administrative units, e.g. a district, a province or the entire country -> then choose option: *approximate (admin unit)*   
 
-## Figures (still need to be decided)
+## Figures
 <figure markdown>
   ![Figure 1](images/Figure1.png)
   <figcaption>Figure 1: Schematic Representation of Different Location Data for the GeoApp</figcaption>
