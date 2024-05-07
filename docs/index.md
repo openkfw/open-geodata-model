@@ -187,5 +187,4 @@ In this case you should ask your KfW project counterpart. They might provide you
 ... to be completed at the very end. 
 
 
-# Extra Page: Additional information material
 
