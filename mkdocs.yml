@@ -1,4 +1,4 @@
-site_name: Open Geodata model
+site_name: Open Project Lokcation Model
 
 theme:
   name: material
@@ -14,12 +14,17 @@ edit_uri: edit/main/docs/
 
 nav:
   - "index.md"
+  - "Overview-Teemplates+ToR.md"
+    - "Project_Location_Data_Template_V02.xlsx"
+    - "TdR_collecte_de_donnees_sites_du_projet.docx"
+    - "Sample-tor.md"
+    - "kobo_guide.md"
+  - "Technica-Notes.md"
+  - "FAQ.md"
   - "sdg_icons.md"
-  - "Sample ToR": sample_tor.md
-  - "kobo_guide.md"
   - Tutorials:
+    - "Example: Excel Template to KML": tutorials/xls_to_kml.ipynb
     - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
-    - "Example: Template to KML": tutorials/xls_to_kml.ipynb
 
 plugins:
   - mkdocs-jupyter
