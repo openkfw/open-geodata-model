@@ -174,7 +174,7 @@ TODO 2: Check contents of readme and table and cross-check with existing documen
 | X. Primary Key (as provided in KML file) | Decimal Number  | Input  | Yes, if kmldata is provided | Per location | Required only in case you provide additonal geolocation information in another KML file. The geometry in the KML file should possess the same primary key as an attribute as it is listed here.|
 
 
-# Extra Page: FAQs
+# FAQs
 ### Who can be contacted if I need help?
 For organizational and project-specific questions, please contact your KfW project counterpart. For technical questions and questions regarding more general aspects of the project location data collection model, we encourage you to create an account on GitHub and get in touch with us by creating an issue in our GitHub repository. We also appreciate your feedback and contributions via GitHub to help us improve our work!    
 
