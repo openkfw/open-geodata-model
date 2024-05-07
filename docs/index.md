@@ -16,6 +16,7 @@ You can ask your KfW project counterpart to provide you with the data that is ge
 
 ## KfW’s Project Location Data Collection and Management Approach
 
+
 In this Section we explain the project location model according to which project location data should be collected as well as technical requirements for the data collection. The goal is to inform KfW staff, Project Executing Agencies (PEAs), consultants, and other external stakeholders responsible for data collection as to the types of location data to be collected and in what form.
 
 Our project location model is mostly based on the International Aid Transparency Initiative (IATI) standard. The IATI Standard is used by international development organizations and allows harmonization of development project location data across heterogenous projects. The data to be collected are subject to minimum requirements in the form of mandatory fields, and there are optional fields flexibly usable for collecting site-specific information.
@@ -54,6 +55,7 @@ A project location can be either exact[^1] or approximate. The exact location de
 
 Approximate locations can be given either using point, lines or polygon data. You may use e.g. administrative areas from existing databases. 
 
+
 [^1]: in the sense of the IATI- Standard
 
 ## Exact locations and how to collect them
@@ -69,6 +71,7 @@ Approximate locations can be given either using point, lines or polygon data. Yo
 Independent of the geometry type all project locations should be collected first as a point location the Excel Template. This point may represent the locaction itself or a gateway to the project site, irrespective of the actual feature geometry (i.e., also for lines and polygons). The gateway point may be e.g. the beginning of a road, a village adjacent to agricultural plots or the administration building of a protected area.  If there is a line or polygon geometry and no gateway/entry point can be defined, the geometrical center (centroid) may be used as well. 
 
 **All coordinates in Excel are to be collected using WGS 84 (EPSG 4326) as the coordinate reference system.**[^3] WGS 84 is the de-facto standard for web mapping applications. Geo-coordinates are to be provided in the decimal place format 00.00000 in the order LONG, LAT (using at least 5 digits after the separator).
+
 [^3]: World Geodetic System 1984 (https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84\)
 
 **For line and polygon geometries:** If you have line or polygon geometries, you need to use both, the Excel template to store all relevant metadata for each location and an additional KML file to store the associated geometries to each location. The Excel file contains two columns that will enable us to to link the geometries with the metadata in Excel. The columns are called "Filename of additional Geo-data submitted as KML" and "Primary Key (As provided in the KML file). The first column should be used to put the filename of the KML which you send to KfW. An example for the filename is "00345_Ouagadougou.kml". The second column should contain a "primary key" that has to be also present in the attribute table of your KML file and links the geometry to the metadata in Excel. You should name the column "primary key" in KML as well. Use whole numbers (integers) to construct the primary key. In Excel you may also provide a "gateway point" (for details see section "Geometrical characteristics of exact locations"). This point can help us to verify whether the link between the information in KML and Excel is correct. You should submit all locations for your project in a single KML file. 
@@ -98,6 +101,7 @@ Approximate[^1] locations should be used when no exact geoinformation is availab
   <figcaption>Figure 2: How to Collect Project Location Data</figcaption>
 </figure>
 
+
 <figure markdown>
   ![Figure 3](images/Figure3.png)
   <figcaption>Figure 3: How to Upload Which Type of Location Data?</figcaption>
@@ -105,16 +109,44 @@ Approximate[^1] locations should be used when no exact geoinformation is availab
 
 ## The project location model
 
-## The KfW Project Location Data Collection Model for Financial Cooperation
+Below, the required project location data is defined for all FC projects. Project-related data is usually provided from both internal and external sources. The external data (see column "Source" with field entry "Input") has to be provided by the PEA or consultant staff using the template(s) provided by KfW and be validated by the responsible KfW PM/analyst before uploading.
 
-Below, the required project location data is defined for all FC projects. Project-related data is usually provided from both internal and external sources. The external data (see column "Source" with field entry "Input") has to be provided by the Project Executing Agency or consultant staff using the geodata collection ToR and the template(s) provided by KfW and be validated by the responsible KfW counterpart before uploading.
+#### Table 2: The KfW Project Location Geodata Model for Financial Cooperation
+
+| **Name** | **Type of data** | **Source**      |  **Mandatory**  | **Asignment** | **Description** | 
+| ---------|:----------------:| ---------------:| ---------------:| --------------:| --------------:|
+| 1. Unique ID | Number | Input  | Given | Per location | Every project location in the FC Geodata Model has to receive a unique location identifier number. This is the unique location identifier that is already provided in the Excel template in the Sub-Annex of the geodata collection ToR >Annex 3.2|
+| 2. KfW project No. (INPRO) | Number | Input  |Yes| Per location | Every project location in the FC Geodata Model must be assigned to its respective KfW project number that is being provided by KfW in the geodata collection ToR > Annex 3.2 |
+| 3. Project-specific location identifier  | Text    | Selection |No| Per location | If the location or activity has a project-specific identifier, e.g., a location code in the MIS of the PEA, this can be entered here. This enables logically connecting and comparing the  location/activity in the KfW–system against the location/activity in the PEA-system. Otherwise the identifier is generated automatically (= No. 1 Unique ID in this table)|
+| 4. Location name |Text | Input |Yes| Per location | Short summary of the main project activity (max. 12 characters or digits)
+| 5. Author of the data (=the legal owner) |Text | Input|Yes| Per location | Person and/or Legal Entity who collected the data (= legal authorship)
+| 6. Publishing restrictions due to security reasons | Select Text (yes/no) | Input | Yes  | Per location | In fragile contexts, geolocation information must be protected and may not be published, for example in online maps, public ESIA or evaluation reports for security reasons (e.g., risk of conflict, repression/discrimination or terrorist attack) in the target area(s) |
+| 7. Date of data collection or latest update   | Date | Input |No| Per location | Date of data collection or latest update (if date of data collection is unknown) Form: DD.MM.YYYY (numbers only) |
+| 8. Location activity status  | Select Text  | Input  |Yes| Per location | As per IATI–Standard, see List of Activity Status options in the Excel–Template. Updates are only mandatory annually at the time of annual reporting for the respective funding client, as too many updates could otherwise be required depending on the project type. We recommend more frequent regular updating however for your own project monitoring |
+| 9. Planned or actual start date of activity at the location   | Date   | Input | Yes | Per location | Ideally, the start of the activity / implementation at the respective location is defined in the geodata collection ToR > Annex 3.2
+| 10. Activity description (general)  | Text |    Input | Yes |Per location | A short description of the main project activity in this location, e.g., hydropower plant construction or construction of small irrigation systems
+| 11. Additional activity description  | Text |   Input | No | Per location | Free text (in case you need to add other location–specific information like production volumes, progress values or a tag like “COVID-19”)
+| 12. Location type code IATI | Select Text   | Selection  | Yes | Per location | See List of Location Types in the Excel Template. This allows aggregating across location type and assignment of icons for publication on the map. Please use the most similar type, e.g., "well.". You can add the exact location type e.g., "extraction well" under "additional location types" if necessary. Definitions for all IATI-based location types can be found [here](https://iatistandard.org/en/iati-standard/203/codelists/locationtype/)
+| 13. Alternative location type   | Text  | Input  | No | Per location | Free text for additional location types (in case you don’t find a suitable Location Type Name in the drop-down menu). This promotes systemic learning and allows us to identify additionally required location types
+| 14. Budget share | Currency number in EUR  | Input  | No | Per location | The budget share allocated to this location in €. The sum of all locations in a project should add up to the budget sum in INPRO/PMT, including overheads. The budget sum is provided in the geodata collection ToR > Annex 3.2
+| 15. DAC 5 purpose classification   |Text | Input | Yes | Per location | Assignment to the relevant DAC 5 Digit Codes from the respective 1 to 3 Codes defined for the project. For example, in a decentralization project, the construction of primary school locations is to be assigned to the respective Basic Education DAC 5-Code, while road rehabilitation sites within the same project are to be assigned to the respective Transport DAC 5-Code
+| 16. Geographic exactness according to IATI  |Select Text (exact or approximate) |   Input | Yes | Per location | The “exact” specification is to be used when the coder is confident of coding the exact geographically end destination of a financial flow. Flows that can only be traced to a general area or an approximate location are to be coded as “approximate.” In case of security risks (e.g., zones of conflict), we strongly recommend only publishing approximate locations|
+
+**If exact locations are known, use Geo-Coordinates:**
+
+| **Name** | **Type of data** | **Source**      |  **Mandatory**  | **Asignment** | **Description** | 
+| ---------|:----------------:| ---------------:| ---------------:| --------------:| --------------:|
+| 17. Geo-coordinates of the respective location gateway (Latitude/LAT) | Decimal | Input | Yes | Per location | Point: 1 coordinate (LAT). At least 5 digits after the dot for each coordinate. Only use if exact locations are known. Example: 50.12018514689011. Usage of WGS84 as Coordinate Reference System mandatory |
+| 18. Geo-coordinates of the respective location gateway (Longitude/LONG) | Decimal | Input | Yes | Per location | Point: 1 coordinates (LONG). At least 5 digits after the dot for each coordinate. Only use if exact locations are known. Example: 8.655474047059236. Usage of WGS84 as Coordinate Reference System mandatory |
+| 19. Related community/neighborhood/village | Text | Input | No | Per location | This is for manually adding smaller locations or administrative unit names not identified in global geo-coordinates lists such as GADM  |
+| 20. Additional geodata submitted as KML (Lines/Polygons) | Select Text (yes/no) | Input | Yes | Per location |Are you providing additional geodata with the geometry shapes for line and polygon data? It his recommended to supply this kind of information as it helps KfW to better identify the project areas. Data has to be submitted as separate KML files per location (one file per location entry in the table)|
 
 ### Table 2: The KfW Project Location Data Collection Model for Financial Cooperation
 
 TODO: Sticky notes into Description in table ( -> Surafel)
 TODO 2: Check contents of readme and table and cross-check with existing documentation here. Choose whether to include it into the more "general part" or the "technical notes" (Think of audience) (-> Maja)
 
-| **Name** | **Type of data** | **Source**      |  **Mandatory**  | **Assignment** | **Description** | 
+| **Name** | **Type of data** | **Source**      |  **Mandatory**  | **Asignment** | **Description** | 
 | ---------|:----------------:| ---------------:| ---------------:| --------------:| --------------:|
 | A. Unique ID | Number | Input  | Given | Per location | For new locations, this column will be empty. For updates, your KfW counterpart will provide you with the list of unique_id numbers in this file to ensure that updated location ids match with the former ones.|
 | B. KfW project No. (INPRO) | Number | Input  |Yes| Per location | Every project location in the FC Geodata Model must be assigned to its respective KfW project number that is being provided by KfW in the geodata collection ToR > Annex 3.2 |

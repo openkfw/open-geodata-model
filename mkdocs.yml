@@ -1,4 +1,4 @@
-site_name: Open Geodata model
+site_name: Open Project Location Model
 
 theme:
   name: material
@@ -7,6 +7,7 @@ theme:
     - navigation.tracking
     - navigation.expand
     - toc.follow
+  custom_dir: overrides
 
 repo_url: https://github.com/openkfw/open-geodata-model
 edit_uri: edit/main/docs/
@@ -15,17 +16,22 @@ nav:
   - "index.md"
   - "howto_for_kfw_staff.md"
   - "sdg_icons.md"
-  - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
-  - "Example: Template to KML": tutorials/xls_to_kml.ipynb
+  - Tutorials:
+    - "Example: Excel Template to KML": tutorials/xls_to_kml.ipynb
+    - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
 
 plugins:
   - mkdocs-jupyter
 
 markdown_extensions:
+  - admonition
   - footnotes
   - toc
   - attr_list
   - md_in_html
+  - pymdownx.critic
+  - pymdownx.tasklist:
+      clickable_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
