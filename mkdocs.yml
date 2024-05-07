@@ -13,8 +13,8 @@ repo_url: https://github.com/openkfw/open-geodata-model
 edit_uri: edit/main/docs/
 
 nav:
-  - "index.md"
-  - "howto_for_kfw_staff.md"
+  - "index.md"  
+  - "kobo_guide.md"
   - "sdg_icons.md"
   - Tutorials:
     - "Example: Excel Template to KML": tutorials/xls_to_kml.ipynb
