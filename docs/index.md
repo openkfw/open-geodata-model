@@ -190,4 +190,3 @@ In this case you should ask your KfW project counterpart. They might provide you
 
 # Extra Page: Additional information material
 
-... Freds Tutorial
