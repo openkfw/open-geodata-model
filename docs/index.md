@@ -40,7 +40,7 @@ If no exact locations can be determined at this stage, approximate location shou
 ## Link to ToR
 
 
-# Extra Page: Technical Notes on the project location model
+# Technical Notes on the project location model
 
 ## What is a project location?
 
