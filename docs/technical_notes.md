@@ -109,8 +109,6 @@ Below, the required project location data is defined for all FC projects. Projec
 
 ### Table 2: The KfW Project Location Data Collection Model for Financial Cooperation
 
-TODO: Sticky notes into Description in table ( -> Surafel)
-TODO 2: Check contents of readme and table and cross-check with existing documentation here. Choose whether to include it into the more "general part" or the "technical notes" (Think of audience) (-> Maja)
 
 | **Name** | **Type of data** | **Source**      |  **Mandatory**  | **Asignment** | **Description** | 
 | ---------|:----------------:| ---------------:| ---------------:| --------------:| --------------:|
