@@ -6,7 +6,10 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.expand
+    - navigation.footer
     - toc.follow
+    - toc.integrate 
+
   custom_dir: overrides
 
 repo_url: https://github.com/openkfw/open-geodata-model
@@ -14,7 +17,6 @@ edit_uri: edit/main/docs/
 
 nav:
   - "index.md"
-  - "model.md"
   - "Sample ToR": sample_tor.md
   - "technical_notes.md"
   - "faq.md"

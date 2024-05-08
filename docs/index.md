@@ -7,6 +7,10 @@ comments: true
 ## What is the Project Location Model? 
 The Project Location Model is a data model to systematically collect location-specific information in projects supported by international development cooperation in a structured way. It was developed by the KfW Development Bank, which is using and improving it together with their peers and partners. The model is currently provided in Excel format (xlsx) to be used in combination with a KML file. Data related to specific project locations should be collected according to this standard. The project location model utilizes mostly predefined categories under the IATI standard and built-in selection methods facilitating clean data entry. A main difference to the IATI-standard is that the exising IATI list of location types has been expanded to cover all physical and immaterial location types required by international development cooperation standards. 
 
+!!! note
+
+    You can find the current version of the projection location data collection template [here](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_V02.xlsx).
+
 ## For what purpose do you collect this information?
 German Financial Cooperation uses structured geo-information to process project location datasets that help us report on the relevance, progress and impacts of our portfolio. We do geospatial analysis and create portfolio maps for the German Federal Ministry for Economic Cooperation and Development (BMZ) and the German public who finances our joint projects with their taxpayer money. Your cooperation will ultimately help us to justify and leverage financial funds for international development.
 
