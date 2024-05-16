@@ -30,7 +30,7 @@ Independent of the geometry type all project locations should be collected first
 
 [^1]: in the sense of the IATI- Standard
 
-**All coordinates in Excel are to be collected using WGS 84 (EPSG 4326) as the coordinate reference system.**[^3] WGS 84 is the de-facto standard for web mapping applications. Geo-coordinates are to be provided in the decimal place format 00.00000 in the order LONG, LAT (using at least 5 digits after the separator).
+**All coordinates in Excel are to be collected using WGS 84 (EPSG 4326) as the coordinate reference system.**[^3] WGS 84 is the de-facto standard for web mapping applications. Geo-coordinates are to be provided in the decimal place format 00.00000 in the columns "Latitude" and "Longitude" (using at least 5 digits after the separator).
 
 [^3]: World Geodetic System 1984 (https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84\)
 
