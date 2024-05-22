@@ -16,11 +16,13 @@ edit_uri: edit/main/docs/
 
 nav:
   - "index.md"
-  - "Sample ToR": sample_tor.md
-  - "technical_notes.md"
+    - "technical_notes.md"
+  - "Overview of Templates and ToR": overview_templates_tor.md
+    - "Sample ToR": sample_tor.md
+    - "kobo_guide.md"
+    - "sdg_icons.md"
   - "faq.md"
-  - "kobo_guide.md"
-  - "sdg_icons.md"
+  
   - Tutorials:
     - "Example: Excel Template to KML": tutorials/xls_to_kml.ipynb
     - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
