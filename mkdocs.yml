@@ -20,8 +20,8 @@ nav:
   - "Overview of Templates and ToR": 
     - overview_templates_tor.md
     - "Sample ToR": sample_tor.md
-  - "kobo_guide.md"
-  - "sdg_icons.md"
+    - "kobo_guide.md"
+    - "sdg_icons.md"
   - "faq.md"
   
   - Tutorials:
