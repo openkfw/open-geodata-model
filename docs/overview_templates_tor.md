@@ -1,6 +1,6 @@
 # Overview of existing sample Terms of Reference (ToR) and Templates
 
-Usually, the project's Project Excecuting Agency (PEA) and/or Consultant are to collect the location data of their respective project(s) with KfW. For each project, PEA and KfW agree on the amended sample ToR for project location data collection.
+Usually, the project's Project Executing Agency (PEA) and/or Consultant are to collect the location data of their respective project(s) with KfW. For each project, PEA and KfW agree on the amended sample ToR for project location data collection.
 
 These amended ToR form the basis for filling out the Excel-Template by the PEA's or consultant's staff.
 
