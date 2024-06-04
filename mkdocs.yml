@@ -16,11 +16,15 @@ edit_uri: edit/main/docs/
 
 nav:
   - "index.md"
-  - "Sample ToR": sample_tor.md
   - "technical_notes.md"
+  - "Overview of Templates and ToR": 
+    - overview_templates_tor.md
+    - "Sample ToR": sample_tor.md
+    - "Sample Tor in FR": sample_tor_fr.md
+    - "kobo_guide.md"
+    - "sdg_icons.md"
   - "faq.md"
-  - "kobo_guide.md"
-  - "sdg_icons.md"
+  
   - Tutorials:
     - "Example: Excel Template to KML": tutorials/xls_to_kml.ipynb
     - "Example: Open Geodata": tutorials/open_data_on_broadband_in_egypt.ipynb
@@ -38,5 +42,5 @@ markdown_extensions:
   - pymdownx.tasklist:
       clickable_checkbox: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
