@@ -2,7 +2,7 @@
 comments: true
 ---
 
-# IATI-based SDG-colored Location Type Icons
+# Project Location Icons
 
 ## Zero hunger
 
