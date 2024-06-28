@@ -1,10 +1,12 @@
-name: Spooler_tests
+name: Validation tests
 
 on:
   push:
-    branches: [ main ]
+    branches:
+        - main
   pull_request:
-    branches: [ main ]
+    branches:
+        - main
 
 jobs:
   tests:
