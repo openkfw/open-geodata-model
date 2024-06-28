@@ -21,4 +21,4 @@ jobs:
           poetry install
       - name: Build Website
         run: |
-          mkdocs gh-deploy --force
+          poetry run mkdocs gh-deploy --force

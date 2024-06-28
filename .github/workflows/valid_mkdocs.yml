@@ -21,4 +21,4 @@ jobs:
           poetry install
       - name: Test Website build
         run: |
-          mkdocs build
+          poetry run mkdocs build

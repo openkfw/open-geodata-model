@@ -1,5 +1,6 @@
 """
-In this module we test that the sector codes used within the template are valid and the ones from the IATI standard.
+In this module we test that the sector codes used within the template are valid and the ones from 
+the IATI standard.
 """
 
 import json
@@ -8,13 +9,14 @@ import pandas as pd
 
 def test_sector_codes():
     """
-    Test that the sector codes used within the template are valid and the ones from the IATI standard.
+    Test that the sector codes used within the template are valid and the ones 
+    from the IATI standard.
     """
 
     # first load the external reference provided by IATI
     file_path = "external/iati_sector_codes_v2_0_3.json"
 
-    with open(file_path) as f:
+    with open(file_path, encoding="utf-8") as f:
         full_data = json.load(f)
 
     sector_codes = full_data["data"]
