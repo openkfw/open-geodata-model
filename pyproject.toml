@@ -10,11 +10,13 @@ readme = "README.md"
 python = "^3.10"
 pandas = "^2.2.2"
 openpyxl = "^3.1.4"
-
-
-[tool.poetry.group.dev.dependencies]
-jupyter = "^1.0.0"
 pytest = "^8.2.2"
+pylint = "^3.2.5"
+black = "^24.4.2"
+jupyter = "^1.0.0"
+mkdocs-material = "^9.5.27"
+geopandas = "^1.0.0"
+mkdocs-jupyter = "^0.24.7"
 
 [build-system]
 requires = ["poetry-core"]
