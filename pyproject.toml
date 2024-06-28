@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "project-location-model"
+version = "1.0.0"
+description = "Open Geodata Model for Mapping Project Sites in ODA"
+authors = ["Your Name <you@example.com>"]
+license = "Apache"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.2.2"
+openpyxl = "^3.1.4"
+pytest = "^8.2.2"
+pylint = "^3.2.5"
+black = "^24.4.2"
+jupyter = "^1.0.0"
+mkdocs-material = "^9.5.27"
+geopandas = "^1.0.0"
+mkdocs-jupyter = "^0.24.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
