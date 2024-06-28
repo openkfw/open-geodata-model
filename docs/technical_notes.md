@@ -4,9 +4,11 @@
 You can find the current version of the projection location template [here](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_V02.xlsx).
 
 ## Mandatory and Non-Mandatory Fields
+
 When collecting data, there are certain mandatory fields that must be completed, as well as non-mandatory fields that can be used to gather additional site-specific information. It is important to check if there are any [*Terms of Reference (ToRs)*](overview_templates_tor.md) for this project location data collection that specify additional required fields. If there are no ToRs available, please consult with your KfW counterpart to determine which non-mandatory fields should be filled out.
 
 ## What is a project location?
+
 **A project location may comprise one or more features that are part of a financially supported activity where it is not feasible to make any further geographical distinctions regarding funding.** For instance, a financially supported hospital in a specific location is an example of a single-feature project location. Another example of a project location with multiple features is a group of adjacent agricultural plots that are being financed under an irrigation plan that benefits all producers in that area. Additionally, a set of protected areas that are jointly financed from a fund is another example, provided that it is not possible to make any further geographical distinctions regarding the allocation of funds to specific areas. However, if discrimination is possible, data for multiple project locations (such as protected areas) and their financial allocation must be collected. KfW strongly encourages increasing the geographical discrimination of financial flows to specific project locations to the maximum extent possible, as this enhances aid transparency and financial accountability.
 
 
@@ -56,16 +58,15 @@ After preselecting the KC Theme/Sub-Sector, please choose the most appropriate l
 **Please note that the preselection column "KC Theme/Sub-Sector" is only intended to help you quickly find the correct location type name.** It will not be saved in the system and does not replace the DAC5 Purpose Classification/CRS-Code assignment below, which effectively assigns the correct subsector to each location.
 
 ## DAC 5 Purpose Classification/CRS-Code
+
 The one to four five-digit DAC 5 Purpose Codes for the entire project must be provided by your KfW counterpart (ideally in the project location data collection ToR, see samples [here](overview_templates_tor.md)). If there is more than one code for the project, you must assign the correct code to each location. For example, in a decentralization project, the construction of primary school locations should be assigned to the respective Basic Education DAC 5-Code, while road rehabilitation sites within the same project should be assigned to the respective Transport DAC 5-Code.
 
 
 If your project contains locations that contribute not only to one but two, three, or four DAC/CRS-Codes, please create two, three, or four separate rows with the same GPS coordinates but different DAC/CRS-Codes, and potentially different location types and activity descriptions.
-If all codes must be assigned to all locations, please create a new row for each location, with the only difference being the DAC 5 Purpose Classification. For the complete list of codes, please refer to the table sheet "DAC Purpose Codes" of the Excel Template.
+If all codes must be assigned to all locations, please create a new row for each location, with the only difference being the DAC 5 Purpose Classification. For the complete list of codes, please refer to the table sheet "DAC Purpose Codes" of the Excel Template, which are validated against the official [sector IATI codes](https://iatistandard.org/en/iati-standard/203/codelists/sector/).
 
 ## Privacy, confidentiality, and publication
 The Excel Template must be submitted without containing any personal data or any data that could be linked to individual persons, such as houses of private households. Please note that KfW does not publish any exact coordinates of its project locations. Location data collection in fragile and conflict contexts should be treated with extra diligence.
-
-----------------------------------------------------------------------------------------------------------------------
 
 ## The Project Location Model
 

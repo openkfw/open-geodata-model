@@ -9,7 +9,7 @@ import pandas as pd
 
 def test_sector_codes():
     """
-    Test that the sector codes used within the template are valid and the ones 
+    Test that the sector codes used within the template are valid and the ones
     from the IATI standard.
     """
 
