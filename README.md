@@ -17,3 +17,21 @@ The technical specifications as well as the sample Terms of Referencecan for col
 
 ## More information on remote management methods
 This open data model is part of KfW's RMMV Digital Public Content Initiative. You can find more information on RMMV [here](https://www.kfw-entwicklungsbank.de/Service/Publications-Videos/Publications-by-topic/Digitalisation/RMMV-Guidebook/). 
+
+## Instructions to Generate JSON File from Excel Worksheet
+
+To extract location types from the Excel worksheet and convert them into a JSON file, follow these steps:
+
+1. Ensure you have Python installed on your system. If not, download and install it from [python.org](https://www.python.org/).
+
+2. Install the required Python packages by running the following command:
+   ```bash
+   pip install pandas openpyxl
+   ```
+
+3. Run the script to extract location types and generate the JSON file:
+   ```bash
+   python scripts/extract_location_types.py
+   ```
+
+4. The JSON file `data/location_types.json` will be created, containing the location types with attributes code, name, character, and geometry.

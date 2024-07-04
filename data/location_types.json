@@ -1,0 +1,308 @@
+[
+    {
+        "Code": "1",
+        "Name": "Agricultural facility",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "2",
+        "Name": "Irrigation canal",
+        "Character": "Physical",
+        "Geometry": "Line"
+    },
+    {
+        "Code": "3",
+        "Name": "Cultivated area",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    },
+    {
+        "Code": "4",
+        "Name": "Farm",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "5",
+        "Name": "Orchard",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    },
+    {
+        "Code": "6",
+        "Name": "Hospital",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "7",
+        "Name": "Clinic",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "8",
+        "Name": "Dispensary",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "9",
+        "Name": "School",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "10",
+        "Name": "Agricultural school",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "11",
+        "Name": "College",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "12",
+        "Name": "Technical school",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "13",
+        "Name": "Aqueduct",
+        "Character": "Physical",
+        "Geometry": "Line"
+    },
+    {
+        "Code": "14",
+        "Name": "Water pumping station",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "15",
+        "Name": "Water tank",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "16",
+        "Name": "Sanitary facilities",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "17",
+        "Name": "Sewage treatment plant",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "18",
+        "Name": "Well",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "19",
+        "Name": "Waterworks",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "20",
+        "Name": "Converter station",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "21",
+        "Name": "Electric power transmission and distribution",
+        "Character": "Physical",
+        "Geometry": "Line"
+    },
+    {
+        "Code": "22",
+        "Name": "Power station",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "23",
+        "Name": "Hydroelectric power station",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "24",
+        "Name": "Photovoltaik grid",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    },
+    {
+        "Code": "25",
+        "Name": "Photovoltaik power station",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "26",
+        "Name": "Business centre",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "27",
+        "Name": "Housing development",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    },
+    {
+        "Code": "28",
+        "Name": "Industrial area",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    },
+    {
+        "Code": "29",
+        "Name": "Factory",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "30",
+        "Name": "Bridge",
+        "Character": "Physical",
+        "Geometry": "Line"
+    },
+    {
+        "Code": "31",
+        "Name": "Building",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "32",
+        "Name": "Channel",
+        "Character": "Physical",
+        "Geometry": "Line"
+    },
+    {
+        "Code": "33",
+        "Name": "Dam",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "34",
+        "Name": "City street with drainage canal",
+        "Character": "Physical",
+        "Geometry": "Line"
+    },
+    {
+        "Code": "35",
+        "Name": "Flood protection wall",
+        "Character": "Physical",
+        "Geometry": "Line"
+    },
+    {
+        "Code": "36",
+        "Name": "House",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "37",
+        "Name": "Road",
+        "Character": "Physical",
+        "Geometry": "Line"
+    },
+    {
+        "Code": "38",
+        "Name": "Street",
+        "Character": "Physical",
+        "Geometry": "Line"
+    },
+    {
+        "Code": "39",
+        "Name": "Forest",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    },
+    {
+        "Code": "40",
+        "Name": "Park",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    },
+    {
+        "Code": "41",
+        "Name": "Watercourse",
+        "Character": "Physical",
+        "Geometry": "Line"
+    },
+    {
+        "Code": "42",
+        "Name": "Administrative facility",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "43",
+        "Name": "Office building",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "44",
+        "Name": "Common",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    },
+    {
+        "Code": "45",
+        "Name": "Community center",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "46",
+        "Name": "Garden",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    },
+    {
+        "Code": "47",
+        "Name": "Local government office",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "48",
+        "Name": "Market",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "49",
+        "Name": "Police post",
+        "Character": "Physical",
+        "Geometry": "Point"
+    },
+    {
+        "Code": "50",
+        "Name": "Populated place",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    },
+    {
+        "Code": "51",
+        "Name": "Zone",
+        "Character": "Physical",
+        "Geometry": "Polygon"
+    }
+]
