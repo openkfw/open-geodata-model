@@ -46,3 +46,45 @@ def test_location_types():
 
     # now test if all the codes in the template are in the reference
     assert reference["code"].equals(excel_df["code"])
+
+
+def test_fr_location_types():
+    """
+    Test that the location types used within the french template are valid and the ones
+    from the reference.
+    """
+
+    # first load the external reference provided by IATI
+    file_path = "references/kfw_location_types.json"
+
+    reference = pd.read_json(file_path)
+
+    # now import the sector codes from the template
+    excel_file_path = "Project_Location_Data_Template_V021_FR.xlsx"
+    worksheet_name = "Location Types IATI and New"
+
+    col_list = [
+        "Thème /Sous-secteur",
+        "type de site physique ou immatériel",
+        "(IITA) Nom du type de site (FR) = type de site physique ou de zone de production ou d’intervention immatérielle lié à la production ou à l’intervention du projet",
+        "Type de données géographiques",
+        "(IATI) Location Type Code",
+    ]
+
+    excel_df = pd.read_excel(
+        excel_file_path, sheet_name=worksheet_name, usecols=col_list
+    )
+    excel_df = excel_df.rename(
+        columns={
+            "KC-Theme / Sub-Sector": "subsector",
+            "physical or immaterial location type": "character",
+            "(IATI) Location Type Code": "code",
+            "(IATI) Location Type Name (EN) =  project output- or intervention-related type of physical location or immaterial output- or intervention area": "name",
+            "Geodata Type": "geometry",
+            "IATI Category": "category",
+            "(IATI) Location Type Description (EN)": "description",
+        }
+    )
+
+    # now test if all the codes in the template are in the reference
+    assert reference["code"].equals(excel_df["code"])
