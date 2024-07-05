@@ -1,10 +1,11 @@
 """
 In this module we test that the location codes used within the template are valid and the ones from 
-the reference. For the moment this is mostly superficial but should serve as a basis as we move forward
-to translations and a comparison with the iati standard.
+the reference. For the moment this is mostly superficial but should serve as a basis as we move 
+forward to translations and a comparison with the iati standard.
 """
 
 import pandas as pd
+
 
 def test_location_types():
     """
@@ -25,23 +26,28 @@ def test_location_types():
         "KC-Theme / Sub-Sector",
         "physical or immaterial location type",
         "(IATI) Location Type Code",
-        "(IATI) Location Type Name (EN) =  project output- or intervention-related type of physical location or immaterial output- or intervention area",
+        "(IATI) Location Type Name (EN) =  project output- or intervention-related type"
+        " of physical location or immaterial output- or intervention area",
         "Geodata Type",
         "IATI Category",
         "(IATI) Location Type Description (EN)",
     ]
 
-    excel_df = pd.read_excel(excel_file_path, sheet_name=worksheet_name, usecols=col_list)
+    excel_df = pd.read_excel(
+        excel_file_path, sheet_name=worksheet_name, usecols=col_list
+    )
     excel_df = excel_df.rename(
         columns={
-        "KC-Theme / Sub-Sector": "subsector",
-        "physical or immaterial location type": "character",
-        "(IATI) Location Type Code": "code",
-        "(IATI) Location Type Name (EN) =  project output- or intervention-related type of physical location or immaterial output- or intervention area": "name",
-        "Geodata Type": "geometry",
-        "IATI Category": "category",
-        "(IATI) Location Type Description (EN)": "description",
-    }
+            "KC-Theme / Sub-Sector": "subsector",
+            "physical or immaterial location type": "character",
+            "(IATI) Location Type Code": "code",
+            "(IATI) Location Type Name (EN) =  project output- or "
+            "intervention-related type of physical location or "
+            "immaterial output- or intervention area": "name",
+            "Geodata Type": "geometry",
+            "IATI Category": "category",
+            "(IATI) Location Type Description (EN)": "description",
+        }
     )
 
     # now test if all the codes in the template are in the reference
@@ -66,7 +72,9 @@ def test_fr_location_types():
     col_list = [
         "Thème /Sous-secteur",
         "type de site physique ou immatériel",
-        "(IITA) Nom du type de site (FR) = type de site physique ou de zone de production ou d’intervention immatérielle lié à la production ou à l’intervention du projet",
+        "(IITA) Nom du type de site (FR) = type de site physique ou de zone de "
+        "production ou d’intervention immatérielle lié à la production ou "
+        "à l’intervention du projet",
         "Type de données géographiques",
         "(IATI) Location Type Code",
     ]
@@ -76,13 +84,7 @@ def test_fr_location_types():
     )
     excel_df = excel_df.rename(
         columns={
-            "KC-Theme / Sub-Sector": "subsector",
-            "physical or immaterial location type": "character",
             "(IATI) Location Type Code": "code",
-            "(IATI) Location Type Name (EN) =  project output- or intervention-related type of physical location or immaterial output- or intervention area": "name",
-            "Geodata Type": "geometry",
-            "IATI Category": "category",
-            "(IATI) Location Type Description (EN)": "description",
         }
     )
 
