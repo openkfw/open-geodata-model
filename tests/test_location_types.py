@@ -14,9 +14,9 @@ def test_location_types():
     """
 
     # first load the external reference provided by IATI
-    file_path = "references/kfw_location_types.json"
+    file_path = "references/kfw_location_types.xlsx"
 
-    reference = pd.read_json(file_path)
+    reference = pd.read_excel(file_path)
 
     # now import the sector codes from the template
     excel_file_path = "Project_Location_Data_Template_V02.xlsx"
@@ -61,9 +61,9 @@ def test_fr_location_types():
     """
 
     # first load the external reference provided by IATI
-    file_path = "references/kfw_location_types.json"
+    file_path = "references/kfw_location_types.xlsx"
 
-    reference = pd.read_json(file_path)
+    reference = pd.read_excel(file_path)
 
     # now import the sector codes from the template
     excel_file_path = "Project_Location_Data_Template_V021_FR.xlsx"
