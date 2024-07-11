@@ -1,6 +1,6 @@
 # Notes on location types
 
-In this section, we will detail our approach to the location types that are available in the *open project location model*. The current reference of location types can be found [here](https://github.com/openkfw/open-geodata-model/blob/main/references/kfw_location_type.xlsx). So this section is most relevant to developers and maintainers of the open project location model. If you would like to know how to select the right location type in the excel template, please see directly [here](technical_notes.md##what-is-a-location-type).
+In this section, we will detail our approach to the location types that are available in the *open project location model*. The current reference of location types can be found [here](https://github.com/openkfw/open-geodata-model/blob/main/references/kfw_location_type.xlsx). So this section is most relevant to developers and maintainers of the open project location model. If you would like to know how to select the right location type in the excel template, please see directly [here](technical_notes.md#what-is-a-location-type).
 
 ## What is a Location Type?
 
