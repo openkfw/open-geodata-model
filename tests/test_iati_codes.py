@@ -14,7 +14,7 @@ def test_sector_codes():
     """
 
     # first load the external reference provided by IATI
-    file_path = "external/iati_sector_codes_v2_0_3.json"
+    file_path = "references/iati_sector_codes_v2_0_3.json"
 
     with open(file_path, encoding="utf-8") as f:
         full_data = json.load(f)
