@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Project Location Model",
+  "description": "This schema defines the structure of the project location model. It is used to validate the project location data provided by the KfW counterpart.",
+  "type": "object",
+  "properties": {
+	"uniqueId": {
+	  "type": "number",
+	  "description": "For new locations, this column will be empty. For updates, your KfW counterpart will provide you with a list of unique_id numbers in this file to ensure that updated location IDs match with the former ones."
+	},
+	"kfwProjectNoINPRO": {
+	  "type": "integer",
+	  "description": "Every project location in the FC Geodata Model must be assigned to its respective KfW project number, which is provided by KfW."
+	},
+	"projectAcronym": {
+	  "type": "string",
+	  "description": "Please enter the acronym used for the name/title of the project to be visible on your map."
+	},
+	"dataOwner": {
+	  "type": "string",
+	  "description": "Legal entity that owns the data provided here (= legal authorship)."
+	},
+	"publishingRestrictions": {
+	  "type": "string",
+	  "enum": ["yes", "no"],
+	  "description": "Indicates if this information is collected in fragile regions and should therefore be omitted from publicly available reports."
+	},
+	"dateOfDataCollection": {
+	  "type": "string",
+	  "format": "date",
+	  "description": "Date of data collection or latest update."
+	},
+	"projectSpecificLocationIdentifier": {
+	  "type": "string",
+	  "description": "If the location or activity has a project-specific identifier, it can be entered here."
+	},
+	"locationName": {
+	  "type": "string",
+	  "description": "Short name of the project site ideally containing a summary of the main project activity and the location name."
+	},
+	"locationActivityStatus": {
+	  "type": "string",
+	  "enum": ["NA", "active", "planned", "completed", "cancelled"],
+	  "description": "The location activity status according to the IATI standard."
+	},
+	"plannedOrActualStartDate": {
+	  "type": "string",
+	  "format": "date",
+	  "description": "Approximate planned or actual start date of implementation of activities on the ground."
+	},
+	"plannedOrActualEndDate": {
+	  "type": "string",
+	  "format": "date",
+	  "description": "Approximate planned or actual end date of activities on the ground."
+	},
+	"activityDescriptionGeneral": {
+	  "type": "string",
+	  "description": "A short description of the main project activity in this location."
+	},
+	"additionalActivityDescription": {
+	  "type": "string",
+	  "description": "Free text for additional location–specific information."
+	},
+	"kcThemeSubSector": {
+	  "type": "string",
+	  "description": "Sectoral / cross-sectoral location type preselection field."
+	},
+	"locationTypeName": {
+	  "type": "string",
+	  "description": "After selecting the KC Theme/Sub-Sector, please choose the most appropriate location type."
+	},
+	"alternativeLocationTypeName": {
+	  "type": "string",
+	  "description": "If you selected 'other physical' or 'other immaterial' in the column 'Location Type Name', please propose your own location type name."
+	},
+	"dac5PurposeClassificationCRSCode": {
+	  "type": "string",
+	  "description": "The DAC 5 Purpose Codes for the entire project."
+	},
+	"budgetShare": {
+	  "type": "number",
+	  "description": "The budget share allocated to this location in €."
+	},
+	"geographicExactness": {
+	  "type": "string",
+	  "enum": ["exact", "approximate"],
+	  "description": "Please use 'exact' if you know the geographically exact end destination of a financial flow."
+	},
+	"latitude": {
+	  "type": "number",
+      "minimum": -90,
+      "maximum": 90,
+	  "description": "Enter the Latitude measured with a GPS device."
+	},
+	"longitude": {
+	  "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+	  "description": "Enter the Longitude measured with a GPS device."
+	},
+	"relatedCommunityVillageNeighborhood": {
+	  "type": "string",
+	  "description": "You may enter a village, hamlet, or neighborhood name that relates to this location."
+	},
+	"filenameOfAdditionalGeoData": {
+	  "type": "string",
+	  "description": "Filename of the KML file where the associated geometry information is found."
+	},
+	"primaryKey": {
+	  "type": "number",
+	  "description": "This is only required if you provide additional geolocation information in another KML file."
+	}
+  },
+  "required": [
+	"kfwProjectNoINPRO",
+	"dataOwner",
+	"publishingRestrictions",
+	"locationName",
+	"plannedOrActualStartDate",
+	"plannedOrActualEndDate",
+	"activityDescriptionGeneral",
+	"kcThemeSubSector",
+	"locationTypeName",
+	"dac5PurposeClassificationCRSCode",
+	"geographicExactness",
+	"latitude",
+	"longitude"  ]
+}
