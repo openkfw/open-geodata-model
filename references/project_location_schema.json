@@ -8,6 +8,7 @@
 	  "type": "number",
 	  "description": "For new locations, this column will be empty. For updates, your KfW counterpart will provide you with a list of unique_id numbers in this file to ensure that updated location IDs match with the former ones."
 	},
+    
 	"kfwProjectNoINPRO": {
 	  "type": "integer",
 	  "description": "Every project location in the FC Geodata Model must be assigned to its respective KfW project number, which is provided by KfW."
@@ -40,7 +41,7 @@
 	},
 	"locationActivityStatus": {
 	  "type": "string",
-	  "enum": ["NA", "active", "planned", "completed", "cancelled"],
+	  "enum": ["NA", "Pipeline/identification", "Implementation", "Finalisation", "Closed", "Cancelled", "Suspended"],
 	  "description": "The location activity status according to the IATI standard."
 	},
 	"plannedOrActualStartDate": {
@@ -73,7 +74,7 @@
 	  "type": "string",
 	  "description": "If you selected 'other physical' or 'other immaterial' in the column 'Location Type Name', please propose your own location type name."
 	},
-	"dac5PurposeClassificationCRSCode": {
+	"dac5PurposeCode": {
 	  "type": "string",
 	  "description": "The DAC 5 Purpose Codes for the entire project."
 	},
@@ -121,7 +122,7 @@
 	"activityDescriptionGeneral",
 	"kcThemeSubSector",
 	"locationTypeName",
-	"dac5PurposeClassificationCRSCode",
+	"dac5PurposeCode",
 	"geographicExactness",
 	"latitude",
 	"longitude"  ]

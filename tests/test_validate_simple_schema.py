@@ -6,6 +6,9 @@ technical notes.
 
 import json
 from jsonschema import validate
+import pandas as pd
+from pprint import pprint
+
 
 def test_load_schema():
     """
@@ -26,7 +29,7 @@ def test_load_schema():
         "activityDescriptionGeneral": "Test Activity Description General",
         "kcThemeSubSector": "Test KC Theme Sub Sector",
         "locationTypeName": "Test Location Type Name",
-        "dac5PurposeClassificationCRSCode":"Test DAC5 Purpose Classification CRS Code",
+        "dac5PurposeCode": "Test DAC5 Purpose Classification CRS Code",
         "geographicExactness": "exact",
         "latitude": -5.353234,
         "longitude": 5.4543,
@@ -34,3 +37,63 @@ def test_load_schema():
 
     # now validate the test dict
     validate(instance=test_dict, schema=schema)
+
+
+def test_validate_excel():
+    """
+    Test that the schema can be loaded.
+    """
+    schema_name = "references/project_location_schema.json"
+    with open(schema_name) as f:
+        schema = json.load(f)
+
+    # now import the sector codes from the template
+    excel_file_path = "Project_Location_Data_Template_V02.xlsx"
+    worksheet_name = "fill-me"
+
+    excel_df = pd.read_excel(
+        excel_file_path,
+        sheet_name=worksheet_name,
+        dtype={
+            "DAC 5 Purpose Classification": str,
+            "DAC 3 Code": str,
+            "voluntary code": str,
+            "Planned or actual start date of activity at the location ": str,
+            "Planned or actual end date of activity at the location": str,
+            "Date of data collection or latest update": str,
+        },
+        skiprows=1,
+    )
+    excel_df = excel_df.rename(
+        columns={
+            "Abbreviation of project name (project acronym)": "projectAcronym",
+            "Activity-Description (general)": "activityDescriptionGeneral",
+            "Additional Activity-Description ": "additionalActivityDescription",
+            "Alternative Location Type Name": "alternativeLocationTypeName",
+            "Budget share": "budgetShare",
+            "DAC 5 Purpose Classification": "dac5PurposeCode",
+            "Data Owner (Institution Name)\n": "dataOwner",
+            "Date of data collection or latest update": "dateOfDataCollection",
+            "Filename of additional Geo-data submitted as KML (Lines/Polygons)": "filenameOfAdditionalGeoData",
+            "Geographic Exactness": "geographicExactness",
+            "KC Theme / Sub-Sector": "kcThemeSubSector",
+            "KfW Project -No.\n(INPRO)": "kfwProjectNoINPRO",
+            "Latitude": "latitude",
+            "Location Activity Status": "locationActivityStatus",
+            "Location Type Name": "locationTypeName",
+            "Location name": "locationName",
+            "Longitude": "longitude",
+            "Planned or actual end date of activity at the location": "plannedOrActualEndDate",
+            "Planned or actual start date of activity at the location ": "plannedOrActualStartDate",
+            "Primary Key (as provided in KML file)": "primaryKey",
+            "Project-specific location identifier": "projectSpecificLocationIdentifier",
+            "Publishing restrictions due to security reasons": "publishingRestrictions",
+            "Related Community / Village / Neighborhood": "relatedCommunity",
+            "Unique ID": "uniqueID",
+        }
+    )
+    # print(df.columns)
+    for _, row in excel_df.iterrows():
+        test_dict = row.dropna().to_dict()
+        pprint(test_dict)
+        validate(instance=test_dict, schema=schema)
