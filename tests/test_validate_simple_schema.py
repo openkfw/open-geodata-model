@@ -1,7 +1,7 @@
 """
 In this module we validate the simple schema of the template. 
-This is a very basic test to ensure that the template is in the correct format and in agreement with the 
-technical notes.
+This is a very basic test to ensure that the template is in the correct format and in agreement 
+with the technical notes.
 """
 
 import json
@@ -15,7 +15,7 @@ def test_load_schema():
     Test that the schema can be loaded.
     """
     schema_name = "references/project_location_schema.json"
-    with open(schema_name) as f:
+    with open(schema_name, encoding="utf-8") as f:
         schema = json.load(f)
 
     # create a test dict that could be validated via jsonschema
@@ -44,11 +44,11 @@ def test_validate_json():
     Test that we can use the schema to validate a json file.
     """
     schema_name = "references/project_location_schema.json"
-    with open(schema_name) as f:
+    with open(schema_name, encoding="utf-8") as f:
         schema = json.load(f)
 
     example_name = "tests/example_project_location.json"
-    with open(example_name) as f:
+    with open(example_name, encoding="utf-8") as f:
         example_json = json.load(f)
     validate(instance=example_json, schema=schema)
 
@@ -58,7 +58,7 @@ def test_validate_excel():
     Test that the schema can be loaded.
     """
     schema_name = "references/project_location_schema.json"
-    with open(schema_name) as f:
+    with open(schema_name, encoding="utf-8") as f:
         schema = json.load(f)
 
     # now import the sector codes from the template
@@ -88,7 +88,8 @@ def test_validate_excel():
             "DAC 5 Purpose Classification": "dac5PurposeCode",
             "Data Owner (Institution Name)\n": "dataOwner",
             "Date of data collection or latest update": "dateOfDataCollection",
-            "Filename of additional Geo-data submitted as KML (Lines/Polygons)": "filenameOfAdditionalGeoData",
+            "Filename of additional Geo-data submitted as"
+            " KML (Lines/Polygons)": "filenameOfAdditionalGeoData",
             "Geographic Exactness": "geographicExactness",
             "KC Theme / Sub-Sector": "kcThemeSubSector",
             "KfW Project -No.\n(INPRO)": "kfwProjectNoINPRO",
