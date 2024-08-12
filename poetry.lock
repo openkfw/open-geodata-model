@@ -930,6 +930,16 @@ MarkupSafe = ">=2.0"
 i18n = ["Babel (>=2.7)"]
 
 [[package]]
+name = "json-linter"
+version = "1.3.0"
+description = "Lint your JSON files!"
+optional = false
+python-versions = ">=3.10"
+files = [
+    {file = "json_linter-1.3.0-py3-none-any.whl", hash = "sha256:5af94acdc3e960e1b6963595065bbc2c97d1823900cdeb5562de6c34ec46eeb1"},
+]
+
+[[package]]
 name = "json5"
 version = "0.9.25"
 description = "A Python implementation of the JSON5 data format."
@@ -1871,8 +1881,8 @@ files = [
 [package.dependencies]
 numpy = [
     {version = ">=1.22.4", markers = "python_version < \"3.11\""},
-    {version = ">=1.23.2", markers = "python_version == \"3.11\""},
     {version = ">=1.26.0", markers = "python_version >= \"3.12\""},
+    {version = ">=1.23.2", markers = "python_version == \"3.11\""},
 ]
 python-dateutil = ">=2.8.2"
 pytz = ">=2020.1"
@@ -2108,8 +2118,8 @@ astroid = ">=3.2.4,<=3.3.0-dev0"
 colorama = {version = ">=0.4.5", markers = "sys_platform == \"win32\""}
 dill = [
     {version = ">=0.2", markers = "python_version < \"3.11\""},
-    {version = ">=0.3.6", markers = "python_version >= \"3.11\" and python_version < \"3.12\""},
     {version = ">=0.3.7", markers = "python_version >= \"3.12\""},
+    {version = ">=0.3.6", markers = "python_version >= \"3.11\" and python_version < \"3.12\""},
 ]
 isort = ">=4.2.5,<5.13.0 || >5.13.0,<6"
 mccabe = ">=0.6,<0.8"
@@ -3241,4 +3251,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "df831cd19e880a8d60301d84f9e99850bf4096359db6cf625aba535adfef2ca9"
+content-hash = "c1e704ec1b0efa4d56b4a535a4d6268a93d7fea3329458964aa9aa7677e2ea40"

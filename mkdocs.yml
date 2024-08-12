@@ -16,19 +16,19 @@ edit_uri: edit/main/docs/
 
 nav:
   - "index.md"
-  - "technical_notes.md"
+  - "Notes for using the Excel Template": technical_notes.md
   - "Overview of Templates and ToR": 
     - overview_templates_tor.md
     - "Sample ToR": sample_tor.md
     - "Sample Tor in FR": sample_tor_fr.md
     - "kobo_guide.md"
     - "sdg_icons.md"
-  - "faq.md"
-  - "location_type.md"
-  - "project_location_schema.md"
-  
+  - "For developers":
+    - "location_type.md"
+    - "Reference for the Project Location Model": project_location_schema.md  
   - Tutorials:
     - "Example: Excel Template to KML": tutorials/xls_to_kml.ipynb
+  - "faq.md"
 
 plugins:
   - mkdocs-jupyter

@@ -5,9 +5,9 @@ technical notes.
 """
 
 import json
-from jsonschema import validate, ValidationError
+
 import pandas as pd
-from pprint import pprint
+from jsonschema import ValidationError, validate
 
 
 def test_load_schema():
@@ -37,6 +37,20 @@ def test_load_schema():
 
     # now validate the test dict
     validate(instance=test_dict, schema=schema)
+
+
+def test_validate_json():
+    """
+    Test that we can use the schema to validate a json file.
+    """
+    schema_name = "references/project_location_schema.json"
+    with open(schema_name) as f:
+        schema = json.load(f)
+
+    example_name = "tests/example_project_location.json"
+    with open(example_name) as f:
+        example_json = json.load(f)
+    validate(instance=example_json, schema=schema)
 
 
 def test_validate_excel():
