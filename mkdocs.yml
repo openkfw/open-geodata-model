@@ -25,6 +25,7 @@ nav:
     - "sdg_icons.md"
   - "faq.md"
   - "location_type.md"
+  - "project_location_schema.md"
   
   - Tutorials:
     - "Example: Excel Template to KML": tutorials/xls_to_kml.ipynb

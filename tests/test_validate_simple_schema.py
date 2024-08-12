@@ -5,7 +5,7 @@ technical notes.
 """
 
 import json
-from jsonschema import validate
+from jsonschema import validate, ValidationError
 import pandas as pd
 from pprint import pprint
 
@@ -93,7 +93,13 @@ def test_validate_excel():
         }
     )
     # print(df.columns)
-    for _, row in excel_df.iterrows():
+    offset = 3
+    for index, row in excel_df.iterrows():
         test_dict = row.dropna().to_dict()
-        pprint(test_dict)
-        validate(instance=test_dict, schema=schema)
+        print("Row: ", index + offset)
+        try:
+            validate(instance=test_dict, schema=schema)
+            print(f"Row {index+offset} is valid")
+        except ValidationError as exc:
+            print(f"Error in row: {index+offset}")
+            print(exc.message)
