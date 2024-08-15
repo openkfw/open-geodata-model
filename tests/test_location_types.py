@@ -87,8 +87,8 @@ def test_fr_location_types():
         columns={
             "(IATI) Location Type Code": "code",
             "(IITA) Nom du type de site (FR) = type de site physique ou de zone de "
-        "production ou d’intervention immatérielle lié à la production ou "
-        "à l’intervention du projet": "name_fr",
+            "production ou d’intervention immatérielle lié à la production ou "
+            "à l’intervention du projet": "name_fr",
         }
     )
 
