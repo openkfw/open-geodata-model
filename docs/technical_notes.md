@@ -1,7 +1,7 @@
 # Technical Notes on the Project Location Model
 
-**Please Note**
-You can find the current version of the projection location template [here](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_V02.xlsx).
+**Please Note:**
+You can find the current version of the **projection location template [here](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_V02.xlsx)**.
 
 ## Mandatory and Non-Mandatory Fields
 
@@ -90,10 +90,10 @@ Table 1: The Project Location Model for Development Cooperation
 | M.| Additional activity description  | Text | No | Free text (in case you need to add other location–specific information like production volumes, progress values or a tag like “COVID-19”). Please consult your KfW counterpart if additional information is required. |
 | N.| KC Theme / Sub-Sector | Select Text | Yes | Sectoral / cross-sectoral location type preselection field, see table sheets "Location Types" & KC Themes. If there is no fit,  select "other physical or other immaterial and fill out the column "Alternative Location Type". |
 | O.| Location Type Name | Select Text     | Yes | After selecting the KC Theme/Sub-Sector, please choose the most appropriate location type from the table sheet "Location Types". If there is no suitable option, please select "other physical" or "other immaterial" and fill out the next column "Alternative Location Type”.|
-| P.| Alternative Location Type Name  | Text    | No | If you selected "other physical" or "other immaterial" in the column "Location Type Name", please propose your own location type name. This promotes systemic learning, allows us to identify additionally required location types, and will help us propose a comprehensive IATI standard extension in the future.|
+| P.| Alternative Location Type Name  | Text    | No | If you selected "other physical" or "other immaterial" in the column "Location Type Name", please propose your own location type name. This promotes systemic learning, allows us to identify additionally required location types, and will help us propose a comprehensive IATI standard extension in the future. |
 | Q.| DAC 5 Purpose Classification /CRS-Code   |Text  | Yes | The DAC 5 Purpose Codes (one to four) for the entire project have to be provided in the [project location data collection ToR](overview_templates_tor.md) or by your KfW counterpart, see notes above. |
 | R.| Budget share | Currency number in EUR    | No | The budget share allocated to this location in €. The sum of all locations in a project should add up to the budget sum in Inpro/PMT, including overheads. Please do not enter data from private entities/PEAs here!|
-| S.| Geographic exactness | Select Text | Yes | Please use "exact" if you know the geographically exact end destination of a financial flow and it is not an administrative unit, and if you do not face security restrictions to do so. If not, please use the respective type "approximate".|
+| S.| Geographic exactness | Select Text | Yes | Please use "exact" if you know the geographically exact end destination of a financial flow and it is not an administrative unit, and if you do not face security restrictions to do so. If not, please use the respective type "approximate (yet unknown)" or "approximate (security)" or "approximate (admin unit)" -> (see also chapter **Approximate locations** above). |
 | T.| Latitude | Decimal Number    | Yes | Enter the Latitude measured with a GPS device (or centroid for approximate locations). Make sure to use WGS 84 as the Coordinate Reference System (EPSG:4326). Enter Values with at least FIVE digits. Example: 50.12018514689011. |
 | U.| Longitude | Decimal Number    | Yes | Enter the Longitude measured with a GPS device (or centroid for approximate locations) here. Make sure to use WGS 84 as the Coordinate Reference System (EPSG:4326). Enter Values with at least FIVE digits. Example: 8.655474047059236  |
 | V.| Related Community / Village / Neighborhood | Decimal Number    | No | You may enter a village, hamlet, or neighborhood name that relates to this location. This can serve to manually add smaller community or administrative unit names not identified in existing global databases.|
