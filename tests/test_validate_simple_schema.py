@@ -9,6 +9,7 @@ import json
 import pandas as pd
 from jsonschema import ValidationError, validate
 
+from icecream import ic
 
 def test_load_schema():
     """
@@ -75,6 +76,7 @@ def test_validate_excel():
             "Planned or actual start date of activity at the location ": str,
             "Planned or actual end date of activity at the location": str,
             "Date of data collection or latest update": str,
+            "Project-specific location identifier": str,
         },
         skiprows=1,
     )
@@ -107,14 +109,25 @@ def test_validate_excel():
             "Unique ID": "uniqueID",
         }
     )
-    # print(df.columns)
     offset = 3
     for index, row in excel_df.iterrows():
         test_dict = row.dropna().to_dict()
-        print("Row: ", index + offset)
-        try:
-            validate(instance=test_dict, schema=schema)
-            print(f"Row {index+offset} is valid")
-        except ValidationError as exc:
-            print(f"Error in row: {index+offset}")
-            print(exc.message)
+        print("Test row: ", index + offset)
+        validate(instance=test_dict, schema=schema)
+
+
+def test_validate_csv():
+    """
+    Test that we can also import and validate an appropiate csv
+    """
+    schema_name = "references/project_location_schema.json"
+    with open(schema_name, encoding="utf-8") as f:
+        schema = json.load(f)
+
+    # now import the sector codes from the template
+    csv_file_path = "tests/example_project_location.csv"
+    csv_df = pd.read_csv(csv_file_path, dtype={"dac5PurposeCode": str})
+    for index, row in csv_df.iterrows():
+        test_dict = row.dropna().to_dict()
+        print("Test csv row: ", index)
+        validate(instance=test_dict, schema=schema)

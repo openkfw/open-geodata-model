@@ -39,7 +39,9 @@
             "description": "Please use 'exact' if you know the geographically exact end destination of a financial flow.",
             "enum": [
                 "exact",
-                "approximate"
+                "approximate (yet unknown)",
+                "approximate (security)",
+                "approximate (admin unit)"
             ],
             "type": "string"
         },
