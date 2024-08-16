@@ -12,7 +12,7 @@
 - **`dataOwner`** *(string, required)*: Legal entity that owns the data provided here (= legal authorship).
 - **`dateOfDataCollection`** *(string, format: date)*: Date of data collection or latest update.
 - **`filenameOfAdditionalGeoData`** *(string)*: Filename of the KML file where the associated geometry information is found.
-- **`geographicExactness`** *(string, required)*: Please use 'exact' if you know the geographically exact end destination of a financial flow. Must be one of: `["exact", "approximate"]`.
+- **`geographicExactness`** *(string, required)*: Please use 'exact' if you know the geographically exact end destination of a financial flow. Must be one of: `["exact", "approximate (yet unknown)", "approximate (security)", "approximate (admin unit)"]`.
 - **`kcThemeSubSector`** *(string, required)*: Sectoral / cross-sectoral location type preselection field.
 - **`kfwProjectNoINPRO`** *(integer, required)*: Every project location in the FC Geodata Model must be assigned to its respective KfW project number, which is provided by KfW.
 - **`latitude`** *(number, required)*: Enter the Latitude measured with a GPS device. Minimum: `-90`. Maximum: `90`.

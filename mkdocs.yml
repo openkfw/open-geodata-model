@@ -7,6 +7,7 @@ theme:
     - navigation.tracking
     - navigation.expand
     - navigation.footer
+    - navigation.indexes
     - toc.follow
     - toc.integrate
   custom_dir: overrides
@@ -18,14 +19,14 @@ nav:
   - "index.md"
   - "Notes for using the Excel Template": technical_notes.md
   - "Overview of Templates and ToR": 
-    - overview_templates_tor.md
-    - "Sample ToR": sample_tor.md
-    - "Sample Tor in FR": sample_tor_fr.md
-    - "kobo_guide.md"
-    - "sdg_icons.md"
+    - tor/index.md
+    - "Sample ToR": tor/sample_tor.md
+    - "Sample Tor in FR": tor/sample_tor_fr.md
+    - tor/kobo_guide.md
+    - sdg_icons.md
   - "For developers":
-    - "location_type.md"
-    - "Reference for the Project Location Model": project_location_schema.md  
+    - "Reference for the Project Location Model": dev/project_location_schema.md  
+    - dev/location_type.md
   - Tutorials:
     - "Example: Excel Template to KML": tutorials/xls_to_kml.ipynb
   - "faq.md"
