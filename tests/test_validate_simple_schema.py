@@ -7,9 +7,8 @@ with the technical notes.
 import json
 
 import pandas as pd
-from jsonschema import ValidationError, validate
+from jsonschema import validate
 
-from icecream import ic
 
 def test_load_schema():
     """
