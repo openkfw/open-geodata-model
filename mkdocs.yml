@@ -25,6 +25,7 @@ nav:
     - tor/kobo_guide.md
     - sdg_icons.md
   - "For developers":
+    - dev/index.md
     - "Reference for the Project Location Model": dev/project_location_schema.md  
     - dev/location_type.md
   - Tutorials:
