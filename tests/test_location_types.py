@@ -52,6 +52,7 @@ def test_location_types():
 
     # now test if all the codes in the template are in the reference
     assert reference["code"].equals(excel_df["code"])
+    assert reference["name"].equals(excel_df["name"])
 
 
 def test_fr_location_types():
@@ -85,11 +86,15 @@ def test_fr_location_types():
     excel_df = excel_df.rename(
         columns={
             "(IATI) Location Type Code": "code",
+            "(IITA) Nom du type de site (FR) = type de site physique ou de zone de "
+            "production ou d’intervention immatérielle lié à la production ou "
+            "à l’intervention du projet": "name_fr",
         }
     )
 
     # now test if all the codes in the template are in the reference
     assert reference["code"].equals(excel_df["code"])
+    assert reference["name_fr"].equals(excel_df["name_fr"])
 
 
 def test_fr_location_types_excel_ref():
