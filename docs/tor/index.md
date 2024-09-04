@@ -20,6 +20,6 @@ These amended ToR form the basis for filling out the Excel-Template by the PEA's
 
 **How to fill out the templates:**
 
-Please have a look at the [Technical Notes](technical_notes.md) on how to fill out the Excel Template (in English). You will find the same technical notes also in the table "READ-ME" in the Excel Template in the respective languages.
+Please have a look at the [Technical Notes](../technical_notes.md) on how to fill out the Excel Template (in English). You will find the same technical notes also in the table "READ-ME" in the Excel Template in the respective languages.
 
 In case you are interested in a training / Q&A session with a sufficient number of KfW partners and consultants (ideally for an entire country portfolio), or other more complex geodata-related requests, please contact us at [info@kfw-entwicklungsbank.de](mailto:info@kfw-entwicklungsbank.de) stating "RE: FZ_Geodata-Desk".

@@ -18,6 +18,11 @@ mkdocs-material = "^9.5.27"
 geopandas = "^1.0.0"
 mkdocs-jupyter = "^0.24.7"
 icecream = "^2.1.3"
+jsonschema = "^4.23.0"
+jsonschema2md = "^1.1.0"
+
+[tool.poetry.group.dev.dependencies]
+json-linter = "^1.3.0"
 
 [build-system]
 requires = ["poetry-core"]
