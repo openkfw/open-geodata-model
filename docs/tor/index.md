@@ -9,6 +9,8 @@ These amended ToR form the basis for filling out the Excel-Template by the PEA's
 **English versions:**
 
 - [Terms of Reference for Project Location Data Collection and Management as part of Project Reporting](sample_tor.md)
+- [JSON-Schema](../../schemas/1.0/): A good main-entrypoint is the [master_project_schema.json](../../schemas/1.0/master_project_schema.json). This File basically distingueshes which Schema should be used.
+  The [WDPA](../../schemas/1.0/wdpa_schema.json)- or [Project-Core](schemas/1.0/project_core_schema.json)-Schema.
 - [Projection Location Data Collection Excel Template EN](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_V02.xlsx)
 
 
