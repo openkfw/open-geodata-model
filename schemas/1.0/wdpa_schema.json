@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "stack://schemas/wdpa.schema",
+    "title": "WDPA Project Schema",
+    "type": "object",
+    "properties": {
+      "WDPA_id": { "type": "number" },
+      "IPLC_in_core_protected_area": { "type": "string" },
+      "resettlements_prior_or_during": { "type": "string" },
+      "realization_of_FPIC_prior_or_during": { "type": "string" },
+      "governance_of_territory": { "type": "string" },
+      "existence_GRM": { "type": "string" },
+      "known_human_rights_violations_prior_or_during": {"type": "string"}
+    },
+    "required": ["IPLC_in_core_protected_area", "resettlements_prior_or_during", "realization_of_FPIC_prior_or_during"],
+    "if": {
+        "not": {
+        "properties": { "WDPA_id": { "type": "number" } },
+        "required": ["WDPA_id"]
+        }
+    },
+    "then": {
+        "required": ["governance_of_territory"]
+    }
+  }
+  
+ 
