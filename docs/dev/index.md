@@ -14,9 +14,13 @@ JSON Schema can aid additional problems on versioning and translations in the fo
 
 ## The json schema
 
-We are a JSON schema to define the project location model. You might find the JSON schema in the `references` folder under `project_location_schema.json`. This schema serves as the single source of truth on the allowed fields of the project location model. It defines the structure, data types, and constraints for each field, ensuring consistency and correctness across different implementations. The json schema is then used in the following ways:
+We use a JSON schema to define the project location model. You find the JSON schema in the `references` folder under
+`project_location_schema.json`. This schema serves as the single source of truth on the allowed fields of the project
+location model. It defines the structure, data types, and constraints for each field, ensuring consistency and
+correctness across different implementations. The json schema is then used in the following ways:
 
-1. **Automated tests** We have started to write teststhat verify that different data files are conform with the schema. This includes examples files for xlsx, json and csv.
+1. **Automated tests** We have started to write tests that verify that different data files are conform with the schema.
+   This includes examples files for xlsx, json and csv.
 2. **Documentation** We use jsonschema2md to automatically generate the documentation of the model. This documentation can be found [here](project_location_schema.md).
 
 In the future, it can serve as the basis of:
