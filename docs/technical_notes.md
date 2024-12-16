@@ -3,6 +3,10 @@
 **Please Note:**
 You can find the current version of the **projection location template [here](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_V02.xlsx)**.
 
+## Contributing
+
+Please read [here](dev/getting_started.md)
+
 ## Mandatory and Non-Mandatory Fields
 
 When collecting data, there are certain mandatory fields that must be completed, as well as non-mandatory fields that can be used to gather additional site-specific information. It is important to check if there are any [*Terms of Reference (ToRs)*](tor/index.md) for this project location data collection that specify additional required fields. If there are no ToRs available, please consult with your KfW counterpart to determine which non-mandatory fields should be filled out.

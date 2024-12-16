@@ -3,6 +3,11 @@ comments: true
 ---
 
 # FAQs
+
+## What should I read before I contribute?
+
+Please read [this](dev/getting_started.md).
+
 ## Who can be contacted if I need help?
 For organizational and project-specific questions, please contact your KfW project counterpart. For technical questions and questions regarding more general aspects of the project location data collection model, we encourage you to create an account on GitHub and get in touch with us by creating an issue in our GitHub repository. We also appreciate your feedback and contributions via GitHub to help us improve our work!    
 
