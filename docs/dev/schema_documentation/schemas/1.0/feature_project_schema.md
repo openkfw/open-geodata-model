@@ -1,0 +1,116 @@
+# GeoJSON Feature
+
+*This schema is basically a wrapper around our properties to make it readable for GIS-Software*
+
+## Properties
+
+- **`type`** *(string, required)*: Must be one of: `["Feature"]`.
+- **`id`**
+    - **One of**
+        - *number*
+        - *string*
+- **`properties`**: Refer to *[stack://schemas/master_project.schema](#ack%3A//schemas/master_project.schema)*.
+- **`geometry`**
+    - **One of**
+        - *null*
+        - *object*
+            - **`type`** *(string, required)*: Must be one of: `["Point"]`.
+            - **`coordinates`** *(array, required)*: Length must be equal to 2.
+                - **Items**:
+                    - *number*: Minimum: `-180`. Maximum: `180`.
+                    - *number*: Minimum: `-90`. Maximum: `90`.
+            - **`bbox`** *(array)*: Length must be at least 4.
+                - **Items** *(number)*
+        - *object*
+            - **`type`** *(string, required)*: Must be one of: `["LineString"]`.
+            - **`coordinates`** *(array, required)*: Length must be at least 2.
+                - **Items** *(array)*: Length must be at least 2.
+                    - **Items** *(number)*
+            - **`bbox`** *(array)*: Length must be at least 4.
+                - **Items** *(number)*
+        - *object*
+            - **`type`** *(string, required)*: Must be one of: `["Polygon"]`.
+            - **`coordinates`** *(array, required)*
+                - **Items** *(array)*: Length must be at least 4.
+                    - **Items** *(array)*: Length must be at least 2.
+                        - **Items** *(number)*
+            - **`bbox`** *(array)*: Length must be at least 4.
+                - **Items** *(number)*
+        - *object*
+            - **`type`** *(string, required)*: Must be one of: `["MultiPoint"]`.
+            - **`coordinates`** *(array, required)*
+                - **Items** *(array)*: Length must be at least 2.
+                    - **Items** *(number)*
+            - **`bbox`** *(array)*: Length must be at least 4.
+                - **Items** *(number)*
+        - *object*
+            - **`type`** *(string, required)*: Must be one of: `["MultiLineString"]`.
+            - **`coordinates`** *(array, required)*
+                - **Items** *(array)*: Length must be at least 2.
+                    - **Items** *(array)*: Length must be at least 2.
+                        - **Items** *(number)*
+            - **`bbox`** *(array)*: Length must be at least 4.
+                - **Items** *(number)*
+        - *object*
+            - **`type`** *(string, required)*: Must be one of: `["MultiPolygon"]`.
+            - **`coordinates`** *(array, required)*
+                - **Items** *(array)*
+                    - **Items** *(array)*: Length must be at least 4.
+                        - **Items** *(array)*: Length must be at least 2.
+                            - **Items** *(number)*
+            - **`bbox`** *(array)*: Length must be at least 4.
+                - **Items** *(number)*
+        - *object*
+            - **`type`** *(string, required)*: Must be one of: `["GeometryCollection"]`.
+            - **`geometries`** *(array, required)*
+                - **Items**
+                    - **One of**
+                        - *object*
+                            - **`type`** *(string, required)*: Must be one of: `["Point"]`.
+                            - **`coordinates`** *(array, required)*: Length must be at least 2.
+                                - **Items** *(number)*
+                            - **`bbox`** *(array)*: Length must be at least 4.
+                                - **Items** *(number)*
+                        - *object*
+                            - **`type`** *(string, required)*: Must be one of: `["LineString"]`.
+                            - **`coordinates`** *(array, required)*: Length must be at least 2.
+                                - **Items** *(array)*: Length must be at least 2.
+                                    - **Items** *(number)*
+                            - **`bbox`** *(array)*: Length must be at least 4.
+                                - **Items** *(number)*
+                        - *object*
+                            - **`type`** *(string, required)*: Must be one of: `["Polygon"]`.
+                            - **`coordinates`** *(array, required)*
+                                - **Items** *(array)*: Length must be at least 4.
+                                    - **Items** *(array)*: Length must be at least 2.
+                                        - **Items** *(number)*
+                            - **`bbox`** *(array)*: Length must be at least 4.
+                                - **Items** *(number)*
+                        - *object*
+                            - **`type`** *(string, required)*: Must be one of: `["MultiPoint"]`.
+                            - **`coordinates`** *(array, required)*
+                                - **Items** *(array)*: Length must be at least 2.
+                                    - **Items** *(number)*
+                            - **`bbox`** *(array)*: Length must be at least 4.
+                                - **Items** *(number)*
+                        - *object*
+                            - **`type`** *(string, required)*: Must be one of: `["MultiLineString"]`.
+                            - **`coordinates`** *(array, required)*
+                                - **Items** *(array)*: Length must be at least 2.
+                                    - **Items** *(array)*: Length must be at least 2.
+                                        - **Items** *(number)*
+                            - **`bbox`** *(array)*: Length must be at least 4.
+                                - **Items** *(number)*
+                        - *object*
+                            - **`type`** *(string, required)*: Must be one of: `["MultiPolygon"]`.
+                            - **`coordinates`** *(array, required)*
+                                - **Items** *(array)*
+                                    - **Items** *(array)*: Length must be at least 4.
+                                        - **Items** *(array)*: Length must be at least 2.
+                                            - **Items** *(number)*
+                            - **`bbox`** *(array)*: Length must be at least 4.
+                                - **Items** *(number)*
+            - **`bbox`** *(array)*: Length must be at least 4.
+                - **Items** *(number)*
+- **`bbox`** *(array)*: Length must be at least 4.
+    - **Items** *(number)*
