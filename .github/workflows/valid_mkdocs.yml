@@ -18,7 +18,11 @@ jobs:
       - name: Install Dependencies
         run: |
           pipx install poetry
+          pipx install jsonschema2md
           poetry install
+      - name: |
+          cd docs
+          python3 createSchemaDoc.py
       - name: Test Website build
         run: |
           poetry run mkdocs build
