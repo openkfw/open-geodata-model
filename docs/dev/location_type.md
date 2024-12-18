@@ -29,18 +29,18 @@ We have extended the IATI location types to better meet the needs of FC projects
 
 In this section we summarize the availble attributes for the KfW location types.
 
-| **Name** |  **Mandatory**  | **Description** | **Part of IATI** |
-| --:| ---------:| ----------------:|----:|
-| code | Yes | The unique identifier for the location type. | Yes |
-| name | Yes | The name of the location type in english language. | Yes |
-| character | Yes | Describes if the location type describes a physical location, then it is to be set to `physical`, or an activity, then it is to be set to `immaterial`. | No |
-| geometry | Yes | Describes the allowed geometry of the location type. Can be only one of the three types `point`, `line` or `polygon`.  | No |
-| description | No | A description of the location type in english language. | Yes |
-| category | No | The category of the location type. It is equivalent to the US NGAs `feature class`. | Yes |
-| description_fr | No | The description of the location type in french language. | No |
-| subsector | No | The name of the subsector with which the location type is associated. Should be formulated in english.| No |
-| name_de | No | The name of the location type in german language. | No |
-| name_fr | No | The name of the location type in french language. | No |
+|       **Name** | **Mandatory** |                                                                                                                                         **Description** | **Part of IATI** |
+|---------------:|--------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------:|-----------------:|
+|           code |           Yes |                                                                                                            The unique identifier for the location type. |              Yes |
+|           name |           Yes |                                                                                                      The name of the location type in english language. |              Yes |
+|      character |           Yes | Describes if the location type describes a physical location, then it is to be set to `physical`, or an activity, then it is to be set to `immaterial`. |               No |
+|       geometry |           Yes |                                   Describes the allowed geometry of the location type. Can be only one of the three types `point`, `line` or `polygon`. |               No |
+|    description |            No |                                                                                                 A description of the location type in english language. |              Yes |
+|       category |            No |                                                                     The category of the location type. It is equivalent to the US NGAs `feature class`. |              Yes |
+| description_fr |            No |                                                                                                The description of the location type in french language. |               No |
+|      subsector |            No |                                                  The name of the subsector with which the location type is associated. Should be formulated in english. |               No |
+|        name_de |            No |                                                                                                       The name of the location type in german language. |               No |
+|        name_fr |            No |                                                                                                       The name of the location type in french language. |               No |
 
 ### On the link of location types and the templates
 
