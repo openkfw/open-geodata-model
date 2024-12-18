@@ -1,3 +1,4 @@
 *.DS_Store
 .cache
+open-geodata-model-package/node_modules
 *.pyc

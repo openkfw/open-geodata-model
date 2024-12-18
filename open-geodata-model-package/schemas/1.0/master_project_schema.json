@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "stack://schemas/master_project.schema",
+  "description": "This Schema is basically a decision between the WDPA-Schema and the project-core-Schema",
   "title": "Master Project Schema",
   "type": "object",
   "allOf": [

@@ -1,7 +1,8 @@
 {
-    "title": "GeoJSON Feature",
-    "$id": "stack://schemas/feature_project.schema",
-    "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GeoJSON Feature",
+  "$id": "stack://schemas/feature_project.schema",
+  "description": "This schema is basically a wrapper around our properties to make it readable for GIS-Software",
     "type": "object",
     "required": [
       "type",
