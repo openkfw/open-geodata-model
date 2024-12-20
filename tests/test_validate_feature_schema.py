@@ -4,22 +4,22 @@ from referencing import Registry
 
 
 # Load schemas
-with open("../open-geodata-model-package/references/feature_project_schema.json", "r") as feature_project_file:
+with open("references/feature_project_schema.json", "r", encoding="utf-8") as feature_project_file:
     feature_project_schema = json.load(feature_project_file)
 
-with open("../open-geodata-model-package/references/dac5_schema.json", "r") as dac5_file:
+with open("references/dac5_schema.json", "r", encoding="utf-8") as dac5_file:
     dac5_schema = json.load(dac5_file)
 
-with open("../open-geodata-model-package/references/project_core_schema.json", "r") as project_core_file:
+with open("references/project_core_schema.json", "r", encoding="utf-8") as project_core_file:
     project_core_schema = json.load(project_core_file)
 
-with open("../open-geodata-model-package/references/sector_location_schema.json", "r") as sector_location_file:
+with open("references/sector_location_schema.json", "r", encoding="utf-8") as sector_location_file:
     sector_location_schema = json.load(sector_location_file)
 
-with open("../open-geodata-model-package/references/wdpa_schema.json", "r") as wdpa_file:
+with open("references/wdpa_schema.json", "r", encoding="utf-8") as wdpa_file:
     wdpa_schema = json.load(wdpa_file)
 
-with open("../open-geodata-model-package/references/master_project_schema.json", "r") as master_file:
+with open("references/master_project_schema.json", "r", encoding="utf-8") as master_file:
     master_schema = json.load(master_file)
 
 # Create a registry and add schemas
@@ -132,6 +132,9 @@ test_cases = [
 
 # Run validation
 def validate_test_cases():
+    """
+    Tests to validate json files against feature project schema 
+    """
     for case in test_cases:
         try:
             validator.validate(instance=case)
