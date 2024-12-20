@@ -1,7 +1,7 @@
 import json
 from jsonschema import Draft7Validator, ValidationError
 from referencing import Registry
-from referencing.jsonschema import DRAFT7
+
 
 # Load schemas
 with open("../open-geodata-model-package/references/feature_project_schema.json", "r") as feature_project_file:
@@ -40,7 +40,11 @@ validator = Draft7Validator(schema=feature_project_schema, registry=registry)
 test_cases = [
     {
         "type":"Feature",
-        "geometry":{"type":"Point","coordinates":[74.598611,36.29333]},
+        "geometry":
+            {
+                "type": "Point",
+                "coordinates":  [74.598611,36.29333]
+            },
         "properties":
             {
                 "kfwProjectNoINPRO":"45157",
