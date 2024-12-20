@@ -1221,6 +1221,7 @@ test = ["jupyter-server (>=2.0.0)", "pytest (>=7.0)", "pytest-jupyter[server] (>
 [[package]]
 name = "jupyterlab"
 version = "4.3.4"
+
 description = "JupyterLab computational environment"
 optional = false
 python-versions = ">=3.8"
