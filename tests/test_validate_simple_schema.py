@@ -108,7 +108,7 @@ def test_validate_excel():
             "Unique ID": "uniqueID",
         }
     )
-    offset = 3
+    offset = 4
     for index, row in excel_df.iterrows():
         test_dict = row.dropna().to_dict()
         print("Test row: ", index + offset)
