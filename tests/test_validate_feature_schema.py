@@ -5,26 +5,28 @@ with the technical notes.
 """
 
 import json
+
 from jsonschema import Draft7Validator, ValidationError
 from referencing import Registry
 
 # Load schemas
-with open("references/feature_project_schema.json", "r", encoding="utf-8") as f_p_f:
+
+with open("open-geodata-model-package/schema/1.0/feature_project_schema.json", "r", encoding="utf-8") as f_p_f:
     feature_project_schema = json.load(f_p_f)
 
-with open("references/dac5_schema.json", "r", encoding="utf-8") as dac5_file:
+with open("open-geodata-model-package/schema/1.0/dac5_schema.json", "r", encoding="utf-8") as dac5_file:
     dac5_schema = json.load(dac5_file)
 
-with open("references/project_core_schema.json", "r", encoding="utf-8") as p_c_f:
+with open("open-geodata-model-package/schema/1.0/project_core_schema.json", "r", encoding="utf-8") as p_c_f:
     project_core_schema = json.load(p_c_f)
 
-with open("references/sector_location_schema.json", "r", encoding="utf-8") as s_l_f:
+with open("open-geodata-model-package/schema/1.0/sector_location_schema.json", "r", encoding="utf-8") as s_l_f:
     sector_location_schema = json.load(s_l_f)
 
-with open("references/wdpa_schema.json", "r", encoding="utf-8") as wdpa_file:
+with open("open-geodata-model-package/schema/1.0/wdpa_schema.json", "r", encoding="utf-8") as wdpa_file:
     wdpa_schema = json.load(wdpa_file)
 
-with open("references/master_project_schema.json", "r", encoding="utf-8") as m_f:
+with open("open-geodata-model-package/schema/1.0/master_project_schema.json", "r", encoding="utf-8") as m_f:
     master_schema = json.load(m_f)
 
 

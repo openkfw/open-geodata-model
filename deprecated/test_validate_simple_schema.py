@@ -6,7 +6,6 @@ with the technical notes.
 
 import json
 
-import pandas as pd
 from jsonschema import validate
 
 
@@ -14,7 +13,7 @@ def test_load_schema():
     """
     Test that the schema can be loaded.
     """
-    schema_name = "references/project_location_schema.json"
+    schema_name = "open-geodata-model-package/references/project_location_schema.json"
     with open(schema_name, encoding="utf-8") as f:
         schema = json.load(f)
 

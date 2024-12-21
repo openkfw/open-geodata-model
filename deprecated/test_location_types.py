@@ -14,7 +14,7 @@ def test_location_types():
     """
 
     # first load the external reference provided by IATI
-    file_path = "references/kfw_location_types.xlsx"
+    file_path = "open-geodata-model-package/references/kfw_location_types.xlsx"
 
     reference = pd.read_excel(file_path)
 
