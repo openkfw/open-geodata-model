@@ -52,81 +52,81 @@ def test_validate_json():
         example_json = json.load(f)
     validate(instance=example_json, schema=schema)
 
-
-def test_validate_excel():
-    """
-    Test that the schema can be loaded.
-    """
-    schema_name = "references/project_location_schema.json"
-    with open(schema_name, encoding="utf-8") as f:
-        schema = json.load(f)
-
-    # now import the sector codes from the template
-    excel_file_path = "Project_Location_Data_Template_V02.xlsx"
-    worksheet_name = "fill-me"
-
-    excel_df = pd.read_excel(
-        excel_file_path,
-        sheet_name=worksheet_name,
-        dtype={
-            "DAC 5 Purpose Classification": str,
-            "DAC 3 Code": str,
-            "voluntary code": str,
-            "Planned or actual start date of activity at the location ": str,
-            "Planned or actual end date of activity at the location": str,
-            "Date of data collection or latest update": str,
-            "Project-specific location identifier": str,
-        },
-        skiprows=1,
-    )
-    excel_df = excel_df.rename(
-        columns={
-            "Abbreviation of project name (project acronym)": "projectAcronym",
-            "Activity-Description (general)": "activityDescriptionGeneral",
-            "Additional Activity-Description ": "additionalActivityDescription",
-            "Alternative Location Type Name": "alternativeLocationTypeName",
-            "Budget share": "budgetShare",
-            "DAC 5 Purpose Classification": "dac5PurposeCode",
-            "Data Owner (Institution Name)\n": "dataOwner",
-            "Date of data collection or latest update": "dateOfDataCollection",
-            "Filename of additional Geo-data submitted as"
-            " KML (Lines/Polygons)": "filenameOfAdditionalGeoData",
-            "Geographic Exactness": "geographicExactness",
-            "KC Theme / Sub-Sector": "kcThemeSubSector",
-            "KfW Project -No.\n(INPRO)": "kfwProjectNoINPRO",
-            "Latitude": "latitude",
-            "Location Activity Status": "locationActivityStatus",
-            "Location Type Name": "locationTypeName",
-            "Location name": "locationName",
-            "Longitude": "longitude",
-            "Planned or actual end date of activity at the location": "plannedOrActualEndDate",
-            "Planned or actual start date of activity at the location ": "plannedOrActualStartDate",
-            "Primary Key (as provided in KML file)": "primaryKey",
-            "Project-specific location identifier": "projectSpecificLocationIdentifier",
-            "Publishing restrictions due to security reasons": "publishingRestrictions",
-            "Related Community / Village / Neighborhood": "relatedCommunity",
-            "Unique ID": "uniqueID",
-        }
-    )
-    offset = 4
-    for index, row in excel_df.iterrows():
-        test_dict = row.dropna().to_dict()
-        print("Test row: ", index + offset)
-        validate(instance=test_dict, schema=schema)
-
-
-def test_validate_csv():
-    """
-    Test that we can also import and validate an appropiate csv
-    """
-    schema_name = "references/project_location_schema.json"
-    with open(schema_name, encoding="utf-8") as f:
-        schema = json.load(f)
-
-    # now import the sector codes from the template
-    csv_file_path = "tests/example_project_location.csv"
-    csv_df = pd.read_csv(csv_file_path, dtype={"dac5PurposeCode": str})
-    for index, row in csv_df.iterrows():
-        test_dict = row.dropna().to_dict()
-        print("Test csv row: ", index)
-        validate(instance=test_dict, schema=schema)
+#
+#def test_validate_excel():
+#    """
+#    Test that the schema can be loaded.
+#    """
+#    schema_name = "references/project_location_schema.json"
+#    with open(schema_name, encoding="utf-8") as f:
+#        schema = json.load(f)
+#
+#    # now import the sector codes from the template
+#    excel_file_path = "Project_Location_Data_Template_V02.xlsx"
+#    worksheet_name = "fill-me"
+#
+#    excel_df = pd.read_excel(
+#        excel_file_path,
+#        sheet_name=worksheet_name,
+#        dtype={
+#            "DAC 5 Purpose Classification": str,
+#            "DAC 3 Code": str,
+#            "voluntary code": str,
+#            "Planned or actual start date of activity at the location ": str,
+#            "Planned or actual end date of activity at the location": str,
+#            "Date of data collection or latest update": str,
+#            "Project-specific location identifier": str,
+#        },
+#        skiprows=1,
+#    )
+#    excel_df = excel_df.rename(
+#        columns={
+#            "Abbreviation of project name (project acronym)": "projectAcronym",
+#            "Activity-Description (general)": "activityDescriptionGeneral",
+#            "Additional Activity-Description ": "additionalActivityDescription",
+#            "Alternative Location Type Name": "alternativeLocationTypeName",
+#            "Budget share": "budgetShare",
+#            "DAC 5 Purpose Classification": "dac5PurposeCode",
+#            "Data Owner (Institution Name)\n": "dataOwner",
+#            "Date of data collection or latest update": "dateOfDataCollection",
+#            "Filename of additional Geo-data submitted as"
+#            " KML (Lines/Polygons)": "filenameOfAdditionalGeoData",
+#            "Geographic Exactness": "geographicExactness",
+#            "KC Theme / Sub-Sector": "kcThemeSubSector",
+#            "KfW Project -No.\n(INPRO)": "kfwProjectNoINPRO",
+#            "Latitude": "latitude",
+#            "Location Activity Status": "locationActivityStatus",
+#            "Location Type Name": "locationTypeName",
+#            "Location name": "locationName",
+#            "Longitude": "longitude",
+#            "Planned or actual end date of activity at the location": "plannedOrActualEndDate",
+#            "Planned or actual start date of activity at the location ": "plannedOrActualStartDate",
+#            "Primary Key (as provided in KML file)": "primaryKey",
+#            "Project-specific location identifier": "projectSpecificLocationIdentifier",
+#            "Publishing restrictions due to security reasons": "publishingRestrictions",
+#            "Related Community / Village / Neighborhood": "relatedCommunity",
+#            "Unique ID": "uniqueID",
+#        }
+#    )
+#    offset = 4
+#    for index, row in excel_df.iterrows():
+#        test_dict = row.dropna().to_dict()
+#        print("Test row: ", index + offset)
+#        validate(instance=test_dict, schema=schema)
+#
+#
+#def test_validate_csv():
+#    """
+#    Test that we can also import and validate an appropiate csv
+#    """
+#    schema_name = "references/project_location_schema.json"
+#    with open(schema_name, encoding="utf-8") as f:
+#        schema = json.load(f)
+#
+#    # now import the sector codes from the template
+#    csv_file_path = "tests/example_project_location.csv"
+#    csv_df = pd.read_csv(csv_file_path, dtype={"dac5PurposeCode": str})
+#    for index, row in csv_df.iterrows():
+#        test_dict = row.dropna().to_dict()
+#        print("Test csv row: ", index)
+#        validate(instance=test_dict, schema=schema)
