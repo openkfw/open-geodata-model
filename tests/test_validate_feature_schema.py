@@ -45,7 +45,7 @@ def validate_test_cases():
 
 
     validator = Draft7Validator(schema=feature_project_schema, registry=registry)
-    
+
     test_cases = [
         {
             "type":"Feature",
@@ -146,3 +146,4 @@ def validate_test_cases():
             print("Validation passed.")
         except ValidationError as e:
             print("Validation failed:", e.message)
+            
