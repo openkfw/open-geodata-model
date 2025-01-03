@@ -22,7 +22,6 @@ with open("references/sector_location_schema.json", "r", encoding="utf-8") as s_
     sector_location_schema = json.load(s_l_f)
 
 
-
 def test_validate_test_cases():
     """
     Tests to validate json files against feature project schema
@@ -118,4 +117,3 @@ def test_validate_test_cases():
             print("Validation passed.")
         except ValidationError as e:
             print("Validation failed:", e.message)
-            
