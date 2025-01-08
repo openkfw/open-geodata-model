@@ -3,11 +3,6 @@
     "$id": "stack://schemas/sector_location_type.schema",
     "description": "Categorical Sector and Location Type pairs which are referenced in the Project Core Schema.",
     "type": "object",
-    "properties": {
-      "sector": { "type": "string" },
-      "location_type": { "type": "string" }
-    },
-    "required": ["sector", "location_type"],
     "enum": [
       { "sector": "_Generic / Cross_Sectoral", "location_type": "building(s)"},
       { "sector": "_Generic / Cross_Sectoral", "location_type": "common / public community area"},
@@ -192,7 +187,7 @@
       { "sector": "Terrestrial_Natural_Resources_Protection", "location_type": "corridor / ecosystem connectivity"},
       { "sector": "Terrestrial_Natural_Resources_Protection", "location_type": "deforestation (area)"},
       { "sector": "Terrestrial_Natural_Resources_Protection", "location_type": "forest station"},
-      { "sector": "Terrestrial_Natural_Resources_Protection", "location_type": "forest(s)"},
+      { "sector": "Terrestrial_Natural_Resources_Protection", "location_type": "forest(s)" },
       { "sector": "Terrestrial_Natural_Resources_Protection", "location_type": "glacier(s)"},
       { "sector": "Terrestrial_Natural_Resources_Protection", "location_type": "grassland"},
       { "sector": "Terrestrial_Natural_Resources_Protection", "location_type": "habitat or species management area (IUCN Cat IV)"},
@@ -263,4 +258,3 @@
       { "sector": "Water_Management", "location_type": "water resources protection area"}
     ]
   }
-  
