@@ -5,6 +5,7 @@ description = "Open Geodata Model for Mapping Project Sites in ODA"
 authors = ["Your Name <you@example.com>"]
 license = "Apache"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
