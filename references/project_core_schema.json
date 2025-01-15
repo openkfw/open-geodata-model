@@ -51,7 +51,7 @@
         },
         "sector_location": {
             "description": "Sectoral / cross-sectoral location type preselection field. / most appropriate location type",
-            "$ref": "stack://schemas/sector_location_type2.schema"   
+            "$ref": "stack://schemas/sector_location_type.schema"   
         },
         "kfwProjectNoINPRO": {
             "description": "Every project location in the FC Geodata Model must be assigned to its respective KfW project number, which is provided by KfW.",

@@ -20,7 +20,7 @@ with open("references/project_core_schema.json", "r", encoding="utf-8") as p_c_f
     project_core_schema = json.load(p_c_f)
 
 with open(
-    "references/generated_sector_location_schema.json", "r", encoding="utf-8"
+    "references/sector_location_schema.json", "r", encoding="utf-8"
 ) as s_l_f:
     sector_location_schema = json.load(s_l_f)
 
