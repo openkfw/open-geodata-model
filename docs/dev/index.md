@@ -14,19 +14,19 @@ JSON Schema can aid additional problems on versioning and translations in the fo
 
 ## The json schema
 
-We are a JSON schema to define the project location model. You might find the JSON schema in the `references` folder under `project_location_schema.json`. This schema serves as the single source of truth on the allowed fields of the project location model. It defines the structure, data types, and constraints for each field, ensuring consistency and correctness across different implementations. The json schema is then used in the following ways:
+We are a JSON schema to define the project location model. You might find the JSON schema in the `references` folder under `feature_project_schema.json`. This schema serves as the single source of truth on the allowed fields of the project location model. It defines the structure, data types, and constraints for each field, ensuring consistency and correctness across different implementations. The json schema is then used in the following ways:
 
 1. **Automated tests** We have started to write teststhat verify that different data files are conform with the schema. This includes examples files for xlsx, json and csv.
-2. **Documentation** We use jsonschema2md to automatically generate the documentation of the model. This documentation can be found [here](project_location_schema.md).
+2. **Documentation** We use jsonschema2md to automatically generate the documentation of the model. This documentation can be found [here](feature_project_schema.md).
 
 In the future, it can serve as the basis of:
 
 - **Data validation**: The schema can be used to validate data files, ensuring that they conform to the expected structure and constraints. This helps catch errors early and maintain data quality.
 - **Conversion tools**: The schema can be used to generate conversion tools that transform data between different formats while preserving the integrity of the underlying data model. This can facilitate interoperability between systems that use different data representations.
 
-### On the relationship between between templates and the schema
+### On the relationship between templates and the schema
 
-The schema is the single source of truth for the project location model. The schema serves as the foundation for the templates, which are specific instantiations of the model tailored to different use cases. The templates are derived from the schema and provide a user-friendly interface for interacting with the model. They define the fields, labels, and constraints that users see and interact with, while the schema enforces the underlying data model. Different examples are:
+The schema is the single source of truth for the project location model. The schema serves as the foundation for the templates, which are specific instantiations of the model tailored to different use cases. The templates are derived from the schema and provide a user-friendly interface for interacting with the model. They define the fields, labels, and constraints that users see and interact with, while the schema enforces the underlying data model. The filled templates get transformed into the json-format with a unique transformation-script, to then be validated against our schema. Different examples are:
 
 - **The english excel template**: This template is a specific instantiation of the project location model tailored for English-speaking users. It includes the fields, labels, and constraints defined in the schema, presented in an Excel format for easy data entry and manipulation.
 - **The french excel template**: This template is another instantiation of the project location model tailored for French-speaking users. It follows the same structure and constraints as the English template but provides translations and labels in French.
@@ -44,9 +44,9 @@ classDiagram
     class ODKLocationTemplate
 
 
-    ProjectLocationSchema --|> EnglishLocationTemplate
-    ProjectLocationSchema --|> FrenchLocationTemplate
-    ProjectLocationSchema --|> ODKLocationTemplate
+    EnglishLocationTemplate --|> ProjectLocationSchema
+    FrenchLocationTemplate --|> ProjectLocationSchema
+    ODKLocationTemplate --|> ProjectLocationSchema
 ```
 
 ## Location types

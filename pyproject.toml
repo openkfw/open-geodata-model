@@ -5,6 +5,7 @@ description = "Open Geodata Model for Mapping Project Sites in ODA"
 authors = ["Your Name <you@example.com>"]
 license = "Apache"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -20,6 +21,7 @@ mkdocs-jupyter = "^0.24.7"
 icecream = "^2.1.3"
 jsonschema = "^4.23.0"
 jsonschema2md = "^1.1.0"
+referencing = "^0.35.1"
 
 [tool.poetry.group.dev.dependencies]
 json-linter = "^1.3.0"
