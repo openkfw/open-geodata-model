@@ -68,7 +68,7 @@ def test_fr_location_types():
 
     # now import the sector codes from the template
     excel_file_path = "Project_Location_Data_Template_V021_FR.xlsx"
-    worksheet_name = "Location Types IATI and New"
+    worksheet_name = "Types_localisation_IATI and New"
 
     col_list = [
         "Thème /Sous-secteur",
@@ -110,7 +110,7 @@ def test_fr_location_types_excel_ref():
 
     # now import the sector codes from the template
     excel_file_path = "Project_Location_Data_Template_V021_FR.xlsx"
-    worksheet_name = "Location Types IATI and New"
+    worksheet_name = "Types_localisation_IATI and New"
 
     col_list = [
         "Thème /Sous-secteur",
