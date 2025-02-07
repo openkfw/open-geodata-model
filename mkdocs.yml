@@ -26,7 +26,8 @@ nav:
     - sdg_icons.md
   - "For developers":
     - dev/index.md
-    - "Reference for the Project Location Model": dev/project_location_schema.md  
+    - dev/feature_project_schema.md
+    - dev/project_core_schema.md
     - dev/location_type.md
   - Tutorials:
     - "Example: Excel Template to KML": tutorials/xls_to_kml.ipynb
