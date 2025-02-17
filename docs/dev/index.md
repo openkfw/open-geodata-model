@@ -16,8 +16,29 @@ JSON Schema can aid additional problems on versioning and translations in the fo
 
 We are a number of JSON schemas to define the project location model. You might find the JSON schemas in the `references` folder under `feature_project_schema.json`. They serve as the reference on the allowed fields of the project location model. They defines the structure, data types, and constraints for each field, ensuring consistency and correctness across different implementations. They are then used in the following ways:
 
-1. **Automated tests** We have started to write tests that verify that different data files are conform with the schema. This includes examples files for xlsx, json and csv.
-2. **Documentation** We use jsonschema2md to automatically generate the documentation of the model. This documentation can be found [here](feature_project_schema.md).
+### **Automated tests** 
+We have started to write tests that verify that different data files are conform with the schema. This includes examples files for xlsx, json and csv in python.
+The tests will executed by the github-pipeline [validation_tests.yml](../../.github/workflows/validation_tests.yml)
+The tests are in the [test-folder](../../tests)
+Run the tests by executing the following steps from the root directory of this project:
+```bash
+pipx install poetry
+poetry install
+poetry run pylint tests
+poetry run black --check tests
+```
+### **Documentation** 
+We use [json-schema-for-humans](https://pypi.org/project/json-schema-for-humans/) to automatically generate the documentation of the model. This documentation can be found [here](feature_project_schema.md).
+The documentation will be created automatically by the [build_website.yml](../../.github/workflows/build_website.yml).
+Building the documentation locally run the following steps from the root directory of this project:
+```bash
+generate-schema-doc --config template_name=md references/dac5_schema.json docs/dev/
+generate-schema-doc --config template_name=md references/sector_location_schema.json docs/dev/
+generate-schema-doc --config template_name=md references/feature_project_schema.json docs/dev/
+generate-schema-doc --config template_name=md references/project_core_schema.json docs/dev/
+generate-schema-doc --config template_name=md references/generated_sector_location_schema.json docs/dev/
+```
+The local documentation will be written under the [docs/dev-folder](./)
 
 In the future, it can serve as the basis of:
 
