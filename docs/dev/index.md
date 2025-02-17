@@ -18,8 +18,8 @@ We are a number of JSON schemas to define the project location model. You might 
 
 ### **Automated tests** 
 We have started to write tests that verify that different data files are conform with the schema. This includes examples files for xlsx, json and csv in python.
-The tests will executed by the github-pipeline [validation_tests.yml](../../.github/workflows/validation_tests.yml)
-The tests are in the [test-folder](../../tests)
+The tests will executed by the github-pipeline [validation_tests.yml](https://github.com/openkfw/open-geodata-model/blob/main/.github/workflows/validation_tests.yml)
+The tests are in the [test-folder](https://github.com/openkfw/open-geodata-model/tree/main/tests)
 Run the tests by executing the following steps from the root directory of this project:
 ```bash
 pipx install poetry
@@ -29,7 +29,7 @@ poetry run black --check tests
 ```
 ### **Documentation** 
 We use [json-schema-for-humans](https://pypi.org/project/json-schema-for-humans/) to automatically generate the documentation of the model. This documentation can be found [here](feature_project_schema.md).
-The documentation will be created automatically by the [build_website.yml](../../.github/workflows/build_website.yml).
+The documentation will be created automatically by the [build_website.yml](https://github.com/openkfw/open-geodata-model/blob/main/.github/workflows/build_website.yml).
 Building the documentation locally run the following steps from the root directory of this project:
 ```bash
 generate-schema-doc --config template_name=md references/dac5_schema.json docs/dev/
@@ -38,7 +38,7 @@ generate-schema-doc --config template_name=md references/feature_project_schema.
 generate-schema-doc --config template_name=md references/project_core_schema.json docs/dev/
 generate-schema-doc --config template_name=md references/generated_sector_location_schema.json docs/dev/
 ```
-The local documentation will be written under the [docs/dev-folder](./)
+The local documentation will be written under the [docs/dev-folder](https://github.com/openkfw/open-geodata-model/tree/main/docs/dev)
 
 In the future, it can serve as the basis of:
 
