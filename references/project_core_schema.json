@@ -50,7 +50,7 @@
             "type": "string"
         },
         "sector_location": {
-            "description": "Sectoral / cross-sectoral location type preselection field. / most appropriate location type",
+            "description": "Sectoral / cross-sectoral location type preselection field. / most appropriate location type. This area isn't rendered correctly. Please look at the [sector_location_schema-doc](sector_location_schema.md) or [sector_location_schema-definition](https://github.com/openkfw/open-geodata-model/tree/main/references/sector_location_schema.json) directly",
             "$ref": "sector_location_schema.json"
         },
         "kfwProjectNoINPRO": {
