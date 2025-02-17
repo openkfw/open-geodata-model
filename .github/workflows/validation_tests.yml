@@ -3,7 +3,7 @@ name: Validation tests
 on:
   push:
     branches:
-        - main
+        - 2025-02-10-devdocs
   pull_request:
     branches:
         - main
