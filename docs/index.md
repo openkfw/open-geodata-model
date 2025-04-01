@@ -9,7 +9,7 @@ The Project Location Model is a data model to systematically collect location-sp
 
 !!! note
 
-    You can find the current version of the projection location data collection template [here](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_V02.xlsx).
+    You can find the current version of the projection location data collection template [here](https://openkfw.github.io/open-geodata-model/tor/).
 
 ## For what purpose do you collect this information?
 German Financial Cooperation uses structured geo-information to process project location datasets that help us report on the relevance, progress and impacts of our portfolio. We do geospatial analysis and create portfolio maps for the German Federal Ministry for Economic Cooperation and Development (BMZ) and the German public who finances our joint projects with their taxpayer money. Your cooperation will ultimately help us to justify and leverage financial funds for international development.
