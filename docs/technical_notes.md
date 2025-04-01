@@ -1,48 +1,56 @@
 # Technical Notes on the Project Location Model
 
-**Please Note:**
-You can find the current version of the **projection location template [here](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_V02.xlsx)**.
+!!! note
 
+    You can find the current version of the projection location data collection template [here](https://openkfw.github.io/open-geodata-model/tor/).
+
+<!---
 ## Mandatory and Non-Mandatory Fields
-
 When collecting data, there are certain mandatory fields that must be completed, as well as non-mandatory fields that can be used to gather additional site-specific information. It is important to check if there are any [*Terms of Reference (ToRs)*](tor/index.md) for this project location data collection that specify additional required fields. If there are no ToRs available, please consult with your KfW counterpart to determine which non-mandatory fields should be filled out.
+-->
 
 ## What is a project location?
-
-**A project location may comprise one or more features that are part of a financially supported activity where it is not feasible to make any further geographical distinctions regarding funding.** For instance, a financially supported hospital in a specific location is an example of a single-feature project location. Another example of a project location with multiple features is a group of adjacent agricultural plots that are being financed under an irrigation plan that benefits all producers in that area. Additionally, a set of protected areas that are jointly financed from a fund is another example, provided that it is not possible to make any further geographical distinctions regarding the allocation of funds to specific areas. However, if discrimination is possible, data for multiple project locations (such as protected areas) and their financial allocation must be collected. KfW strongly encourages increasing the geographical discrimination of financial flows to specific project locations to the maximum extent possible, as this enhances aid transparency and financial accountability.
+**A project location is a set of one or more features that are part of a financially supported activity where it is not feasible to make any further geographical distinctions regarding funding.** For instance, a financially supported hospital at a specific location is an example of a single-feature project location. Another example of a project location with multiple features is a group of adjacent agricultural plots that are being financed under an irrigation plan that benefits all producers in that area. Additionally, a set of protected areas that are jointly financed from a fund is another example, provided that it is not possible to make any further geographical distinctions regarding the allocation of funds to specific areas. However, if discrimination is possible, data for multiple project locations (such as protected areas) and their financial allocation must be collected. KfW strongly encourages increasing the geographical discrimination of financial flows to specific project locations to the maximum extent possible, as this enhances transparency and financial accountability.
 
 
 ## Exact locations and how to collect them
-A project location can be either exact or approximate[^1]. The exact location refers to the geographical endpoint of an international development assistance financial flow. If you already know the exact location coordinates, you may indicate them as "exact" locations. The Excel Template enables you to collect single location points, such as a power plant site, or a larger number of project sites and features, such as 300 locations of buildings in different sectors within the framework of a decentralization project using Latitude and Longitude Coordinates. Additionally, project sites with larger areas and more complex geometries, such as polygons of forest protection areas, or linear location types like roads or railways, are also supported but must be submitted in an extra file in KML format.
+In the sense of the IATI standard, a project location can be either exact or approximate. The exact location refers to the geographical endpoint of an international development assistance financial flow. If you already know the exact location coordinates, you may indicate them as "exact" locations. The Excel template enables you to collect single location points such as a power plant site or also a larger number of project sites and features such as 300 locations of buildings in different sectors within the framework of a decentralization project using latitude and longitude coordinates. Additionally, project sites with larger areas and more complex geometries such as polygons of forest protection areas or linear location types like roads or railways are also supported but have to be submitted using an extra file in KML format.
 
-'Exact[^1] locations' can have three different geometry types:
+Exact locations can have three different geometry types:
 
-1.  **Point** geometries (e.g., a well or a hospital)
+1.  **Point** geometrie, e.g. a well or a hospital.
 
-2.  **Line** geometries (e.g., a road or transmission line)
+2.  **Line** geometries, e.g. a road or transmission line.
 
-3.  **Polygon** geometries (e.g., a protected area or agricultural plots)
+3.  **Polygon** geometries, e.g. a protected area or agricultural plots.
 
-Regardless of the geometry type, all project locations should initially be collected as a point location in the Excel Template. This point can represent the location itself or a gateway to the project site, regardless of the actual feature geometry (i.e., also for lines and polygons). The gateway point could be, for example, the beginning of a road, a village adjacent to agricultural plots, or the administration building of a protected area. If there is a line or polygon geometry and no gateway/entry point can be defined, the geometrical center (centroid) may also be used.
-[^1]: in the sense of the IATI- Standard
+<!---
+Regardless of the geometry type, all project locations should initially be collected as a point location within the Excel template. This point can represent the location itself or a gateway to the project site, regardless of the actual feature geometry (i.e., also for lines and polygons). The gateway point could be, for example, the beginning of a road, a village adjacent to agricultural plots, or the administration building of a protected area. If there is a line or polygon geometry and no gateway/entry point can be defined, the geometrical center (centroid) may also be used.
+--->
 
-**All coordinates in Excel must be collected using WGS 84 (EPSG 4326) as the coordinate reference system[^3]**. WGS 84 is the standard for web mapping applications. Geo-coordinates have to be provided in the decimal place format 00.00000 in the "Latitude" and "Longitude" columns (using at least 5 digits after the separator).
+**All coordinates in Excel must be collected using WGS 84 (EPSG 4326) as the coordinate reference system[^3]** which is the standard for web mapping applications. Geo-coordinates have to be provided with an accuracy of at least 5 digits at the "Latitude" or "Longitude".
 [^3]: World Geodetic System 1984 (https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84\)
 
-**If you have line or polygon geometries**, you must use both the Excel template to store all relevant metadata for each location and an additional KML file to store the associated geometries for each location. The Excel file contains two columns that will enable us to link the geometries with the metadata in Excel. These columns are called "Filename of additional Geo-data submitted as KML" and "Primary Key (As provided in the KML file)". The first column should contain the filename of the KML file that you send to KfW, for example "00345_Ouagadougou.kml". The second column should contain a "primary key" that must also be present in the attribute table of your KML file and links the geometry to the metadata in Excel. You must name the column "primary key" in KML as well. Use whole numbers (integers) to construct the primary key. In Excel, you may also provide a "gateway point" (for details, see the section "Geometrical characteristics of exact locations"). This point can help us verify whether the link between the information in KML and Excel is correct. You must submit all locations for your project in a single KML file.
-We highly encourage you to check the data before submission in GIS software, such as QGIS or Google Earth Pro. This will reduce the need to go back and forth between the responsible KfW counterparts and the project staff.
+If you have line or polygon geometries, you must use both the Excel template to store all relevant metadata for each location and an additional KML file to store the associated geometries for each location. The Excel file contains two columns that will enable us to link Excel and KML. These columns are: 
+
+- *Filename of additional Geo-data submitted as KML*: This column should contain the filename of the KML file that you send to KfW, for example "00345_Ouagadougou.kml". 
+
+- *Primary Key (As provided in the KML file)*: That column should contain a "primary key" that must also be present in the attribute table of your KML file and links the geometry to the metadata in Excel. So, you have to name the column Primary Key in KML as well. Use integers to construct the primary key.
+
+In Excel, you may also provide a "gateway point" (for details, see the section *Geometrical characteristics of exact locations*). This point can help us verify whether the link between the information in KML and Excel is correct. You must submit all locations for your project in a single KML file. We highly encourage you to check the data before submission using a GIS software such as QGIS or Google Earth Pro. This will reduce the need to go back and forth between the responsible KfW counterparts and the project staff.
 [^2]: KML (KMZ) is an open XML Standard for Points, Lines and Shapes. Officially named the OpenGIS KML Encoding Standard (OGC KML). It is maintained by the Open Geospatial Consortium, Inc. (OGC). Other Geoformats (e.g., Shapefiles or Geojson) can usually be converted to KML in Standard Geographic Information System (GIS) Software such as ArcGIS or QGIS.
 
 ## Approximate locations
+The approximate location option should be selected if one or more of the following circumstances apply:
 
-The approximate location option [^1] should be selected if one or more of the following circumstances apply:
-1. **An exact project location has not (yet) been specified or is not yet known** (e.g., the exact project locations have not yet been determined) -> then choose the option: *approximate (yet unknown)*.
+1. An exact project location has not (yet) been specified or is not yet known, e.g. the exact project locations have not yet been determined. In that case choose the option *approximate (yet unknown)*.
 
-2. **An exact project location is not to be collected or communicated due to security reasons** (e.g., in a conflict zone) -> then choose the option: *approximate (security)*.
+2. An exact project location is not to be collected or communicated due to security reasons, e.g. in a conflict zone. In that case choose the option *approximate (security)*.
 
-3. **The target location(s) is/are one or more administrative units**, such as a district, a province, or the entire country or group of countries (e.g., an entire country for a Policy-Based-Lending project or a number of districts in a country for a decentralization project) -> then choose the option: *approximate (admin unit)*.
+3. The target location(s) is/are one or more administrative units such as a district, a province or the entire country or even a group of countries. Examples might be an entire country for a Policy-Based-Lending project or a number of districts in a country for a decentralization project. In that case choose the option *approximate (admin unit)*.
    
-In the case of security risks (e.g., conflict zones), we strongly recommend only publishing approximate locations! Approximate locations can be given using either point or polygon data. You may use administrative areas from existing databases, for example.
+In the case of security risks (e.g. conflict zones), we strongly recommend only publishing approximate locations! Approximate locations can be given using either point or polygon data. E.g. you may use administrative areas from existing databases. 
+
 ## Figures
 <figure markdown>
   ![Figure 1](images/Figure1.png)
@@ -50,24 +58,21 @@ In the case of security risks (e.g., conflict zones), we strongly recommend only
 </figure>
 
 ## What is a Location Type?
+Even though this template closely follows the IATI standard, we have created additional location types to cover all financial cooperation project types. This enables the aggregation of information among multiple location types. If you cannot find a specific location type, please use the most similar location type, such as *well* for an *extraction well*. You can then add additional information on the location type within  *additional location types* if necessary. For more detailled technical information about the location types, please refer to the [location type reference](dev/location_type.md).
 
-This template closely follows the International Aid Transparency Initiative (IATI) standard, but we have created additional location types to cover all Financial Cooperation project types. This enables the aggregation of information among multiple location types. If you cannot find a specific location type, please use the most similar location type, such as "well" for an "extraction well". You can then add additional information on the location type, such as "extraction well", under "additional location types", if necessary. For more detailled technical information about the location types, please refer to the [location type reference](dev/location_type.md).
+Our new location type list includes the IATI location types that are useful for International Development, as well as additional location types for all sectors that were missing in the existing IATI list. We have created 197 new project location types, including *immaterial* ones like *Capacity Development/Training* or *Voucher Schemes*, that cannot be plotted according to any physical feature on a map but can be defined by the area covered by them. Therefore, we have also adapted the definition of *location type* as *project output- or intervention-related type of physical location or immaterial output- or intervention-area*. Please refer to the list of location types in the Excel template for more information.
 
-Our new location type list includes the IATI location types that are useful for International Development, as well as additional location types for all sectors that were missing in the existing IATI list. We have created 197 new project location types, including "immaterial" ones like Capacity Development/Training or Voucher Schemes, that cannot be plotted according to any physical feature on a map but can be defined by the area covered by them. Therefore, we have also adapted the definition of "location type" as "project output- or intervention-related type of physical location or immaterial output- or intervention area". Please refer to the list of Location Types in the Excel Template for more information.
-
-After preselecting the KC Theme/Sub-Sector, please choose the most appropriate location type from the table sheet "Location Types". If there is no suitable option, please select "other physical" or "other immaterial" and fill out the next column "Alternative Location Type". If you need or want to mention two different location types (e.g., school and capacity development) at the same GPS coordinate, you may create two separate rows for these location types with different activity descriptions and DAC/CRS codes at the same GPS coordinates.
-**Please note that the preselection column "KC Theme/Sub-Sector" is only intended to help you quickly find the correct location type name.** It will not be saved in the system and does not replace the DAC5 Purpose Classification/CRS-Code assignment below, which effectively assigns the correct subsector to each location.
+After preselecting the *KC Theme/Sub-Sector*, please choose the most appropriate location type from the table sheet *Location Types*. If there is no suitable option, please select *other physical* or *other immaterial* and fill out the next column *Alternative Location Type*. If you need or want to mention two different location types (e.g. school and capacity development) at the same GPS coordinate, you may create two separate rows for these location types with different activity descriptions and DAC/CRS codes at the same GPS coordinates.
+**Please note that the preselection column "KC Theme/Sub-Sector" is only intended to help you quickly find the correct location type name.** It does not replace the DAC5 Purpose Classification/CRS-Code assignment below which effectively assigns the correct subsector to each location.
 
 ## DAC 5 Purpose Classification/CRS-Code
-
 The one to four five-digit DAC 5 Purpose Codes for the entire project must be provided by your KfW counterpart (ideally in the project location data collection ToR, see samples [here](tor/index.md)). If there is more than one code for the project, you must assign the correct code to each location. For example, in a decentralization project, the construction of primary school locations should be assigned to the respective Basic Education DAC 5-Code, while road rehabilitation sites within the same project should be assigned to the respective Transport DAC 5-Code.
-
 
 If your project contains locations that contribute not only to one but two, three, or four DAC/CRS-Codes, please create two, three, or four separate rows with the same GPS coordinates but different DAC/CRS-Codes, and potentially different location types and activity descriptions.
 If all codes must be assigned to all locations, please create a new row for each location, with the only difference being the DAC 5 Purpose Classification. For the complete list of codes, please refer to the table sheet "DAC Purpose Codes" of the Excel Template, which are validated against the official [sector IATI codes](https://iatistandard.org/en/iati-standard/203/codelists/sector/).
 
-## Privacy, confidentiality, and publication
-The Excel Template must be submitted without containing any personal data or any data that could be linked to individual persons, such as houses of private households. Please note that KfW does not publish any exact coordinates of its project locations. Location data collection in fragile and conflict contexts should be treated with extra diligence.
+## Privacy, confidentiality and publication
+The Excel template must be submitted without containing any personal data or any data that could be linked to individual persons such as houses of private households. Please note that KfW does not publish any exact coordinates of its project locations. Location data collection in fragile and conflict contexts should be treated with extra diligence.
 
 ## The Project Location Model
 
