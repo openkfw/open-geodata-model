@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "stack://schemas/project_core.schema",
+    "$id": "project_core_schema.json",
     "description": "This schema defines the structure of the project location model. It is used to validate the project location data provided by the KfW counterpart.",
     "properties": {
         "schemeVersion": {
@@ -24,7 +24,7 @@
         },
         "dac5PurposeCode": {
             "description": "The DAC 5 Purpose Codes for the entire project.",
-            "$ref": "stack://schemas/dac5.schema"
+            "$ref": "dac5_schema.json"
         },
         "dataOwner": {
             "description": "Legal entity that owns the data provided here (= legal authorship).",
@@ -50,8 +50,8 @@
             "type": "string"
         },
         "sector_location": {
-            "description": "Sectoral / cross-sectoral location type preselection field. / most appropriate location type",
-            "$ref": "stack://schemas/sector_location_type.schema"   
+            "description": "Sectoral / cross-sectoral location type preselection field. / most appropriate location type. This area isn't rendered correctly. Please look at the [sector_location_schema-doc](sector_location_schema.md) or [sector_location_schema-definition](https://github.com/openkfw/open-geodata-model/tree/main/references/sector_location_schema.json) directly",
+            "$ref": "sector_location_schema.json"
         },
         "kfwProjectNoINPRO": {
             "description": "Every project location in the FC Geodata Model must be assigned to its respective KfW project number, which is provided by KfW.",
