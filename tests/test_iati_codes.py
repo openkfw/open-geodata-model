@@ -30,7 +30,7 @@ def test_sector_codes():
             iati_codes.append(sector["code"])
 
     # now import the sector codes from the template
-    excel_file_path = "Project_Location_Data_Template_V02.xlsx"
+    excel_file_path = "Project_Location_Data_Template_EN_V03.xlsx"
     worksheet_name = "DAC Purpose Codes"
 
     df = pd.read_excel(

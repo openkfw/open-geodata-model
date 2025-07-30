@@ -19,7 +19,7 @@ def test_location_types():
     reference = pd.read_excel(file_path)
 
     # now import the sector codes from the template
-    excel_file_path = "Project_Location_Data_Template_V02.xlsx"
+    excel_file_path = "Project_Location_Data_Template_EN_V03.xlsx"
     worksheet_name = "Location Types IATI and New"
 
     col_list = [
@@ -67,7 +67,7 @@ def test_fr_location_types():
     reference = pd.read_excel(file_path)
 
     # now import the sector codes from the template
-    excel_file_path = "Project_Location_Data_Template_V021_FR.xlsx"
+    excel_file_path = "Project_Location_Data_Template_FR_V03.xlsx"
     worksheet_name = "Types_localisation_IATI and New"
 
     col_list = [
@@ -109,7 +109,7 @@ def test_fr_location_types_excel_ref():
     reference = pd.read_excel(file_path)
 
     # now import the sector codes from the template
-    excel_file_path = "Project_Location_Data_Template_V021_FR.xlsx"
+    excel_file_path = "Project_Location_Data_Template_FR_V03.xlsx"
     worksheet_name = "Types_localisation_IATI and New"
 
     col_list = [
