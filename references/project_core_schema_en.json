@@ -67,7 +67,7 @@
                 "Closed",
                 "Cancelled",
                 "Suspended",
-		"Other"
+                "Other"
             ],
             "type": "string"
         },
@@ -99,7 +99,7 @@
         "publishingRestrictions": {
             "description": "Indicates if this information is collected in fragile regions and should therefore be omitted from publicly available reports.",
             "enum": [
-                "yes",
+                "yes ",
                 "no"
             ],
             "type": "string"
