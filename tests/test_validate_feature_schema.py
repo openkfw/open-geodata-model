@@ -43,7 +43,6 @@ def test_validate_test_cases():
     )
 
     validator_en = Draft7Validator(schema=feature_project_schema, registry=registry_en)
-    
 
     test_cases = [
         {
