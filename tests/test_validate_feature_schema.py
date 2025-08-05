@@ -28,6 +28,7 @@ with open("references/project_core_schema_fr.json", "r", encoding="utf-8") as p_
 with open("references/sector_location_schema_fr.json", "r", encoding="utf-8") as s_l_f:
     sector_location_schema_fr = json.load(s_l_f)
 
+
 def test_validate_test_cases():
     """
     Tests to validate json files against feature project schema
@@ -167,7 +168,7 @@ def test_validate_excel():
             "dateOfDataCollection": str,
             "projectSpecificLocationIdentifier": str,
             "kfwProjectNoINPRO": str,
-            "uniqueId": str
+            "uniqueId": str,
         },
         skiprows=2,
     )
@@ -241,7 +242,7 @@ def test_validate_excel():
             "dateOfDataCollection": str,
             "projectSpecificLocationIdentifier": str,
             "kfwProjectNoINPRO": str,
-            "uniqueId": str
+            "uniqueId": str,
         },
         skiprows=2,
     )
