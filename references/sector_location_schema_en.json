@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "sector_location_type.schema",
+  "$id": "sector_location_schema_en.json",
   "description": "Categorical Sector and Location Type pairs which are referenced in the Project Core Schema.",
   "type": "object",
   "enum": [

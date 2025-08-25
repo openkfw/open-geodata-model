@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "sector_location_type.schema",
+  "$id": "sector_location_schema_fr.json",
   "description": "Version française des paires de secteur catégorique et de type de localisation qui sont référencées dans le schéma de base du projet.",
   "type": "object",
   "enum": [
