@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="test_data" id="test_data">
+	<SimpleField name="KfW Project -No.
+(INPRO)" type="float"></SimpleField>
+	<SimpleField name="Project-specific location identifier" type="float"></SimpleField>
+	<SimpleField name="Location name" type="string"></SimpleField>
+	<SimpleField name="Author of the Data 
+(=the legal owner)" type="string"></SimpleField>
+	<SimpleField name="Publishing restrictions due to security reasons" type="float"></SimpleField>
+	<SimpleField name="Date of data collection or latest update" type="float"></SimpleField>
+	<SimpleField name="Location Activity Status" type="float"></SimpleField>
+	<SimpleField name="Planned or actual start date of activity at the location " type="float"></SimpleField>
+	<SimpleField name="Activity-Description (general)" type="float"></SimpleField>
+	<SimpleField name="Additional Activity-Description " type="float"></SimpleField>
+	<SimpleField name="Location Type IATI" type="string"></SimpleField>
+	<SimpleField name="Alternative Location Type " type="float"></SimpleField>
+	<SimpleField name="DAC 5 Purpose Classification" type="float"></SimpleField>
+	<SimpleField name="Geographic Exactness" type="float"></SimpleField>
+	<SimpleField name="Latitude" type="float"></SimpleField>
+	<SimpleField name="Longitude" type="float"></SimpleField>
+	<SimpleField name="Related Community / Village / Neighborhood" type="float"></SimpleField>
+	<SimpleField name="Additional Geo-data submitted as KML (Lines/Polygons)" type="float"></SimpleField>
+	<SimpleField name="GADM GID" type="float"></SimpleField>
+	<SimpleField name="GID Level" type="float"></SimpleField>
+	<SimpleField name="GADM version" type="float"></SimpleField>
+	<SimpleField name="unique_id" type="string"></SimpleField>
+</Schema>
+<Folder><name>test_data</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#test_data">
+		<SimpleData name="Location name">School 1</SimpleData>
+		<SimpleData name="Author of the Data 
+(=the legal owner)">Freddy Fred</SimpleData>
+		<SimpleData name="Location Type IATI">other </SimpleData>
+		<SimpleData name="Latitude">50.12057</SimpleData>
+		<SimpleData name="Longitude">8.6566</SimpleData>
+		<SimpleData name="unique_id">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.6566,50.12057</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#test_data">
+		<SimpleData name="Location name">School 2</SimpleData>
+		<SimpleData name="Author of the Data 
+(=the legal owner)">Freddy Fred</SimpleData>
+		<SimpleData name="Latitude">28.56464</SimpleData>
+		<SimpleData name="Longitude">77.15487</SimpleData>
+		<SimpleData name="unique_id">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>77.15487,28.56464</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

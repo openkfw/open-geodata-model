@@ -1,0 +1,6858 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../project_core_schema_en/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>GeoJSON Feature - Open Project Location Model</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#geojson-feature" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Open Project Location Model" class="md-header__button md-logo" aria-label="Open Project Location Model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Project Location Model
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GeoJSON Feature
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/openkfw/open-geodata-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Open Project Location Model" class="md-nav__button md-logo" aria-label="Open Project Location Model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Project Location Model
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/openkfw/open-geodata-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes for using the Excel Template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tor/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Overview of Templates and ToR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Overview of Templates and ToR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tor/sample_tor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample ToR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tor/sample_tor_fr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample Tor in FR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tor/kobo_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using KoboToolbox for Geographical Data Collection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sdg_icons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Location Icons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    For developers
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GeoJSON Feature
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    GeoJSON Feature
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-property-geojson-feature-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Property GeoJSON Feature &gt; type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-property-geojson-feature-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Property GeoJSON Feature &gt; id
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Property GeoJSON Feature > id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-property-geojson-feature-id-oneof-item-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Property GeoJSON Feature &gt; id &gt; oneOf &gt; item 0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-property-geojson-feature-id-oneof-item-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Property GeoJSON Feature &gt; id &gt; oneOf &gt; item 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-property-geojson-feature-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Property GeoJSON Feature &gt; properties
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-property-geojson-feature-geometry" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Property GeoJSON Feature &gt; geometry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Property GeoJSON Feature > geometry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-property-geojson-feature-geometry-oneof-item-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; item 0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-property-geojson-feature-geometry-oneof-geojson-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2. Property GeoJSON Feature > geometry > oneOf > GeoJSON Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-property-geojson-feature-geometry-oneof-geojson-point-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-property-geojson-feature-geometry-oneof-geojson-point-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2.2. Property GeoJSON Feature > geometry > oneOf > GeoJSON Point > coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4221-geojson-feature-geometry-oneof-geojson-point-coordinates-coordinates-item-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; coordinates &gt; coordinates item 0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4222-geojson-feature-geometry-oneof-geojson-point-coordinates-coordinates-item-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.2.2. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; coordinates &gt; coordinates item 1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423-property-geojson-feature-geometry-oneof-geojson-point-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; bbox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2.3. Property GeoJSON Feature > geometry > oneOf > GeoJSON Point > bbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4231-geojson-feature-geometry-oneof-geojson-point-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-property-geojson-feature-geometry-oneof-geojson-linestring" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. Property GeoJSON Feature > geometry > oneOf > GeoJSON LineString">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431-property-geojson-feature-geometry-oneof-geojson-linestring-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-property-geojson-feature-geometry-oneof-geojson-linestring-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3.2. Property GeoJSON Feature > geometry > oneOf > GeoJSON LineString > coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4321-geojson-feature-geometry-oneof-geojson-linestring-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3.2.1. GeoJSON Feature > geometry > oneOf > GeoJSON LineString > coordinates > coordinates items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#43211-geojson-feature-geometry-oneof-geojson-linestring-coordinates-coordinates-items-coordinates-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items &gt; coordinates items items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433-property-geojson-feature-geometry-oneof-geojson-linestring-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; bbox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3.3. Property GeoJSON Feature > geometry > oneOf > GeoJSON LineString > bbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4331-geojson-feature-geometry-oneof-geojson-linestring-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-property-geojson-feature-geometry-oneof-geojson-polygon" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4. Property GeoJSON Feature > geometry > oneOf > GeoJSON Polygon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#441-property-geojson-feature-geometry-oneof-geojson-polygon-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#442-property-geojson-feature-geometry-oneof-geojson-polygon-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4.2. Property GeoJSON Feature > geometry > oneOf > GeoJSON Polygon > coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4421-geojson-feature-geometry-oneof-geojson-polygon-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4.2.1. GeoJSON Feature > geometry > oneOf > GeoJSON Polygon > coordinates > coordinates items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#44211-geojson-feature-geometry-oneof-geojson-polygon-coordinates-coordinates-items-coordinates-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#442111-geojson-feature-geometry-oneof-geojson-polygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#443-property-geojson-feature-geometry-oneof-geojson-polygon-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; bbox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4.3. Property GeoJSON Feature > geometry > oneOf > GeoJSON Polygon > bbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4431-geojson-feature-geometry-oneof-geojson-polygon-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-property-geojson-feature-geometry-oneof-geojson-multipoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5. Property GeoJSON Feature > geometry > oneOf > GeoJSON MultiPoint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#451-property-geojson-feature-geometry-oneof-geojson-multipoint-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#452-property-geojson-feature-geometry-oneof-geojson-multipoint-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5.2. Property GeoJSON Feature > geometry > oneOf > GeoJSON MultiPoint > coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4521-geojson-feature-geometry-oneof-geojson-multipoint-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5.2.1. GeoJSON Feature > geometry > oneOf > GeoJSON MultiPoint > coordinates > coordinates items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#45211-geojson-feature-geometry-oneof-geojson-multipoint-coordinates-coordinates-items-coordinates-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items &gt; coordinates items items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#453-property-geojson-feature-geometry-oneof-geojson-multipoint-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5.3. Property GeoJSON Feature > geometry > oneOf > GeoJSON MultiPoint > bbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4531-geojson-feature-geometry-oneof-geojson-multipoint-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-property-geojson-feature-geometry-oneof-geojson-multilinestring" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6. Property GeoJSON Feature > geometry > oneOf > GeoJSON MultiLineString">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#461-property-geojson-feature-geometry-oneof-geojson-multilinestring-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#462-property-geojson-feature-geometry-oneof-geojson-multilinestring-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6.2. Property GeoJSON Feature > geometry > oneOf > GeoJSON MultiLineString > coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4621-geojson-feature-geometry-oneof-geojson-multilinestring-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6.2.1. GeoJSON Feature > geometry > oneOf > GeoJSON MultiLineString > coordinates > coordinates items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#46211-geojson-feature-geometry-oneof-geojson-multilinestring-coordinates-coordinates-items-coordinates-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#462111-geojson-feature-geometry-oneof-geojson-multilinestring-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#463-property-geojson-feature-geometry-oneof-geojson-multilinestring-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6.3. Property GeoJSON Feature > geometry > oneOf > GeoJSON MultiLineString > bbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4631-geojson-feature-geometry-oneof-geojson-multilinestring-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-property-geojson-feature-geometry-oneof-geojson-multipolygon" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.7. Property GeoJSON Feature > geometry > oneOf > GeoJSON MultiPolygon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#471-property-geojson-feature-geometry-oneof-geojson-multipolygon-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#472-property-geojson-feature-geometry-oneof-geojson-multipolygon-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.7.2. Property GeoJSON Feature > geometry > oneOf > GeoJSON MultiPolygon > coordinates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4721-geojson-feature-geometry-oneof-geojson-multipolygon-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.7.2.1. GeoJSON Feature > geometry > oneOf > GeoJSON MultiPolygon > coordinates > coordinates items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#47211-geojson-feature-geometry-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#472111-geojson-feature-geometry-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4721111-geojson-feature-geometry-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items-coordinates-items-items-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.2.1.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items &gt; coordinates items items items items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#473-property-geojson-feature-geometry-oneof-geojson-multipolygon-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.7.3. Property GeoJSON Feature > geometry > oneOf > GeoJSON MultiPolygon > bbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4731-geojson-feature-geometry-oneof-geojson-multipolygon-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.7.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48-property-geojson-feature-geometry-oneof-geojson-geometrycollection" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.8. Property GeoJSON Feature > geometry > oneOf > GeoJSON GeometryCollection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#481-property-geojson-feature-geometry-oneof-geojson-geometrycollection-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.8.2. Property GeoJSON Feature > geometry > oneOf > GeoJSON GeometryCollection > geometries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4821-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.8.2.1. GeoJSON Feature > geometry > oneOf > GeoJSON GeometryCollection > geometries > geometries items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#48211-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482111-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.1.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482112-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.1.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821121-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.1.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482113-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.1.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; bbox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821131-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.1.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48212-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482121-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.2.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482122-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.2.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821221-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.2.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48212211-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-coordinates-coordinates-items-coordinates-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.2.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items &gt; coordinates items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482123-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.2.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; bbox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821231-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.2.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48213-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482131-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.3.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482132-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.3.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821321-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.3.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48213211-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-coordinates-coordinates-items-coordinates-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.3.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482132111-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.3.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482133-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.3.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; bbox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821331-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.3.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48214-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.4. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482141-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.4.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482142-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.4.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821421-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.4.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48214211-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-coordinates-coordinates-items-coordinates-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.4.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items &gt; coordinates items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482143-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.4.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821431-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.4.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48215-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.5. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482151-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.5.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482152-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.5.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821521-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.5.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48215211-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-coordinates-coordinates-items-coordinates-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.5.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482152111-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.5.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482153-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.5.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821531-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.5.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48216-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.6. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482161-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.6.1. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; type
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482162-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.6.2. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821621-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-coordinates-coordinates-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.6.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#48216211-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.6.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482162111-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.6.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821621111-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items-coordinates-items-items-items-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.6.2.1.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items &gt; coordinates items items items items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482163-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.6.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4821631-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.2.1.6.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#483-property-geojson-feature-geometry-oneof-geojson-geometrycollection-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.3. Property GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; bbox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.8.3. Property GeoJSON Feature > geometry > oneOf > GeoJSON GeometryCollection > bbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4831-geojson-feature-geometry-oneof-geojson-geometrycollection-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.8.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-property-geojson-feature-bbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Property GeoJSON Feature &gt; bbox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Property GeoJSON Feature > bbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-geojson-feature-bbox-bbox-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. GeoJSON Feature &gt; bbox &gt; bbox items
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_core_schema_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Location Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_core_schema_fr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle de Localisation des Projets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dac5_schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DAC 5 Purpose Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/xls_to_kml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geodata template to KML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="geojson-feature">GeoJSON Feature</h1>
+<ul>
+<li><a href="#type">1. Property <code>GeoJSON Feature &gt; type</code></a></li>
+<li><a href="#id">2. Property <code>GeoJSON Feature &gt; id</code></a></li>
+<li><a href="#id_oneOf_i0">2.1. Property <code>GeoJSON Feature &gt; id &gt; oneOf &gt; item 0</code></a></li>
+<li><a href="#id_oneOf_i1">2.2. Property <code>GeoJSON Feature &gt; id &gt; oneOf &gt; item 1</code></a></li>
+<li><a href="#properties">3. Property <code>GeoJSON Feature &gt; properties</code></a></li>
+<li><a href="#geometry">4. Property <code>GeoJSON Feature &gt; geometry</code></a></li>
+<li><a href="#geometry_oneOf_i0">4.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; item 0</code></a></li>
+<li><a href="#geometry_oneOf_i1">4.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point</code></a><ul>
+<li><a href="#geometry_oneOf_i1_type">4.2.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i1_coordinates">4.2.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; coordinates</code></a></li>
+<li><a href="#autogenerated_heading_2">4.2.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; coordinates &gt; coordinates item 0</a></li>
+<li><a href="#autogenerated_heading_3">4.2.2.2. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; coordinates &gt; coordinates item 1</a></li>
+<li><a href="#geometry_oneOf_i1_bbox">4.2.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; bbox</code></a></li>
+<li><a href="#geometry_oneOf_i1_bbox_items">4.2.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i2">4.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString</code></a><ul>
+<li><a href="#geometry_oneOf_i2_type">4.3.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i2_coordinates">4.3.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; coordinates</code></a></li>
+<li><a href="#geometry_oneOf_i2_coordinates_items">4.3.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items</a><ul>
+<li><a href="#geometry_oneOf_i2_coordinates_items_items">4.3.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items &gt; coordinates items items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i2_bbox">4.3.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; bbox</code></a></li>
+<li><a href="#geometry_oneOf_i2_bbox_items">4.3.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i3">4.4. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon</code></a><ul>
+<li><a href="#geometry_oneOf_i3_type">4.4.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i3_coordinates">4.4.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates</code></a></li>
+<li><a href="#geometry_oneOf_i3_coordinates_items">4.4.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items</a><ul>
+<li><a href="#geometry_oneOf_i3_coordinates_items_items">4.4.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items</a></li>
+<li><a href="#geometry_oneOf_i3_coordinates_items_items_items">4.4.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i3_bbox">4.4.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; bbox</code></a></li>
+<li><a href="#geometry_oneOf_i3_bbox_items">4.4.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i4">4.5. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint</code></a><ul>
+<li><a href="#geometry_oneOf_i4_type">4.5.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i4_coordinates">4.5.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates</code></a></li>
+<li><a href="#geometry_oneOf_i4_coordinates_items">4.5.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items</a><ul>
+<li><a href="#geometry_oneOf_i4_coordinates_items_items">4.5.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items &gt; coordinates items items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i4_bbox">4.5.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox</code></a></li>
+<li><a href="#geometry_oneOf_i4_bbox_items">4.5.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i5">4.6. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString</code></a><ul>
+<li><a href="#geometry_oneOf_i5_type">4.6.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i5_coordinates">4.6.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates</code></a></li>
+<li><a href="#geometry_oneOf_i5_coordinates_items">4.6.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items</a><ul>
+<li><a href="#geometry_oneOf_i5_coordinates_items_items">4.6.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items</a></li>
+<li><a href="#geometry_oneOf_i5_coordinates_items_items_items">4.6.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i5_bbox">4.6.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox</code></a></li>
+<li><a href="#geometry_oneOf_i5_bbox_items">4.6.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i6">4.7. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon</code></a><ul>
+<li><a href="#geometry_oneOf_i6_type">4.7.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i6_coordinates">4.7.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates</code></a></li>
+<li><a href="#geometry_oneOf_i6_coordinates_items">4.7.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items</a><ul>
+<li><a href="#geometry_oneOf_i6_coordinates_items_items">4.7.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items</a></li>
+<li><a href="#geometry_oneOf_i6_coordinates_items_items_items">4.7.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</a><ul>
+<li><a href="#geometry_oneOf_i6_coordinates_items_items_items_items">4.7.2.1.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items &gt; coordinates items items items items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i6_bbox">4.7.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox</code></a></li>
+<li><a href="#geometry_oneOf_i6_bbox_items">4.7.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7">4.8. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection</code></a><ul>
+<li><a href="#geometry_oneOf_i7_type">4.8.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries">4.8.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items">4.8.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items</a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i0">4.8.2.1.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i0_type">4.8.2.1.1.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i0_coordinates">4.8.2.1.1.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; coordinates</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i0_coordinates_items">4.8.2.1.1.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; coordinates &gt; coordinates items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i0_bbox">4.8.2.1.1.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; bbox</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i0_bbox_items">4.8.2.1.1.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1">4.8.2.1.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_type">4.8.2.1.2.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_coordinates">4.8.2.1.2.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; coordinates</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_coordinates_items">4.8.2.1.2.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items</a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_coordinates_items_items">4.8.2.1.2.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items &gt; coordinates items items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_bbox">4.8.2.1.2.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; bbox</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_bbox_items">4.8.2.1.2.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2">4.8.2.1.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_type">4.8.2.1.3.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates">4.8.2.1.3.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates_items">4.8.2.1.3.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items</a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates_items_items">4.8.2.1.3.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items</a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates_items_items_items">4.8.2.1.3.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_bbox">4.8.2.1.3.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; bbox</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_bbox_items">4.8.2.1.3.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3">4.8.2.1.4. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_type">4.8.2.1.4.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_coordinates">4.8.2.1.4.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_coordinates_items">4.8.2.1.4.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items</a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_coordinates_items_items">4.8.2.1.4.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items &gt; coordinates items items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_bbox">4.8.2.1.4.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_bbox_items">4.8.2.1.4.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4">4.8.2.1.5. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_type">4.8.2.1.5.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates">4.8.2.1.5.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates_items">4.8.2.1.5.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items</a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates_items_items">4.8.2.1.5.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items</a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates_items_items_items">4.8.2.1.5.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_bbox">4.8.2.1.5.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_bbox_items">4.8.2.1.5.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5">4.8.2.1.6. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_type">4.8.2.1.6.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; type</code></a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates">4.8.2.1.6.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items">4.8.2.1.6.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items</a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items_items">4.8.2.1.6.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items</a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items_items_items">4.8.2.1.6.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</a></li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items_items_items_items">4.8.2.1.6.2.1.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items &gt; coordinates items items items items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_bbox">4.8.2.1.6.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox</code></a><ul>
+<li><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_bbox_items">4.8.2.1.6.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#geometry_oneOf_i7_bbox">4.8.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; bbox</code></a></li>
+<li><a href="#geometry_oneOf_i7_bbox_items">4.8.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; bbox &gt; bbox items</a></li>
+</ul>
+</li>
+<li><a href="#bbox">5. Property <code>GeoJSON Feature &gt; bbox</code></a></li>
+<li><a href="#bbox_items">5.1. GeoJSON Feature &gt; bbox &gt; bbox items</a></li>
+</ul>
+<p><strong>Title:</strong> GeoJSON Feature</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Main Schema with geometries and <a href="../project_core_schema_en/">project_core_schema_en.md</a> or <a href="../project_core_schema_fr/">project_core_schema_fr.md</a>  properties. It is built hierarchially and is represented as Feature - a known Geojson Format. <br> In the properties are all the project information which is separated from the geometry.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#id">id</a></td>
+<td>No</td>
+<td>Combination</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#properties">properties</a></td>
+<td>No</td>
+<td>object</td>
+<td>No</td>
+<td>In project_core_schema.json</td>
+<td>😅 ERROR in schema generation, a referenced schema could not be loaded, no documentation here unfortunately 🏜️</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry">geometry</a></td>
+<td>No</td>
+<td>Combination</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-property-geojson-feature-type"><a name="type"></a>1. Property <code>GeoJSON Feature &gt; type</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "Feature"</p>
+<h2 id="2-property-geojson-feature-id"><a name="id"></a>2. Property <code>GeoJSON Feature &gt; id</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>combining</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>One of(Option)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#id_oneOf_i0">item 0</a></td>
+</tr>
+<tr>
+<td><a href="#id_oneOf_i1">item 1</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="21-property-geojson-feature-id-oneof-item-0"><a name="id_oneOf_i0"></a>2.1. Property <code>GeoJSON Feature &gt; id &gt; oneOf &gt; item 0</code></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-property-geojson-feature-id-oneof-item-1"><a name="id_oneOf_i1"></a>2.2. Property <code>GeoJSON Feature &gt; id &gt; oneOf &gt; item 1</code></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-property-geojson-feature-properties"><a name="properties"></a>3. Property <code>GeoJSON Feature &gt; properties</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+<tr>
+<td><strong>Defined in</strong></td>
+<td>project_core_schema.json</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> 😅 ERROR in schema generation, a referenced schema could not be loaded, no documentation here unfortunately 🏜️</p>
+<h2 id="4-property-geojson-feature-geometry"><a name="geometry"></a>4. Property <code>GeoJSON Feature &gt; geometry</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>combining</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>One of(Option)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i0">item 0</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i1">GeoJSON Point</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i2">GeoJSON LineString</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i3">GeoJSON Polygon</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i4">GeoJSON MultiPoint</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i5">GeoJSON MultiLineString</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i6">GeoJSON MultiPolygon</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i7">GeoJSON GeometryCollection</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="41-property-geojson-feature-geometry-oneof-item-0"><a name="geometry_oneOf_i0"></a>4.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; item 0</code></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-property-geojson-feature-geometry-oneof-geojson-point"><a name="geometry_oneOf_i1"></a>4.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point</code></h3>
+<p><strong>Title:</strong> GeoJSON Point</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i1_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i1_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i1_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="421-property-geojson-feature-geometry-oneof-geojson-point-type"><a name="geometry_oneOf_i1_type"></a>4.2.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; type</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "Point"</p>
+<h4 id="422-property-geojson-feature-geometry-oneof-geojson-point-coordinates"><a name="geometry_oneOf_i1_coordinates"></a>4.2.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; coordinates</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i1_coordinates_items_i0">coordinates item 0</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i1_coordinates_items_i1">coordinates item 1</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4221-geojson-feature-geometry-oneof-geojson-point-coordinates-coordinates-item-0"><a name="autogenerated_heading_2"></a>4.2.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; coordinates &gt; coordinates item 0</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Restrictions</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Minimum</strong></td>
+<td>&ge; -180</td>
+</tr>
+<tr>
+<td><strong>Maximum</strong></td>
+<td>&le; 180</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4222-geojson-feature-geometry-oneof-geojson-point-coordinates-coordinates-item-1"><a name="autogenerated_heading_3"></a>4.2.2.2. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; coordinates &gt; coordinates item 1</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Restrictions</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Minimum</strong></td>
+<td>&ge; -90</td>
+</tr>
+<tr>
+<td><strong>Maximum</strong></td>
+<td>&le; 90</td>
+</tr>
+</tbody>
+</table>
+<h4 id="423-property-geojson-feature-geometry-oneof-geojson-point-bbox"><a name="geometry_oneOf_i1_bbox"></a>4.2.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; bbox</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i1_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4231-geojson-feature-geometry-oneof-geojson-point-bbox-bbox-items"><a name="geometry_oneOf_i1_bbox_items"></a>4.2.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Point &gt; bbox &gt; bbox items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-property-geojson-feature-geometry-oneof-geojson-linestring"><a name="geometry_oneOf_i2"></a>4.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString</code></h3>
+<p><strong>Title:</strong> GeoJSON LineString</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i2_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i2_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i2_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="431-property-geojson-feature-geometry-oneof-geojson-linestring-type"><a name="geometry_oneOf_i2_type"></a>4.3.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; type</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "LineString"</p>
+<h4 id="432-property-geojson-feature-geometry-oneof-geojson-linestring-coordinates"><a name="geometry_oneOf_i2_coordinates"></a>4.3.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; coordinates</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i2_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4321-geojson-feature-geometry-oneof-geojson-linestring-coordinates-coordinates-items"><a name="geometry_oneOf_i2_coordinates_items"></a>4.3.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i2_coordinates_items_items">coordinates items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="43211-geojson-feature-geometry-oneof-geojson-linestring-coordinates-coordinates-items-coordinates-items-items"><a name="geometry_oneOf_i2_coordinates_items_items"></a>4.3.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items &gt; coordinates items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="433-property-geojson-feature-geometry-oneof-geojson-linestring-bbox"><a name="geometry_oneOf_i2_bbox"></a>4.3.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; bbox</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i2_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4331-geojson-feature-geometry-oneof-geojson-linestring-bbox-bbox-items"><a name="geometry_oneOf_i2_bbox_items"></a>4.3.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON LineString &gt; bbox &gt; bbox items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="44-property-geojson-feature-geometry-oneof-geojson-polygon"><a name="geometry_oneOf_i3"></a>4.4. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon</code></h3>
+<p><strong>Title:</strong> GeoJSON Polygon</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i3_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i3_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i3_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="441-property-geojson-feature-geometry-oneof-geojson-polygon-type"><a name="geometry_oneOf_i3_type"></a>4.4.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; type</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "Polygon"</p>
+<h4 id="442-property-geojson-feature-geometry-oneof-geojson-polygon-coordinates"><a name="geometry_oneOf_i3_coordinates"></a>4.4.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i3_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4421-geojson-feature-geometry-oneof-geojson-polygon-coordinates-coordinates-items"><a name="geometry_oneOf_i3_coordinates_items"></a>4.4.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i3_coordinates_items_items">coordinates items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="44211-geojson-feature-geometry-oneof-geojson-polygon-coordinates-coordinates-items-coordinates-items-items"><a name="geometry_oneOf_i3_coordinates_items_items"></a>4.4.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i3_coordinates_items_items_items">coordinates items items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="442111-geojson-feature-geometry-oneof-geojson-polygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items"><a name="geometry_oneOf_i3_coordinates_items_items_items"></a>4.4.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="443-property-geojson-feature-geometry-oneof-geojson-polygon-bbox"><a name="geometry_oneOf_i3_bbox"></a>4.4.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; bbox</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i3_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4431-geojson-feature-geometry-oneof-geojson-polygon-bbox-bbox-items"><a name="geometry_oneOf_i3_bbox_items"></a>4.4.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON Polygon &gt; bbox &gt; bbox items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="45-property-geojson-feature-geometry-oneof-geojson-multipoint"><a name="geometry_oneOf_i4"></a>4.5. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint</code></h3>
+<p><strong>Title:</strong> GeoJSON MultiPoint</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i4_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i4_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i4_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="451-property-geojson-feature-geometry-oneof-geojson-multipoint-type"><a name="geometry_oneOf_i4_type"></a>4.5.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; type</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "MultiPoint"</p>
+<h4 id="452-property-geojson-feature-geometry-oneof-geojson-multipoint-coordinates"><a name="geometry_oneOf_i4_coordinates"></a>4.5.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i4_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4521-geojson-feature-geometry-oneof-geojson-multipoint-coordinates-coordinates-items"><a name="geometry_oneOf_i4_coordinates_items"></a>4.5.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i4_coordinates_items_items">coordinates items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="45211-geojson-feature-geometry-oneof-geojson-multipoint-coordinates-coordinates-items-coordinates-items-items"><a name="geometry_oneOf_i4_coordinates_items_items"></a>4.5.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items &gt; coordinates items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="453-property-geojson-feature-geometry-oneof-geojson-multipoint-bbox"><a name="geometry_oneOf_i4_bbox"></a>4.5.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i4_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4531-geojson-feature-geometry-oneof-geojson-multipoint-bbox-bbox-items"><a name="geometry_oneOf_i4_bbox_items"></a>4.5.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox &gt; bbox items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="46-property-geojson-feature-geometry-oneof-geojson-multilinestring"><a name="geometry_oneOf_i5"></a>4.6. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString</code></h3>
+<p><strong>Title:</strong> GeoJSON MultiLineString</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i5_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i5_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i5_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="461-property-geojson-feature-geometry-oneof-geojson-multilinestring-type"><a name="geometry_oneOf_i5_type"></a>4.6.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; type</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "MultiLineString"</p>
+<h4 id="462-property-geojson-feature-geometry-oneof-geojson-multilinestring-coordinates"><a name="geometry_oneOf_i5_coordinates"></a>4.6.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i5_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4621-geojson-feature-geometry-oneof-geojson-multilinestring-coordinates-coordinates-items"><a name="geometry_oneOf_i5_coordinates_items"></a>4.6.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i5_coordinates_items_items">coordinates items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="46211-geojson-feature-geometry-oneof-geojson-multilinestring-coordinates-coordinates-items-coordinates-items-items"><a name="geometry_oneOf_i5_coordinates_items_items"></a>4.6.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i5_coordinates_items_items_items">coordinates items items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="462111-geojson-feature-geometry-oneof-geojson-multilinestring-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items"><a name="geometry_oneOf_i5_coordinates_items_items_items"></a>4.6.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="463-property-geojson-feature-geometry-oneof-geojson-multilinestring-bbox"><a name="geometry_oneOf_i5_bbox"></a>4.6.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i5_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4631-geojson-feature-geometry-oneof-geojson-multilinestring-bbox-bbox-items"><a name="geometry_oneOf_i5_bbox_items"></a>4.6.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox &gt; bbox items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="47-property-geojson-feature-geometry-oneof-geojson-multipolygon"><a name="geometry_oneOf_i6"></a>4.7. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon</code></h3>
+<p><strong>Title:</strong> GeoJSON MultiPolygon</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i6_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i6_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i6_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="471-property-geojson-feature-geometry-oneof-geojson-multipolygon-type"><a name="geometry_oneOf_i6_type"></a>4.7.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; type</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "MultiPolygon"</p>
+<h4 id="472-property-geojson-feature-geometry-oneof-geojson-multipolygon-coordinates"><a name="geometry_oneOf_i6_coordinates"></a>4.7.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i6_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4721-geojson-feature-geometry-oneof-geojson-multipolygon-coordinates-coordinates-items"><a name="geometry_oneOf_i6_coordinates_items"></a>4.7.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i6_coordinates_items_items">coordinates items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="47211-geojson-feature-geometry-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items"><a name="geometry_oneOf_i6_coordinates_items_items"></a>4.7.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i6_coordinates_items_items_items">coordinates items items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="472111-geojson-feature-geometry-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items"><a name="geometry_oneOf_i6_coordinates_items_items_items"></a>4.7.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i6_coordinates_items_items_items_items">coordinates items items items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4721111-geojson-feature-geometry-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items-coordinates-items-items-items-items"><a name="geometry_oneOf_i6_coordinates_items_items_items_items"></a>4.7.2.1.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items &gt; coordinates items items items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="473-property-geojson-feature-geometry-oneof-geojson-multipolygon-bbox"><a name="geometry_oneOf_i6_bbox"></a>4.7.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i6_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4731-geojson-feature-geometry-oneof-geojson-multipolygon-bbox-bbox-items"><a name="geometry_oneOf_i6_bbox_items"></a>4.7.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox &gt; bbox items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="48-property-geojson-feature-geometry-oneof-geojson-geometrycollection"><a name="geometry_oneOf_i7"></a>4.8. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection</code></h3>
+<p><strong>Title:</strong> GeoJSON GeometryCollection</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries">geometries</a></td>
+<td>No</td>
+<td>array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i7_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="481-property-geojson-feature-geometry-oneof-geojson-geometrycollection-type"><a name="geometry_oneOf_i7_type"></a>4.8.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; type</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "GeometryCollection"</p>
+<h4 id="482-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries"><a name="geometry_oneOf_i7_geometries"></a>4.8.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items">geometries items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4821-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items"><a name="geometry_oneOf_i7_geometries_items"></a>4.8.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>combining</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>One of(Option)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i0">GeoJSON Point</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1">GeoJSON LineString</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2">GeoJSON Polygon</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3">GeoJSON MultiPoint</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4">GeoJSON MultiLineString</a></td>
+</tr>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5">GeoJSON MultiPolygon</a></td>
+</tr>
+</tbody>
+</table>
+<h6 id="48211-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point"><a name="geometry_oneOf_i7_geometries_items_oneOf_i0"></a>4.8.2.1.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point</code></h6>
+<p><strong>Title:</strong> GeoJSON Point</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i0_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i0_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i7_geometries_items_oneOf_i0_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482111-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point-type"><a name="geometry_oneOf_i7_geometries_items_oneOf_i0_type"></a>4.8.2.1.1.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; type</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "Point"</p>
+<h6 id="482112-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point-coordinates"><a name="geometry_oneOf_i7_geometries_items_oneOf_i0_coordinates"></a>4.8.2.1.1.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; coordinates</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i0_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821121-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point-coordinates-coordinates-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i0_coordinates_items"></a>4.8.2.1.1.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; coordinates &gt; coordinates items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482113-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point-bbox"><a name="geometry_oneOf_i7_geometries_items_oneOf_i0_bbox"></a>4.8.2.1.1.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; bbox</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i0_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821131-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-point-bbox-bbox-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i0_bbox_items"></a>4.8.2.1.1.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Point &gt; bbox &gt; bbox items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="48212-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring"><a name="geometry_oneOf_i7_geometries_items_oneOf_i1"></a>4.8.2.1.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString</code></h6>
+<p><strong>Title:</strong> GeoJSON LineString</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482121-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-type"><a name="geometry_oneOf_i7_geometries_items_oneOf_i1_type"></a>4.8.2.1.2.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; type</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "LineString"</p>
+<h6 id="482122-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-coordinates"><a name="geometry_oneOf_i7_geometries_items_oneOf_i1_coordinates"></a>4.8.2.1.2.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; coordinates</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821221-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-coordinates-coordinates-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i1_coordinates_items"></a>4.8.2.1.2.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_coordinates_items_items">coordinates items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="48212211-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-coordinates-coordinates-items-coordinates-items-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i1_coordinates_items_items"></a>4.8.2.1.2.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; coordinates &gt; coordinates items &gt; coordinates items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482123-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-bbox"><a name="geometry_oneOf_i7_geometries_items_oneOf_i1_bbox"></a>4.8.2.1.2.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; bbox</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i1_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821231-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-linestring-bbox-bbox-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i1_bbox_items"></a>4.8.2.1.2.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON LineString &gt; bbox &gt; bbox items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="48213-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon"><a name="geometry_oneOf_i7_geometries_items_oneOf_i2"></a>4.8.2.1.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon</code></h6>
+<p><strong>Title:</strong> GeoJSON Polygon</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482131-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-type"><a name="geometry_oneOf_i7_geometries_items_oneOf_i2_type"></a>4.8.2.1.3.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; type</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "Polygon"</p>
+<h6 id="482132-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-coordinates"><a name="geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates"></a>4.8.2.1.3.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821321-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-coordinates-coordinates-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates_items"></a>4.8.2.1.3.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates_items_items">coordinates items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="48213211-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-coordinates-coordinates-items-coordinates-items-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates_items_items"></a>4.8.2.1.3.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates_items_items_items">coordinates items items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482132111-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i2_coordinates_items_items_items"></a>4.8.2.1.3.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482133-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-bbox"><a name="geometry_oneOf_i7_geometries_items_oneOf_i2_bbox"></a>4.8.2.1.3.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; bbox</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i2_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821331-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-polygon-bbox-bbox-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i2_bbox_items"></a>4.8.2.1.3.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON Polygon &gt; bbox &gt; bbox items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="48214-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint"><a name="geometry_oneOf_i7_geometries_items_oneOf_i3"></a>4.8.2.1.4. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint</code></h6>
+<p><strong>Title:</strong> GeoJSON MultiPoint</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482141-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-type"><a name="geometry_oneOf_i7_geometries_items_oneOf_i3_type"></a>4.8.2.1.4.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; type</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "MultiPoint"</p>
+<h6 id="482142-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-coordinates"><a name="geometry_oneOf_i7_geometries_items_oneOf_i3_coordinates"></a>4.8.2.1.4.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821421-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-coordinates-coordinates-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i3_coordinates_items"></a>4.8.2.1.4.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_coordinates_items_items">coordinates items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="48214211-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-coordinates-coordinates-items-coordinates-items-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i3_coordinates_items_items"></a>4.8.2.1.4.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; coordinates &gt; coordinates items &gt; coordinates items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482143-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-bbox"><a name="geometry_oneOf_i7_geometries_items_oneOf_i3_bbox"></a>4.8.2.1.4.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i3_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821431-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipoint-bbox-bbox-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i3_bbox_items"></a>4.8.2.1.4.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPoint &gt; bbox &gt; bbox items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="48215-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring"><a name="geometry_oneOf_i7_geometries_items_oneOf_i4"></a>4.8.2.1.5. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString</code></h6>
+<p><strong>Title:</strong> GeoJSON MultiLineString</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482151-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-type"><a name="geometry_oneOf_i7_geometries_items_oneOf_i4_type"></a>4.8.2.1.5.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; type</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "MultiLineString"</p>
+<h6 id="482152-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-coordinates"><a name="geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates"></a>4.8.2.1.5.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821521-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-coordinates-coordinates-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates_items"></a>4.8.2.1.5.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates_items_items">coordinates items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="48215211-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-coordinates-coordinates-items-coordinates-items-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates_items_items"></a>4.8.2.1.5.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates_items_items_items">coordinates items items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482152111-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i4_coordinates_items_items_items"></a>4.8.2.1.5.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482153-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-bbox"><a name="geometry_oneOf_i7_geometries_items_oneOf_i4_bbox"></a>4.8.2.1.5.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i4_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821531-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multilinestring-bbox-bbox-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i4_bbox_items"></a>4.8.2.1.5.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiLineString &gt; bbox &gt; bbox items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="48216-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon"><a name="geometry_oneOf_i7_geometries_items_oneOf_i5"></a>4.8.2.1.6. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon</code></h6>
+<p><strong>Title:</strong> GeoJSON MultiPolygon</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_type">type</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates">coordinates</a></td>
+<td>No</td>
+<td>array of array</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>- <a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_bbox">bbox</a></td>
+<td>No</td>
+<td>array of number</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482161-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-type"><a name="geometry_oneOf_i7_geometries_items_oneOf_i5_type"></a>4.8.2.1.6.1. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; type</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Must be one of:
+* "MultiPolygon"</p>
+<h6 id="482162-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-coordinates"><a name="geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates"></a>4.8.2.1.6.2. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items">coordinates items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821621-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-coordinates-coordinates-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items"></a>4.8.2.1.6.2.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items_items">coordinates items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="48216211-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items_items"></a>4.8.2.1.6.2.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of array</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items_items_items">coordinates items items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482162111-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items_items_items"></a>4.8.2.1.6.2.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items_items_items_items">coordinates items items items items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821621111-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-coordinates-coordinates-items-coordinates-items-items-coordinates-items-items-items-coordinates-items-items-items-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i5_coordinates_items_items_items_items"></a>4.8.2.1.6.2.1.1.1.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; coordinates &gt; coordinates items &gt; coordinates items items &gt; coordinates items items items &gt; coordinates items items items items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h6 id="482163-property-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-bbox"><a name="geometry_oneOf_i7_geometries_items_oneOf_i5_bbox"></a>4.8.2.1.6.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox</code></h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_geometries_items_oneOf_i5_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h6 id="4821631-geojson-feature-geometry-oneof-geojson-geometrycollection-geometries-geometries-items-oneof-geojson-multipolygon-bbox-bbox-items"><a name="geometry_oneOf_i7_geometries_items_oneOf_i5_bbox_items"></a>4.8.2.1.6.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; geometries &gt; geometries items &gt; oneOf &gt; GeoJSON MultiPolygon &gt; bbox &gt; bbox items</h6>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="483-property-geojson-feature-geometry-oneof-geojson-geometrycollection-bbox"><a name="geometry_oneOf_i7_bbox"></a>4.8.3. Property <code>GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; bbox</code></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#geometry_oneOf_i7_bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h5 id="4831-geojson-feature-geometry-oneof-geojson-geometrycollection-bbox-bbox-items"><a name="geometry_oneOf_i7_bbox_items"></a>4.8.3.1. GeoJSON Feature &gt; geometry &gt; oneOf &gt; GeoJSON GeometryCollection &gt; bbox &gt; bbox items</h5>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-property-geojson-feature-bbox"><a name="bbox"></a>5. Property <code>GeoJSON Feature &gt; bbox</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>array of number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Array restrictions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min items</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Max items</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Items unicity</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>False</td>
+</tr>
+<tr>
+<td><strong>Tuple validation</strong></td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Each item of this array must be</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#bbox_items">bbox items</a></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="51-geojson-feature-bbox-bbox-items"><a name="bbox_items"></a>5.1. GeoJSON Feature &gt; bbox &gt; bbox items</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a> on 2025-08-25 at 16:17:09 +0000</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction to the model architecture">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction to the model architecture
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../project_core_schema_en/" class="md-footer__link md-footer__link--next" aria-label="Next: Project Location Model">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Project Location Model
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.footer", "navigation.indexes", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
