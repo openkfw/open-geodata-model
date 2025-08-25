@@ -1,0 +1,2215 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../project_core_schema_en/">
+      
+      
+        <link rel="next" href="../sector_location_schema_en/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Modèle de Localisation des Projets - Open Project Location Model</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modele-de-localisation-des-projets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Open Project Location Model" class="md-header__button md-logo" aria-label="Open Project Location Model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Project Location Model
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modèle de Localisation des Projets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/openkfw/open-geodata-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Open Project Location Model" class="md-nav__button md-logo" aria-label="Open Project Location Model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Project Location Model
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/openkfw/open-geodata-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notes for using the Excel Template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tor/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Overview of Templates and ToR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Overview of Templates and ToR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tor/sample_tor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample ToR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tor/sample_tor_fr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample Tor in FR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tor/kobo_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using KoboToolbox for Geographical Data Collection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sdg_icons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Location Icons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    For developers
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_project_schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GeoJSON Feature
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project_core_schema_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Location Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Modèle de Localisation des Projets
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Modèle de Localisation des Projets
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-property-modele-de-localisation-des-projets-schemeversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Property Modèle de Localisation des Projets &gt; schemeVersion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-property-modele-de-localisation-des-projets-activitydescriptiongeneral" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Property Modèle de Localisation des Projets &gt; activityDescriptionGeneral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-property-modele-de-localisation-des-projets-additionalactivitydescription" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Property Modèle de Localisation des Projets &gt; additionalActivityDescription
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-property-modele-de-localisation-des-projets-alternativelocationtypename" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Property Modèle de Localisation des Projets &gt; alternativeLocationTypeName
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-property-modele-de-localisation-des-projets-budgetshare" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Property Modèle de Localisation des Projets &gt; budgetShare
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-property-modele-de-localisation-des-projets-dac5purposecode" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Property Modèle de Localisation des Projets &gt; dac5PurposeCode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-property-modele-de-localisation-des-projets-dataowner" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Property Modèle de Localisation des Projets &gt; dataOwner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-property-modele-de-localisation-des-projets-dateofdatacollection" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Property Modèle de Localisation des Projets &gt; dateOfDataCollection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-property-modele-de-localisation-des-projets-filenameofadditionalgeodata" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Property Modèle de Localisation des Projets &gt; filenameOfAdditionalGeoData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-property-modele-de-localisation-des-projets-geographicexactness" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Property Modèle de Localisation des Projets &gt; geographicExactness
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-property-modele-de-localisation-des-projets-sector_location" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Property Modèle de Localisation des Projets &gt; sector_location
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-property-modele-de-localisation-des-projets-kfwprojectnoinpro" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Property Modèle de Localisation des Projets &gt; kfwProjectNoINPRO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-property-modele-de-localisation-des-projets-locationactivitystatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. Property Modèle de Localisation des Projets &gt; locationActivityStatus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-property-modele-de-localisation-des-projets-locationname" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. Property Modèle de Localisation des Projets &gt; locationName
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-property-modele-de-localisation-des-projets-plannedoractualenddate" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. Property Modèle de Localisation des Projets &gt; plannedOrActualEndDate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-property-modele-de-localisation-des-projets-plannedoractualstartdate" class="md-nav__link">
+    <span class="md-ellipsis">
+      16. Property Modèle de Localisation des Projets &gt; plannedOrActualStartDate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-property-modele-de-localisation-des-projets-primarykey" class="md-nav__link">
+    <span class="md-ellipsis">
+      17. Property Modèle de Localisation des Projets &gt; primaryKey
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-property-modele-de-localisation-des-projets-projectacronym" class="md-nav__link">
+    <span class="md-ellipsis">
+      18. Property Modèle de Localisation des Projets &gt; projectAcronym
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-property-modele-de-localisation-des-projets-projectspecificlocationidentifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      19. Property Modèle de Localisation des Projets &gt; projectSpecificLocationIdentifier
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-property-modele-de-localisation-des-projets-publishingrestrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      20. Property Modèle de Localisation des Projets &gt; publishingRestrictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-property-modele-de-localisation-des-projets-relatedcommunityvillageneighborhood" class="md-nav__link">
+    <span class="md-ellipsis">
+      21. Property Modèle de Localisation des Projets &gt; relatedCommunityVillageNeighborhood
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-property-modele-de-localisation-des-projets-uniqueid" class="md-nav__link">
+    <span class="md-ellipsis">
+      22. Property Modèle de Localisation des Projets &gt; uniqueId
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sector_location_schema_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sector_location_schema_fr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dac5_schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DAC 5 Purpose Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/xls_to_kml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geodata template to KML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="modele-de-localisation-des-projets">Modèle de Localisation des Projets</h1>
+<ul>
+<li><a href="#schemeVersion">1. Property <code>Modèle de Localisation des Projets &gt; schemeVersion</code></a></li>
+<li><a href="#activityDescriptionGeneral">2. Property <code>Modèle de Localisation des Projets &gt; activityDescriptionGeneral</code></a></li>
+<li><a href="#additionalActivityDescription">3. Property <code>Modèle de Localisation des Projets &gt; additionalActivityDescription</code></a></li>
+<li><a href="#alternativeLocationTypeName">4. Property <code>Modèle de Localisation des Projets &gt; alternativeLocationTypeName</code></a></li>
+<li><a href="#budgetShare">5. Property <code>Modèle de Localisation des Projets &gt; budgetShare</code></a></li>
+<li><a href="#dac5PurposeCode">6. Property <code>Modèle de Localisation des Projets &gt; dac5PurposeCode</code></a></li>
+<li><a href="#dataOwner">7. Property <code>Modèle de Localisation des Projets &gt; dataOwner</code></a></li>
+<li><a href="#dateOfDataCollection">8. Property <code>Modèle de Localisation des Projets &gt; dateOfDataCollection</code></a></li>
+<li><a href="#filenameOfAdditionalGeoData">9. Property <code>Modèle de Localisation des Projets &gt; filenameOfAdditionalGeoData</code></a></li>
+<li><a href="#geographicExactness">10. Property <code>Modèle de Localisation des Projets &gt; geographicExactness</code></a></li>
+<li><a href="#sector_location">11. Property <code>Modèle de Localisation des Projets &gt; sector_location</code></a></li>
+<li><a href="#kfwProjectNoINPRO">12. Property <code>Modèle de Localisation des Projets &gt; kfwProjectNoINPRO</code></a></li>
+<li><a href="#locationActivityStatus">13. Property <code>Modèle de Localisation des Projets &gt; locationActivityStatus</code></a></li>
+<li><a href="#locationName">14. Property <code>Modèle de Localisation des Projets &gt; locationName</code></a></li>
+<li><a href="#plannedOrActualEndDate">15. Property <code>Modèle de Localisation des Projets &gt; plannedOrActualEndDate</code></a></li>
+<li><a href="#plannedOrActualStartDate">16. Property <code>Modèle de Localisation des Projets &gt; plannedOrActualStartDate</code></a></li>
+<li><a href="#primaryKey">17. Property <code>Modèle de Localisation des Projets &gt; primaryKey</code></a></li>
+<li><a href="#projectAcronym">18. Property <code>Modèle de Localisation des Projets &gt; projectAcronym</code></a></li>
+<li><a href="#projectSpecificLocationIdentifier">19. Property <code>Modèle de Localisation des Projets &gt; projectSpecificLocationIdentifier</code></a></li>
+<li><a href="#publishingRestrictions">20. Property <code>Modèle de Localisation des Projets &gt; publishingRestrictions</code></a></li>
+<li><a href="#relatedCommunityVillageNeighborhood">21. Property <code>Modèle de Localisation des Projets &gt; relatedCommunityVillageNeighborhood</code></a></li>
+<li><a href="#uniqueId">22. Property <code>Modèle de Localisation des Projets &gt; uniqueId</code></a></li>
+</ul>
+<p><strong>Title:</strong> Modèle de Localisation des Projets</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Ce schéma définit la structure du modèle de sites des projet. Il sert à valider les données de sites du projet fournies par le partenaire KfW.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Pattern</th>
+<th>Type</th>
+<th>Deprecated</th>
+<th>Definition</th>
+<th>Title/Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ <a href="#schemeVersion">schemeVersion</a></td>
+<td>No</td>
+<td>const</td>
+<td>No</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>+ <a href="#activityDescriptionGeneral">activityDescriptionGeneral</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Une brève description de l'activité principale du projet sur ce site.</td>
+</tr>
+<tr>
+<td>- <a href="#additionalActivityDescription">additionalActivityDescription</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Texte libre pour des informations supplémentaires spécifiques au site.</td>
+</tr>
+<tr>
+<td>- <a href="#alternativeLocationTypeName">alternativeLocationTypeName</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Si vous avez sélectionné 'autre physique' ou 'autre immatériel' dans la colonne 'Nom du type de site', veuillez proposer votre propre nom de type de site.</td>
+</tr>
+<tr>
+<td>- <a href="#budgetShare">budgetShare</a></td>
+<td>No</td>
+<td>number</td>
+<td>No</td>
+<td>-</td>
+<td>La part du budget allouée à ce site en €.</td>
+</tr>
+<tr>
+<td>+ <a href="#dac5PurposeCode">dac5PurposeCode</a></td>
+<td>No</td>
+<td>enum (of integer)</td>
+<td>No</td>
+<td>In dac5_schema.json</td>
+<td>DAC 5 Purpose Code</td>
+</tr>
+<tr>
+<td>+ <a href="#dataOwner">dataOwner</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Entité juridique qui possède les données fournies ici (= droit d'auteur légal).</td>
+</tr>
+<tr>
+<td>- <a href="#dateOfDataCollection">dateOfDataCollection</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Date de collecte des données ou de la dernière mise à jour.</td>
+</tr>
+<tr>
+<td>- <a href="#filenameOfAdditionalGeoData">filenameOfAdditionalGeoData</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Nom du fichier KML contenant les informations géométriques associées.</td>
+</tr>
+<tr>
+<td>+ <a href="#geographicExactness">geographicExactness</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>Veuillez utiliser 'exacte' si vous connaissez la destination finale géographique exacte d'un flux financier.</td>
+</tr>
+<tr>
+<td>+ <a href="#sector_location">sector_location</a></td>
+<td>No</td>
+<td>enum (of null)</td>
+<td>No</td>
+<td>In sector_location_schema_fr.json</td>
+<td>Champ de présélection du type de localisation Secteurs / Sous-secteurs. / type de localisation le plus approprié.</td>
+</tr>
+<tr>
+<td>+ <a href="#kfwProjectNoINPRO">kfwProjectNoINPRO</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Chaque site du projet dans le modèle de géodonnées FC doit être attribué à son numéro de projet KfW respectif, qui est fourni par la KfW.</td>
+</tr>
+<tr>
+<td>- <a href="#locationActivityStatus">locationActivityStatus</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>La phase de réalisation de l’activité selon la norme IATI.</td>
+</tr>
+<tr>
+<td>+ <a href="#locationName">locationName</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Nom court du site, incluant idéalement un résumé de l’activité principale et le nom du lieu.</td>
+</tr>
+<tr>
+<td>+ <a href="#plannedOrActualEndDate">plannedOrActualEndDate</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Date de fin approximative prévue ou réelle des activités sur le site.</td>
+</tr>
+<tr>
+<td>+ <a href="#plannedOrActualStartDate">plannedOrActualStartDate</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Date de début approximative prévue ou réelle de la mise en œuvre des activités sur le site.</td>
+</tr>
+<tr>
+<td>- <a href="#primaryKey">primaryKey</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Ceci n'est requis que si vous fournissez des informations de géolocalisation supplémentaires dans un autre fichier KML.</td>
+</tr>
+<tr>
+<td>- <a href="#projectAcronym">projectAcronym</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Veuillez entrer l'acronyme utilisé pour le nom/titre du projet afin qu'il soit visible sur votre carte.</td>
+</tr>
+<tr>
+<td>- <a href="#projectSpecificLocationIdentifier">projectSpecificLocationIdentifier</a></td>
+<td>No</td>
+<td>object</td>
+<td>No</td>
+<td>-</td>
+<td>Si le site ou l'activité a un identifiant spécifique au projet, il peut être saisi ici.</td>
+</tr>
+<tr>
+<td>+ <a href="#publishingRestrictions">publishingRestrictions</a></td>
+<td>No</td>
+<td>enum (of string)</td>
+<td>No</td>
+<td>-</td>
+<td>Indique si ces informations sont collectées dans des régions fragiles et doivent donc être omises des rapports accessibles au public.</td>
+</tr>
+<tr>
+<td>- <a href="#relatedCommunityVillageNeighborhood">relatedCommunityVillageNeighborhood</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Vous pouvez saisir le nom d’un village, d’un hameau ou d’un quartier lié à ce site.</td>
+</tr>
+<tr>
+<td>- <a href="#uniqueId">uniqueId</a></td>
+<td>No</td>
+<td>string</td>
+<td>No</td>
+<td>-</td>
+<td>Pour les nouveaux sites, cette colonne reste vide. Pour les mises à jour, votre partenaire KfW fournira une liste de numéros unique_id afin d’assurer la correspondance avec les identifiants précédents.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-property-modele-de-localisation-des-projets-schemeversion"><a name="schemeVersion"></a>1. Property <code>Modèle de Localisation des Projets &gt; schemeVersion</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>const</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Specific value: <code>"1.0"</code></p>
+<h2 id="2-property-modele-de-localisation-des-projets-activitydescriptiongeneral"><a name="activityDescriptionGeneral"></a>2. Property <code>Modèle de Localisation des Projets &gt; activityDescriptionGeneral</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Une brève description de l'activité principale du projet sur ce site.</p>
+<h2 id="3-property-modele-de-localisation-des-projets-additionalactivitydescription"><a name="additionalActivityDescription"></a>3. Property <code>Modèle de Localisation des Projets &gt; additionalActivityDescription</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Texte libre pour des informations supplémentaires spécifiques au site.</p>
+<h2 id="4-property-modele-de-localisation-des-projets-alternativelocationtypename"><a name="alternativeLocationTypeName"></a>4. Property <code>Modèle de Localisation des Projets &gt; alternativeLocationTypeName</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Si vous avez sélectionné 'autre physique' ou 'autre immatériel' dans la colonne 'Nom du type de site', veuillez proposer votre propre nom de type de site.</p>
+<h2 id="5-property-modele-de-localisation-des-projets-budgetshare"><a name="budgetShare"></a>5. Property <code>Modèle de Localisation des Projets &gt; budgetShare</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> La part du budget allouée à ce site en €.</p>
+<h2 id="6-property-modele-de-localisation-des-projets-dac5purposecode"><a name="dac5PurposeCode"></a>6. Property <code>Modèle de Localisation des Projets &gt; dac5PurposeCode</code></h2>
+<p><strong>Title:</strong> DAC 5 Purpose Code</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of integer)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Defined in</strong></td>
+<td>dac5_schema.json</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Les codes CAD 5 assignés à l’ensemble du projet.</p>
+<p>Must be one of:
+* 11110
+* 11120
+* 11130
+* 11182
+* 11220
+* 11230
+* 11231
+* 11232
+* 11240
+* 11250
+* 11260
+* 11320
+* 11330
+* 11420
+* 11430
+* 12110
+* 12181
+* 12182
+* 12191
+* 12220
+* 12230
+* 12240
+* 12250
+* 12261
+* 12262
+* 12263
+* 12264
+* 12281
+* 12310
+* 12320
+* 12330
+* 12340
+* 12350
+* 12382
+* 13010
+* 13020
+* 13030
+* 13040
+* 13081
+* 14010
+* 14015
+* 14020
+* 14021
+* 14022
+* 14030
+* 14031
+* 14032
+* 14040
+* 14050
+* 14081
+* 15110
+* 15111
+* 15112
+* 15113
+* 15114
+* 15125
+* 15130
+* 15142
+* 15150
+* 15151
+* 15152
+* 15153
+* 15160
+* 15170
+* 15180
+* 15190
+* 15210
+* 15220
+* 15230
+* 15240
+* 15250
+* 15261
+* 16010
+* 16020
+* 16030
+* 16040
+* 16050
+* 16061
+* 16062
+* 16063
+* 16064
+* 16070
+* 16080
+* 21010
+* 21020
+* 21030
+* 21040
+* 21050
+* 21061
+* 21081
+* 22010
+* 22020
+* 22030
+* 22040
+* 23110
+* 23181
+* 23182
+* 23183
+* 23210
+* 23220
+* 23230
+* 23231
+* 23232
+* 23240
+* 23250
+* 23260
+* 23270
+* 23310
+* 23320
+* 23330
+* 23340
+* 23350
+* 23360
+* 23410
+* 23510
+* 23610
+* 23620
+* 23630
+* 23631
+* 23640
+* 23641
+* 23642
+* 24010
+* 24020
+* 24030
+* 24040
+* 24050
+* 24081
+* 25010
+* 25020
+* 25030
+* 25040
+* 31110
+* 31120
+* 31130
+* 31140
+* 31150
+* 31161
+* 31162
+* 31163
+* 31164
+* 31165
+* 31166
+* 31181
+* 31182
+* 31191
+* 31192
+* 31193
+* 31194
+* 31195
+* 31210
+* 31220
+* 31261
+* 31281
+* 31282
+* 31291
+* 31310
+* 31320
+* 31381
+* 31382
+* 31391
+* 32110
+* 32120
+* 32130
+* 32140
+* 32161
+* 32162
+* 32163
+* 32164
+* 32165
+* 32166
+* 32167
+* 32168
+* 32169
+* 32170
+* 32171
+* 32172
+* 32173
+* 32174
+* 32182
+* 32210
+* 32220
+* 32261
+* 32262
+* 32263
+* 32264
+* 32265
+* 32266
+* 32267
+* 32268
+* 32310
+* 33110
+* 33120
+* 33130
+* 33140
+* 33150
+* 33181
+* 33210
+* 41010
+* 41020
+* 41030
+* 41040
+* 41081
+* 41082
+* 43010
+* 43030
+* 43040
+* 43050
+* 43060
+* 43071
+* 43072
+* 43073
+* 43081
+* 43082
+* 51010
+* 52010
+* 53030
+* 53040
+* 60010
+* 60020
+* 60030
+* 60040
+* 60061
+* 60062
+* 60063
+* 72010
+* 72040
+* 72050
+* 73010
+* 74020
+* 91010
+* 93010
+* 99810
+* 99820</p>
+<h2 id="7-property-modele-de-localisation-des-projets-dataowner"><a name="dataOwner"></a>7. Property <code>Modèle de Localisation des Projets &gt; dataOwner</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Entité juridique qui possède les données fournies ici (= droit d'auteur légal).</p>
+<h2 id="8-property-modele-de-localisation-des-projets-dateofdatacollection"><a name="dateOfDataCollection"></a>8. Property <code>Modèle de Localisation des Projets &gt; dateOfDataCollection</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td><code>date</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Date de collecte des données ou de la dernière mise à jour.</p>
+<h2 id="9-property-modele-de-localisation-des-projets-filenameofadditionalgeodata"><a name="filenameOfAdditionalGeoData"></a>9. Property <code>Modèle de Localisation des Projets &gt; filenameOfAdditionalGeoData</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Nom du fichier KML contenant les informations géométriques associées.</p>
+<h2 id="10-property-modele-de-localisation-des-projets-geographicexactness"><a name="geographicExactness"></a>10. Property <code>Modèle de Localisation des Projets &gt; geographicExactness</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Veuillez utiliser 'exacte' si vous connaissez la destination finale géographique exacte d'un flux financier.</p>
+<p>Must be one of:
+* "exacte"
+* "approximative (encore inconnue)"
+* "approximative (sécurité)"
+* "approximative (unité d’administration)"</p>
+<h2 id="11-property-modele-de-localisation-des-projets-sector_location"><a name="sector_location"></a>11. Property <code>Modèle de Localisation des Projets &gt; sector_location</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of null)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Defined in</strong></td>
+<td>sector_location_schema_fr.json</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Champ de présélection du type de localisation Secteurs / Sous-secteurs. / type de localisation le plus approprié.</p>
+<p>Must be one of:
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null
+* null</p>
+<h2 id="12-property-modele-de-localisation-des-projets-kfwprojectnoinpro"><a name="kfwProjectNoINPRO"></a>12. Property <code>Modèle de Localisation des Projets &gt; kfwProjectNoINPRO</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Chaque site du projet dans le modèle de géodonnées FC doit être attribué à son numéro de projet KfW respectif, qui est fourni par la KfW.</p>
+<h2 id="13-property-modele-de-localisation-des-projets-locationactivitystatus"><a name="locationActivityStatus"></a>13. Property <code>Modèle de Localisation des Projets &gt; locationActivityStatus</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> La phase de réalisation de l’activité selon la norme IATI.</p>
+<p>Must be one of:
+* "Ne s’applique pas (NA)"
+* "Identification"
+* "Exécution"
+* "Finalisation"
+* "Terminé"
+* "Annulé"
+* "Suspendu"
+* "Divers"</p>
+<h2 id="14-property-modele-de-localisation-des-projets-locationname"><a name="locationName"></a>14. Property <code>Modèle de Localisation des Projets &gt; locationName</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Nom court du site, incluant idéalement un résumé de l’activité principale et le nom du lieu.</p>
+<h2 id="15-property-modele-de-localisation-des-projets-plannedoractualenddate"><a name="plannedOrActualEndDate"></a>15. Property <code>Modèle de Localisation des Projets &gt; plannedOrActualEndDate</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td><code>date</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Date de fin approximative prévue ou réelle des activités sur le site.</p>
+<h2 id="16-property-modele-de-localisation-des-projets-plannedoractualstartdate"><a name="plannedOrActualStartDate"></a>16. Property <code>Modèle de Localisation des Projets &gt; plannedOrActualStartDate</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Format</strong></td>
+<td><code>date</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Date de début approximative prévue ou réelle de la mise en œuvre des activités sur le site.</p>
+<h2 id="17-property-modele-de-localisation-des-projets-primarykey"><a name="primaryKey"></a>17. Property <code>Modèle de Localisation des Projets &gt; primaryKey</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Ceci n'est requis que si vous fournissez des informations de géolocalisation supplémentaires dans un autre fichier KML.</p>
+<h2 id="18-property-modele-de-localisation-des-projets-projectacronym"><a name="projectAcronym"></a>18. Property <code>Modèle de Localisation des Projets &gt; projectAcronym</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Veuillez entrer l'acronyme utilisé pour le nom/titre du projet afin qu'il soit visible sur votre carte.</p>
+<h2 id="19-property-modele-de-localisation-des-projets-projectspecificlocationidentifier"><a name="projectSpecificLocationIdentifier"></a>19. Property <code>Modèle de Localisation des Projets &gt; projectSpecificLocationIdentifier</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Additional properties</strong></td>
+<td>Any type allowed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Si le site ou l'activité a un identifiant spécifique au projet, il peut être saisi ici.</p>
+<h2 id="20-property-modele-de-localisation-des-projets-publishingrestrictions"><a name="publishingRestrictions"></a>20. Property <code>Modèle de Localisation des Projets &gt; publishingRestrictions</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>enum (of string)</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Indique si ces informations sont collectées dans des régions fragiles et doivent donc être omises des rapports accessibles au public.</p>
+<p>Must be one of:
+* "oui "
+* "non"</p>
+<h2 id="21-property-modele-de-localisation-des-projets-relatedcommunityvillageneighborhood"><a name="relatedCommunityVillageNeighborhood"></a>21. Property <code>Modèle de Localisation des Projets &gt; relatedCommunityVillageNeighborhood</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Vous pouvez saisir le nom d’un village, d’un hameau ou d’un quartier lié à ce site.</p>
+<h2 id="22-property-modele-de-localisation-des-projets-uniqueid"><a name="uniqueId"></a>22. Property <code>Modèle de Localisation des Projets &gt; uniqueId</code></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong>Required</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Description:</strong> Pour les nouveaux sites, cette colonne reste vide. Pour les mises à jour, votre partenaire KfW fournira une liste de numéros unique_id afin d’assurer la correspondance avec les identifiants précédents.</p>
+<hr />
+<p>Generated using <a href="https://github.com/coveooss/json-schema-for-humans">json-schema-for-humans</a> on 2025-08-25 at 17:47:06 +0200</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../project_core_schema_en/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Project Location Model">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Project Location Model
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../sector_location_schema_en/" class="md-footer__link md-footer__link--next" aria-label="Next: Schema Docs">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Schema Docs
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.footer", "navigation.indexes", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

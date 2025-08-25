@@ -246,4 +246,4 @@ Must be one of:
 * 99820
 
 ----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2025-08-25 at 14:24:30 +0200
+Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2025-08-25 at 17:46:59 +0200

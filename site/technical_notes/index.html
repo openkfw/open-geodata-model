@@ -1,0 +1,1205 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../tor/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Notes for using the Excel Template - Open Project Location Model</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#technical-notes-on-the-project-location-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Open Project Location Model" class="md-header__button md-logo" aria-label="Open Project Location Model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Open Project Location Model
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Notes for using the Excel Template
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/openkfw/open-geodata-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Open Project Location Model" class="md-nav__button md-logo" aria-label="Open Project Location Model" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Open Project Location Model
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/openkfw/open-geodata-model" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Notes for using the Excel Template
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Notes for using the Excel Template
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-project-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a project location?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exact-locations-and-how-to-collect-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exact locations and how to collect them
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approximate-locations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approximate locations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Figures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-location-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is a Location Type?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dac-5-purpose-classificationcrs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAC 5 Purpose Classification/CRS-Code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-confidentiality-and-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privacy, confidentiality and publication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-project-location-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Project Location Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-notes-on-selected-fields-from-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional notes on selected fields from the model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional notes on selected fields from the model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-unique-id-for-each-project-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      A unique ID for each project location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publishing-restrictions-due-to-security-reasons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publishing restrictions due to security reasons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-specific-location-identifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project-specific location identifier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budget-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budget Share
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../tor/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Overview of Templates and ToR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Overview of Templates and ToR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tor/sample_tor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample ToR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tor/sample_tor_fr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sample Tor in FR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tor/kobo_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using KoboToolbox for Geographical Data Collection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdg_icons/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Location Icons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../dev/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    For developers
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            For developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/feature_project_schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GeoJSON Feature
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/project_core_schema_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Location Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/project_core_schema_fr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle de Localisation des Projets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/sector_location_schema_en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/sector_location_schema_fr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/dac5_schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DAC 5 Purpose Code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/xls_to_kml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geodata template to KML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="technical-notes-on-the-project-location-model">Technical Notes on the Project Location Model</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find the current version of the projection location data collection template <a href="https://openkfw.github.io/open-geodata-model/tor/">here</a>.</p>
+</div>
+<!---
+## Mandatory and Non-Mandatory Fields
+When collecting data, there are certain mandatory fields that must be completed, as well as non-mandatory fields that can be used to gather additional site-specific information. It is important to check if there are any [*Terms of Reference (ToRs)*](tor/index.md) for this project location data collection that specify additional required fields. If there are no ToRs available, please consult with your KfW counterpart to determine which non-mandatory fields should be filled out.
+-->
+
+<h2 id="what-is-a-project-location">What is a project location?</h2>
+<p><strong>A project location is a set of one or more features that are part of a financially supported activity where it is not feasible to make any further geographical distinctions regarding funding.</strong> For instance, a financially supported hospital at a specific location is an example of a single-feature project location. Another example of a project location with multiple features is a group of adjacent agricultural plots that are being financed under an irrigation plan that benefits all producers in that area. Additionally, a set of protected areas that are jointly financed from a fund is another example, provided that it is not possible to make any further geographical distinctions regarding the allocation of funds to specific areas. However, if discrimination is possible, data for multiple project locations (such as protected areas) and their financial allocation must be collected. KfW strongly encourages increasing the geographical discrimination of financial flows to specific project locations to the maximum extent possible, as this enhances transparency and financial accountability.</p>
+<h2 id="exact-locations-and-how-to-collect-them">Exact locations and how to collect them</h2>
+<p>In the sense of the IATI standard, a project location can be either exact or approximate. The exact location refers to the geographical endpoint of an international development assistance financial flow. If you already know the exact location coordinates, you may indicate them as "exact" locations. The Excel template enables you to collect single location points such as a power plant site or also a larger number of project sites and features such as 300 locations of buildings in different sectors within the framework of a decentralization project using latitude and longitude coordinates. Additionally, project sites with larger areas and more complex geometries such as polygons of forest protection areas or linear location types like roads or railways are also supported but have to be submitted using an extra file in KML format.</p>
+<p>Exact locations can have three different geometry types:</p>
+<ol>
+<li>
+<p><strong>Point</strong> geometrie, e.g. a well or a hospital.</p>
+</li>
+<li>
+<p><strong>Line</strong> geometries, e.g. a road or transmission line.</p>
+</li>
+<li>
+<p><strong>Polygon</strong> geometries, e.g. a protected area or agricultural plots.</p>
+</li>
+</ol>
+<!---
+Regardless of the geometry type, all project locations should initially be collected as a point location within the Excel template. This point can represent the location itself or a gateway to the project site, regardless of the actual feature geometry (i.e., also for lines and polygons). The gateway point could be, for example, the beginning of a road, a village adjacent to agricultural plots, or the administration building of a protected area. If there is a line or polygon geometry and no gateway/entry point can be defined, the geometrical center (centroid) may also be used.
+--->
+
+<p><strong>All coordinates in Excel must be collected using WGS 84 (EPSG 4326) as the coordinate reference system<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">1</a></sup></strong> which is the standard for web mapping applications. Geo-coordinates have to be provided with an accuracy of at least 5 digits at the "Latitude" or "Longitude".</p>
+<p>If you have line or polygon geometries, you must use both the Excel template to store all relevant metadata for each location and an additional KML file to store the associated geometries for each location. The Excel file contains two columns that will enable us to link Excel and KML. These columns are: </p>
+<ul>
+<li>
+<p><em>Filename of additional Geo-data submitted as KML</em>: This column should contain the filename of the KML file that you send to KfW, for example "00345_Ouagadougou.kml". </p>
+</li>
+<li>
+<p><em>Primary Key (As provided in the KML file)</em>: That column should contain a "primary key" that must also be present in the attribute table of your KML file and links the geometry to the metadata in Excel. So, you have to name the column Primary Key in KML as well. Use integers to construct the primary key.</p>
+</li>
+</ul>
+<p>In Excel, you may also provide a "gateway point" (for details, see the section <em>Geometrical characteristics of exact locations</em>). This point can help us verify whether the link between the information in KML and Excel is correct. You must submit all locations for your project in a single KML file. We highly encourage you to check the data before submission using a GIS software such as QGIS or Google Earth Pro. This will reduce the need to go back and forth between the responsible KfW counterparts and the project staff.</p>
+<h2 id="approximate-locations">Approximate locations</h2>
+<p>The approximate location option should be selected if one or more of the following circumstances apply:</p>
+<ol>
+<li>
+<p>An exact project location has not (yet) been specified or is not yet known, e.g. the exact project locations have not yet been determined. In that case choose the option <em>approximate (yet unknown)</em>.</p>
+</li>
+<li>
+<p>An exact project location is not to be collected or communicated due to security reasons, e.g. in a conflict zone. In that case choose the option <em>approximate (security)</em>.</p>
+</li>
+<li>
+<p>The target location(s) is/are one or more administrative units such as a district, a province or the entire country or even a group of countries. Examples might be an entire country for a Policy-Based-Lending project or a number of districts in a country for a decentralization project. In that case choose the option <em>approximate (admin unit)</em>.</p>
+</li>
+</ol>
+<p>In the case of security risks (e.g. conflict zones), we strongly recommend only publishing approximate locations! Approximate locations can be given using either point or polygon data. E.g. you may use administrative areas from existing databases. </p>
+<h2 id="figures">Figures</h2>
+<figure>
+<p><img alt="Figure 1" src="../images/Figure1.png" />
+  </p>
+<figcaption>Figure 1: Schematic Representation of Different Location Data for the GeoApp</figcaption>
+</figure>
+<h2 id="what-is-a-location-type">What is a Location Type?</h2>
+<p>Even though this template closely follows the IATI standard, we have created additional location types to cover all financial cooperation project types. This enables the aggregation of information among multiple location types. If you cannot find a specific location type, please use the most similar location type, such as <em>well</em> for an <em>extraction well</em>. You can then add additional information on the location type within  <em>additional location types</em> if necessary. For more detailled technical information about the location types, please refer to the <a href="dev/location_type.md">location type reference</a>.</p>
+<p>Our new location type list includes the IATI location types that are useful for International Development, as well as additional location types for all sectors that were missing in the existing IATI list. We have created 197 new project location types, including <em>immaterial</em> ones like <em>Capacity Development/Training</em> or <em>Voucher Schemes</em>, that cannot be plotted according to any physical feature on a map but can be defined by the area covered by them. Therefore, we have also adapted the definition of <em>location type</em> as <em>project output- or intervention-related type of physical location or immaterial output- or intervention-area</em>. Please refer to the list of location types in the Excel template for more information.</p>
+<p>After preselecting the <em>KC Theme/Sub-Sector</em>, please choose the most appropriate location type from the table sheet <em>Location Types</em>. If there is no suitable option, please select <em>other physical</em> or <em>other immaterial</em> and fill out the next column <em>Alternative Location Type</em>. If you need or want to mention two different location types (e.g. school and capacity development) at the same GPS coordinate, you may create two separate rows for these location types with different activity descriptions and DAC/CRS codes at the same GPS coordinates.
+<strong>Please note that the preselection column "KC Theme/Sub-Sector" is only intended to help you quickly find the correct location type name.</strong> It does not replace the DAC5 Purpose Classification/CRS-Code assignment below which effectively assigns the correct subsector to each location.</p>
+<h2 id="dac-5-purpose-classificationcrs-code">DAC 5 Purpose Classification/CRS-Code</h2>
+<p>The one to four five-digit DAC 5 Purpose Codes for the entire project must be provided by your KfW counterpart (ideally in the project location data collection ToR, see samples <a href="../tor/">here</a>). If there is more than one code for the project, you must assign the correct code to each location. For example, in a decentralization project, the construction of primary school locations should be assigned to the respective Basic Education DAC 5-Code, while road rehabilitation sites within the same project should be assigned to the respective Transport DAC 5-Code.</p>
+<p>If your project contains locations that contribute not only to one but two, three, or four DAC/CRS-Codes, please create two, three, or four separate rows with the same GPS coordinates but different DAC/CRS-Codes, and potentially different location types and activity descriptions.
+If all codes must be assigned to all locations, please create a new row for each location, with the only difference being the DAC 5 Purpose Classification. For the complete list of codes, please refer to the table sheet "DAC Purpose Codes" of the Excel Template, which are validated against the official <a href="https://iatistandard.org/en/iati-standard/203/codelists/sector/">sector IATI codes</a>.</p>
+<h2 id="privacy-confidentiality-and-publication">Privacy, confidentiality and publication</h2>
+<p>The Excel template must be submitted without containing any personal data or any data that could be linked to individual persons such as houses of private households. Please note that KfW does not publish any exact coordinates of its project locations. Location data collection in fragile and conflict contexts should be treated with extra diligence.</p>
+<h2 id="the-project-location-model">The Project Location Model</h2>
+<p>Table 1: The Project Location Model for Development Cooperation</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><strong>Column</strong></th>
+<th style="text-align: right;"><strong>Name</strong></th>
+<th style="text-align: right;"><strong>Type of data</strong></th>
+<th style="text-align: right;"><strong>Mandatory</strong></th>
+<th style="text-align: right;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">A.</td>
+<td style="text-align: right;">Unique ID</td>
+<td style="text-align: right;">Number</td>
+<td style="text-align: right;">Filled out by KfW</td>
+<td style="text-align: right;">For new locations, this column will be empty. For updates, your KfW counterpart will provide you with a list of unique_id numbers in this file to ensure that updated location IDs match with the former ones.</td>
+</tr>
+<tr>
+<td style="text-align: right;">B.</td>
+<td style="text-align: right;">KfW project No. (INPRO)</td>
+<td style="text-align: right;">Number</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Every project location in the FC Geodata Model must be assigned to its respective KfW project number, which is provided by KfW in the <a href="../tor/">project location data collection ToR</a>.</td>
+</tr>
+<tr>
+<td style="text-align: right;">C.</td>
+<td style="text-align: right;">Abbreviation of project name (project acronym)</td>
+<td style="text-align: right;">Text</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Please enter the acronym used for the name/title of the project (e.g., HREII) to be visible on your map. If the project has multiple phases, please add the number of the phase belonging to the aforementioned KfW Project-No.</td>
+</tr>
+<tr>
+<td style="text-align: right;">D.</td>
+<td style="text-align: right;">Data Owner (Institution Name)</td>
+<td style="text-align: right;">Text</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Legal entity that owns the data provided here (= legal authorship).</td>
+</tr>
+<tr>
+<td style="text-align: right;">E.</td>
+<td style="text-align: right;">Publishing restrictions due to security reasons</td>
+<td style="text-align: right;">Select Text (yes/no)</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Indicates if this information is collected in fragile regions (e.g., areas of severe civil conflict or war) and should therefore be omitted from publicly available reports.</td>
+</tr>
+<tr>
+<td style="text-align: right;">F.</td>
+<td style="text-align: right;">Date of data collection or latest update</td>
+<td style="text-align: right;">Date YYYY-MM-DD (Date format - English/US)</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Date of data collection or latest update (if date of data collection is unknown). In case only the year is available please choose the 1st of january e.g. 2022-01-01</td>
+</tr>
+<tr>
+<td style="text-align: right;">G.</td>
+<td style="text-align: right;">Project-specific location identifier</td>
+<td style="text-align: right;">Text</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">If the location or activity has a project-specific identifier (e.g., a location code in the MIS of the source agency, e.g., Project Executing Agency (PEA)) or an identifier in a public database like GADM, it can be entered here.</td>
+</tr>
+<tr>
+<td style="text-align: right;">H.</td>
+<td style="text-align: right;">Location name</td>
+<td style="text-align: right;">Text</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Short name of the project site ideally containing a summary of the main project activity and the location name. Must be from the list of  location names in the location type sheet.</td>
+</tr>
+<tr>
+<td style="text-align: right;">I.</td>
+<td style="text-align: right;">Location activity status</td>
+<td style="text-align: right;">Select Text</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">The location activity status according to the IATI standard. If you are unaware of the current status please choose "NA".</td>
+</tr>
+<tr>
+<td style="text-align: right;">J.</td>
+<td style="text-align: right;">Planned or actual start date of activity at the location</td>
+<td style="text-align: right;">Date  YYYY-MM-DD (Date format - English/US)</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Approximate planned or actual start date of implementation of activities on the ground. This can be, for example, the date when construction work is planned to begin. If there is no information available, please enter 2100-01-01. Ideally, the start of project implementation is defined in the  <a href="../tor/">project location data collection ToR</a>.</td>
+</tr>
+<tr>
+<td style="text-align: right;">K.</td>
+<td style="text-align: right;">Planned or actual end date of activity at the location</td>
+<td style="text-align: right;">Date  YYYY-MM-DD (Date format - English/US)</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Approximate planned or actual end date of activities on the ground. This can be, for example, the date when the project is planned to cease implementation activities. If there is no information available, please enter 2100-01-01.</td>
+</tr>
+<tr>
+<td style="text-align: right;">L.</td>
+<td style="text-align: right;">Activity-Description (general)</td>
+<td style="text-align: right;">Text</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">A short description of the main project activity in this location, e.g., hydropower plant construction or construction of small irrigation systems.</td>
+</tr>
+<tr>
+<td style="text-align: right;">M.</td>
+<td style="text-align: right;">Additional activity description</td>
+<td style="text-align: right;">Text</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">Free text (in case you need to add other location–specific information like production volumes, progress values or a tag like “COVID-19”). Please consult your KfW counterpart if additional information is required.</td>
+</tr>
+<tr>
+<td style="text-align: right;">N.</td>
+<td style="text-align: right;">KC Theme / Sub-Sector</td>
+<td style="text-align: right;">Select Text</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Sectoral / cross-sectoral location type preselection field, see table sheets "Location Types" &amp; KC Themes. If there is no fit,  select "other physical or other immaterial and fill out the column "Alternative Location Type".</td>
+</tr>
+<tr>
+<td style="text-align: right;">O.</td>
+<td style="text-align: right;">Location Type Name</td>
+<td style="text-align: right;">Select Text</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">After selecting the KC Theme/Sub-Sector, please choose the most appropriate location type from the table sheet "Location Types". If there is no suitable option, please select "other physical" or "other immaterial" and fill out the next column "Alternative Location Type”.</td>
+</tr>
+<tr>
+<td style="text-align: right;">P.</td>
+<td style="text-align: right;">Alternative Location Type Name</td>
+<td style="text-align: right;">Text</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">If you selected "other physical" or "other immaterial" in the column "Location Type Name", please propose your own location type name. This promotes systemic learning, allows us to identify additionally required location types, and will help us propose a comprehensive IATI standard extension in the future.</td>
+</tr>
+<tr>
+<td style="text-align: right;">Q.</td>
+<td style="text-align: right;">DAC 5 Purpose Classification /CRS-Code</td>
+<td style="text-align: right;">Text</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">The DAC 5 Purpose Codes (one to four) for the entire project have to be provided in the <a href="../tor/">project location data collection ToR</a> or by your KfW counterpart, see notes above.</td>
+</tr>
+<tr>
+<td style="text-align: right;">R.</td>
+<td style="text-align: right;">Budget share</td>
+<td style="text-align: right;">Currency number in EUR</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">The budget share allocated to this location in €. The sum of all locations in a project should add up to the budget sum in Inpro/PMT, including overheads. Please do not enter data from private entities/PEAs here!</td>
+</tr>
+<tr>
+<td style="text-align: right;">S.</td>
+<td style="text-align: right;">Geographic exactness</td>
+<td style="text-align: right;">Select Text</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Please use "exact" if you know the geographically exact end destination of a financial flow and it is not an administrative unit, and if you do not face security restrictions to do so. If not, please use the respective type "approximate (yet unknown)" or "approximate (security)" or "approximate (admin unit)" -&gt; (see also chapter <strong>Approximate locations</strong> above).</td>
+</tr>
+<tr>
+<td style="text-align: right;">T.</td>
+<td style="text-align: right;">Latitude</td>
+<td style="text-align: right;">Decimal Number</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Enter the Latitude measured with a GPS device (or centroid for approximate locations). Make sure to use WGS 84 as the Coordinate Reference System (EPSG:4326). Enter Values with at least FIVE digits. Example: 50.12018514689011.</td>
+</tr>
+<tr>
+<td style="text-align: right;">U.</td>
+<td style="text-align: right;">Longitude</td>
+<td style="text-align: right;">Decimal Number</td>
+<td style="text-align: right;">Yes</td>
+<td style="text-align: right;">Enter the Longitude measured with a GPS device (or centroid for approximate locations) here. Make sure to use WGS 84 as the Coordinate Reference System (EPSG:4326). Enter Values with at least FIVE digits. Example: 8.655474047059236</td>
+</tr>
+<tr>
+<td style="text-align: right;">V.</td>
+<td style="text-align: right;">Related Community / Village / Neighborhood</td>
+<td style="text-align: right;">Decimal Number</td>
+<td style="text-align: right;">No</td>
+<td style="text-align: right;">You may enter a village, hamlet, or neighborhood name that relates to this location. This can serve to manually add smaller community or administrative unit names not identified in existing global databases.</td>
+</tr>
+<tr>
+<td style="text-align: right;">W.</td>
+<td style="text-align: right;">Filename of additional Geo-data submitted as KML (Lines/Polygons)</td>
+<td style="text-align: right;">Text</td>
+<td style="text-align: right;">Yes, if kmldata is provided</td>
+<td style="text-align: right;">Filename of the KML file where the associated geometry information is found. Note that to link an entry from this Excel to the KML file, it is required to correctly fill in the Primary Key column.</td>
+</tr>
+<tr>
+<td style="text-align: right;">X.</td>
+<td style="text-align: right;">Primary Key (as provided in KML file)</td>
+<td style="text-align: right;">Decimal Number</td>
+<td style="text-align: right;">Yes, if kmldata is provided</td>
+<td style="text-align: right;">This is only required if you provide additional geolocation information in another KML file. The geometry in the KML file should have the same primary key as listed here</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="additional-notes-on-selected-fields-from-the-model">Additional notes on selected fields from the model</h2>
+<h3 id="a-unique-id-for-each-project-location">A unique ID for each project location</h3>
+<p>Every project location in the Project Location Model must receive a unique location identifier number by KfW. For new locations, this column will be empty. For updates, your KfW counterpart will provide you with a list of unique_id numbers in this file to ensure that updated location IDs match with the former ones. Please use the IDs provided to you by your KfW focal point from then onwards. Please do not change this field. </p>
+<h3 id="publishing-restrictions-due-to-security-reasons">Publishing restrictions due to security reasons</h3>
+<p>Indicates if this information is collected in fragile regions (e.g., areas of severe civil conflict or war) and should therefore be omitted from publicly available reports. In fragile contexts, geolocation information must be protected and is not to be published.</p>
+<h3 id="project-specific-location-identifier">Project-specific location identifier</h3>
+<p>If the location or activity has a project-specific identifier, such as a location code in the MIS of the PEA, this can be entered here. This enables logically connecting and comparing the location/activity in the KfW system against the location/activity in the PEA system. </p>
+<h3 id="budget-share">Budget Share</h3>
+<p>The budget share allocated to this location in €. The sum of all locations in a project should add up to the official budget sum, including overheads. Data from private partners/PEA must not be entered here! If the budget shares of all locations are to be provided, the budget sum will be provided by the KfW counterpart in the <a href="../tor/">project location data collection ToR</a>.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:3">
+<p>World Geodetic System 1984 (https://support.virtual-surveyor.com/en/support/solutions/articles/1000261351-what-is-wgs84)&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>KML (KMZ) is an open XML Standard for Points, Lines and Shapes. Officially named the OpenGIS KML Encoding Standard (OGC KML). It is maintained by the Open Geospatial Consortium, Inc. (OGC). Other Geoformats (e.g., Shapefiles or Geojson) can usually be converted to KML in Standard Geographic Information System (GIS) Software such as ArcGIS or QGIS.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../tor/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview of existing sample Terms of Reference (ToR) and Templates">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview of existing sample Terms of Reference (ToR) and Templates
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.footer", "navigation.indexes", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

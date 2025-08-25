@@ -775,4 +775,4 @@ Must be one of:
 **Description:** Pour les nouveaux sites, cette colonne reste vide. Pour les mises à jour, votre partenaire KfW fournira une liste de numéros unique_id afin d’assurer la correspondance avec les identifiants précédents.
 
 ----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2025-08-25 at 14:24:35 +0200
+Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2025-08-25 at 17:47:06 +0200
