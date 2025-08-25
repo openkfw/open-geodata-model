@@ -29,8 +29,6 @@ nav:
     - dev/feature_project_schema.md
     - dev/project_core_schema_en.md
     - dev/project_core_schema_fr.md
-    - dev/sector_location_schema_en.md
-    - dev/sector_location_schema_fr.md
     - dev/dac5_schema.md
   - Tutorials:
     - "Example: Excel Template to KML": tutorials/xls_to_kml.ipynb
