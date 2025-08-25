@@ -27,7 +27,7 @@
       ]
     },
     "properties": {
-      "$ref": "stack://schemas/project_core.schema"
+      "$ref": "project_core.schema"
     },
     "geometry": {
       "oneOf": [

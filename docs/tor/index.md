@@ -9,13 +9,13 @@ These amended ToR form the basis for filling out the Excel-Template by the PEA's
 **English versions:**
 
 - [Terms of Reference for Project Location Data Collection and Management as part of Project Reporting](sample_tor.md)
-- [Projection Location Data Collection Excel Template EN](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_V02.xlsx)
+- [Projection Location Data Collection Excel Template EN](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_EN_V03.xlsx)
 
 
 **Versions Françaises:**
 
 - [Terms de Reference pour la collecte et la gestion des données de sites du projet dans le cadre du rapportage du projet](sample_tor_fr.md)
-- [Projection Location Data Collection Excel Template FR](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_V021_FR.xlsx)
+- [Projection Location Data Collection Excel Template FR](https://raw.githubusercontent.com/openkfw/open-geodata-model/main/Project_Location_Data_Template_FR_V03.xlsx)
 
 
 **How to fill out the templates:**
