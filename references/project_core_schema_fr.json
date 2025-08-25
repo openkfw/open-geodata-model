@@ -1,0 +1,131 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "stack://schemas/project_core.schema",
+    "description": "Ce schéma définit la structure du modèle de sites des projet. Il sert à valider les données de sites du projet fournies par le partenaire KfW.",
+    "properties": {
+        "schemeVersion": {
+            "const": "1.0"
+        },
+        "activityDescriptionGeneral": {
+            "description": "Une brève description de l'activité principale du projet sur ce site.",
+            "type": "string"
+        },
+        "additionalActivityDescription": {
+            "description": "Texte libre pour des informations supplémentaires spécifiques au site.",
+            "type": "string"
+        },
+        "alternativeLocationTypeName": {
+            "description": "Si vous avez sélectionné 'autre physique' ou 'autre immatériel' dans la colonne 'Nom du type de site', veuillez proposer votre propre nom de type de site.",
+            "type": "string"
+        },
+        "budgetShare": {
+            "description": "La part du budget allouée à ce site en €.",
+            "type": "number"
+        },
+        "dac5PurposeCode": {
+            "description": "Les codes CAD 5 assignés à l’ensemble du projet.",
+            "$ref": "stack://schemas/dac5.schema"
+        },
+        "dataOwner": {
+            "description": "Entité juridique qui possède les données fournies ici (= droit d'auteur légal).",
+            "type": "string"
+        },
+        "dateOfDataCollection": {
+            "description": "Date de collecte des données ou de la dernière mise à jour.",
+            "format": "date",
+            "type": "string"
+        },
+        "filenameOfAdditionalGeoData": {
+            "description": "Nom du fichier KML contenant les informations géométriques associées.",
+            "type": "string"
+        },
+        "geographicExactness": {
+            "description": "Veuillez utiliser 'exacte' si vous connaissez la destination finale géographique exacte d'un flux financier.",
+            "enum": [
+                "exacte",
+                "approximative (encore inconnue)",
+                "approximative (sécurité)",
+                "approximative (unité d’administration)"
+            ],
+            "type": "string"
+        },
+        "sector_location": {
+            "description": "Champ de présélection du type de localisation Secteurs / Sous-secteurs. / type de localisation le plus approprié.",
+            "$ref": "stack://schemas/sector_location_type.schema"
+        },
+        "kfwProjectNoINPRO": {
+            "description": "Chaque site du projet dans le modèle de géodonnées FC doit être attribué à son numéro de projet KfW respectif, qui est fourni par la KfW.",
+            "type": "string"
+        },
+        "locationActivityStatus": {
+            "description": "La phase de réalisation de l’activité selon la norme IATI.",
+            "enum": [
+                "Ne s’applique pas (NA)",
+                "Identification",
+                "Exécution",
+                "Finalisation",
+                "Terminé",
+                "Annulé",
+                "Suspendu",
+                "Divers"
+            ],
+            "type": "string"
+        },
+        "locationName": {
+            "description": "Nom court du site, incluant idéalement un résumé de l’activité principale et le nom du lieu.",
+            "type": "string"
+        },
+        "plannedOrActualEndDate": {
+            "description": "Date de fin approximative prévue ou réelle des activités sur le site.",
+            "format": "date",
+            "type": "string"
+        },
+        "plannedOrActualStartDate": {
+            "description": "Date de début approximative prévue ou réelle de la mise en œuvre des activités sur le site.",
+            "format": "date",
+            "type": "string"
+        },
+        "primaryKey": {
+            "description": "Ceci n'est requis que si vous fournissez des informations de géolocalisation supplémentaires dans un autre fichier KML.",
+            "type": "string"
+        },
+        "projectAcronym": {
+            "description": "Veuillez entrer l'acronyme utilisé pour le nom/titre du projet afin qu'il soit visible sur votre carte.",
+            "type": "string"
+        },
+        "projectSpecificLocationIdentifier": {
+            "description": "Si le site ou l'activité a un identifiant spécifique au projet, il peut être saisi ici."
+        },
+        "publishingRestrictions": {
+            "description": "Indique si ces informations sont collectées dans des régions fragiles et doivent donc être omises des rapports accessibles au public.",
+            "enum": [
+                "oui ",
+                "non"
+            ],
+            "type": "string"
+        },
+        "relatedCommunityVillageNeighborhood": {
+            "description": "Vous pouvez saisir le nom d’un village, d’un hameau ou d’un quartier lié à ce site.",
+            "type": "string"
+        },
+        "uniqueId": {
+            "description": "Pour les nouveaux sites, cette colonne reste vide. Pour les mises à jour, votre partenaire KfW fournira une liste de numéros unique_id afin d’assurer la correspondance avec les identifiants précédents.",
+            "type": "string"
+        }
+    },
+    "required": [
+        "kfwProjectNoINPRO",
+        "dataOwner",
+        "publishingRestrictions",
+        "locationName",
+        "plannedOrActualStartDate",
+        "plannedOrActualEndDate",
+        "activityDescriptionGeneral",
+        "sector_location",
+        "dac5PurposeCode",
+        "geographicExactness",
+        "schemeVersion"
+    ],
+    "title": "Modèle de Localisation des Projets",
+    "type": "object"
+}

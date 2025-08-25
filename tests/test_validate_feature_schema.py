@@ -16,11 +16,17 @@ with open("references/feature_project_schema.json", "r", encoding="utf-8") as f_
 with open("references/dac5_schema.json", "r", encoding="utf-8") as dac5_file:
     dac5_schema = json.load(dac5_file)
 
-with open("references/project_core_schema.json", "r", encoding="utf-8") as p_c_f:
-    project_core_schema = json.load(p_c_f)
+with open("references/project_core_schema_en.json", "r", encoding="utf-8") as p_c_f:
+    project_core_schema_en = json.load(p_c_f)
 
-with open("references/sector_location_schema.json", "r", encoding="utf-8") as s_l_f:
-    sector_location_schema = json.load(s_l_f)
+with open("references/sector_location_schema_en.json", "r", encoding="utf-8") as s_l_f:
+    sector_location_schema_en = json.load(s_l_f)
+
+with open("references/project_core_schema_fr.json", "r", encoding="utf-8") as p_c_f:
+    project_core_schema_fr = json.load(p_c_f)
+
+with open("references/sector_location_schema_fr.json", "r", encoding="utf-8") as s_l_f:
+    sector_location_schema_fr = json.load(s_l_f)
 
 
 def test_validate_test_cases():
@@ -28,16 +34,16 @@ def test_validate_test_cases():
     Tests to validate json files against feature project schema
     """
     # Create a registry and add schemas
-    registry = Registry().with_contents(
+    registry_en = Registry().with_contents(
         [
             ("stack://schemas/dac5.schema", dac5_schema),
-            ("stack://schemas/sector_location_type2.schema", sector_location_schema),
-            ("stack://schemas/project_core.schema", project_core_schema),
+            ("stack://schemas/sector_location_type.schema", sector_location_schema_en),
+            ("stack://schemas/project_core.schema", project_core_schema_en),
             ("stack://schemas/feature_project.schema", feature_project_schema),
         ],
     )
 
-    validator = Draft7Validator(schema=feature_project_schema, registry=registry)
+    validator_en = Draft7Validator(schema=feature_project_schema, registry=registry_en)
 
     test_cases = [
         {
@@ -114,7 +120,7 @@ def test_validate_test_cases():
     # Run validation
     for case in test_cases:
         try:
-            validator.validate(instance=case)
+            validator_en.validate(instance=case)
             print("Validation passed.")
         except ValidationError as e:
             print("Validation failed:", e.message)
@@ -128,34 +134,43 @@ def test_validate_excel():
     registry = Registry().with_contents(
         [
             ("stack://schemas/dac5.schema", dac5_schema),
-            ("stack://schemas/sector_location_type.schema", sector_location_schema),
-            ("stack://schemas/project_core.schema", project_core_schema),
+            ("stack://schemas/sector_location_type.schema", sector_location_schema_en),
+            ("stack://schemas/project_core.schema", project_core_schema_en),
+            ("stack://schemas/feature_project.schema", feature_project_schema),
+        ],
+    )
+
+    registry_fr = Registry().with_contents(
+        [
+            ("stack://schemas/dac5.schema", dac5_schema),
+            ("stack://schemas/sector_location_type.schema", sector_location_schema_fr),
+            ("stack://schemas/project_core.schema", project_core_schema_fr),
             ("stack://schemas/feature_project.schema", feature_project_schema),
         ],
     )
 
     validator = Draft7Validator(schema=feature_project_schema, registry=registry)
 
+    validator_fr = Draft7Validator(schema=feature_project_schema, registry=registry_fr)
     # now import the sector codes from the template
-    excel_file_path = "Project_Location_Data_Template_V02.xlsx"
+    excel_file_path = "Project_Location_Data_Template_EN_V03.xlsx"
     worksheet_name = "fill-me"
 
     excel_df = pd.read_excel(
         excel_file_path,
         sheet_name=worksheet_name,
         dtype={
-            "DAC 5 Purpose Classification": float,
-            "DAC 3 Code": float,
-            "Budget share": float,
-            "voluntary code": str,
-            "Primary Key (as provided in KML file)": str,
-            "Planned or actual start date of activity at the location ": str,
-            "Planned or actual end date of activity at the location": str,
-            "Date of data collection or latest update": str,
-            "Project-specific location identifier": str,
-            "KfW Project -No.\n(INPRO)": str,
+            "dac5PurposeCode": float,
+            "budgetShare": float,
+            "primaryKey": str,
+            "plannedOrActualStartDate": str,
+            "plannedOrActualEndDate": str,
+            "dateOfDataCollection": str,
+            "projectSpecificLocationIdentifier": str,
+            "kfwProjectNoINPRO": str,
+            "uniqueId": str,
         },
-        skiprows=1,
+        skiprows=2,
     )
     excel_df = excel_df.rename(
         columns={
@@ -174,7 +189,7 @@ def test_validate_excel():
             "KfW Project -No.\n(INPRO)": "kfwProjectNoINPRO",
             "Latitude": "latitude",
             "Location Activity Status": "locationActivityStatus",
-            "Location Type Name": "locationType",
+            "Location Type Name": "location_type",
             "Location name": "locationName",
             "Longitude": "longitude",
             "Planned or actual start date of activity at the location ": "plannedOrActualStartDate",
@@ -186,7 +201,7 @@ def test_validate_excel():
             "Unique ID": "uniqueID",
         }
     )
-    offset = 3
+    offset = 0
     for index, row in excel_df.iterrows():
         p_d = row.dropna().to_dict()
         t_d = {"type": "Feature"}
@@ -197,12 +212,12 @@ def test_validate_excel():
         t_d["properties"] = {
             "sector_location": {
                 "sector": p_d["sector"],
-                "location_type": p_d["locationType"],
+                "location_type": p_d["location_type"],
             }
         }
         p_d.pop("longitude")
         p_d.pop("latitude")
-        p_d.pop("locationType")
+        p_d.pop("location_type")
         p_d.pop("sector")
         for x in p_d:
             t_d["properties"][x] = p_d[x]
@@ -210,3 +225,49 @@ def test_validate_excel():
             t_d["properties"]["schemeVersion"] = "1.0"
         print("Test row: ", index + offset)
         validator.validate(instance=t_d)
+
+    # now import the sector codes from the template
+    excel_file_path_fr = "Project_Location_Data_Template_FR_V03.xlsx"
+    worksheet_name = "fill-me Remplissez-moi"
+
+    excel_df = pd.read_excel(
+        excel_file_path_fr,
+        sheet_name=worksheet_name,
+        dtype={
+            "dac5PurposeCode": float,
+            "budgetShare": float,
+            "primaryKey": str,
+            "plannedOrActualStartDate": str,
+            "plannedOrActualEndDate": str,
+            "dateOfDataCollection": str,
+            "projectSpecificLocationIdentifier": str,
+            "kfwProjectNoINPRO": str,
+            "uniqueId": str,
+        },
+        skiprows=2,
+    )
+
+    offset = 0
+    for index, row in excel_df.iterrows():
+        p_d = row.dropna().to_dict()
+        t_d = {"type": "Feature"}
+        t_d["geometry"] = {
+            "type": "Point",
+            "coordinates": [p_d["longitude"], p_d["latitude"]],
+        }
+        t_d["properties"] = {
+            "sector_location": {
+                "sector": p_d["sector"],
+                "location_type": p_d["location_type"],
+            }
+        }
+        p_d.pop("longitude")
+        p_d.pop("latitude")
+        p_d.pop("location_type")
+        p_d.pop("sector")
+        for x in p_d:
+            t_d["properties"][x] = p_d[x]
+        if "schemeVersion" not in t_d:
+            t_d["properties"]["schemeVersion"] = "1.0"
+        print("Test row: ", index + offset)
+        validator_fr.validate(instance=t_d)
