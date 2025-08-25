@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "stack://schemas/project_core.schema",
+    "$id": "project_core_schema.json",
     "description": "Ce schéma définit la structure du modèle de sites des projet. Il sert à valider les données de sites du projet fournies par le partenaire KfW.",
     "properties": {
         "schemeVersion": {
@@ -24,7 +24,7 @@
         },
         "dac5PurposeCode": {
             "description": "Les codes CAD 5 assignés à l’ensemble du projet.",
-            "$ref": "stack://schemas/dac5.schema"
+            "$ref": "dac5_schema.json"
         },
         "dataOwner": {
             "description": "Entité juridique qui possède les données fournies ici (= droit d'auteur légal).",
@@ -51,7 +51,7 @@
         },
         "sector_location": {
             "description": "Champ de présélection du type de localisation Secteurs / Sous-secteurs. / type de localisation le plus approprié.",
-            "$ref": "stack://schemas/sector_location_type.schema"
+            "$ref": "sector_location_schema_fr.json"
         },
         "kfwProjectNoINPRO": {
             "description": "Chaque site du projet dans le modèle de géodonnées FC doit être attribué à son numéro de projet KfW respectif, qui est fourni par la KfW.",
