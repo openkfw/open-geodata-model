@@ -26,4 +26,5 @@ jobs:
           poetry run generate-schema-doc --config template_name=md references/project_core_schema_en.json docs/dev/
           poetry run generate-schema-doc --config template_name=md references/generated_sector_location_schema.json docs/dev/
           poetry run generate-schema-doc --config template_name=md references/project_core_schema_fr.json docs/dev/
+
           poetry run mkdocs gh-deploy --force
