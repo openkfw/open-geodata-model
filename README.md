@@ -1,3 +1,7 @@
+# Deprecated
+
+further development will be continued at https://github.com/mapme-initiative/project_location_model
+
 # KfWs Open Project Location Model
 ## About
 Welcome! This is KfWs repository for storing the open project location model which can be used to collect project location sites and meta-information for international development projects, including those financed by KfW. 
